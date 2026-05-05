@@ -1,0 +1,315 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-ocean-ink: #102A3A;
+  --color-gulf-blue: #1E5D84;
+  --color-deep-gulf: #163F5B;
+  --color-shell-white: #FAF8F4;
+  --color-pure-white: #FFFFFF;
+  --color-sea-glass: #DCE9E7;
+  --color-sandstone: #E8D8C3;
+  --color-slate: #4E5961;
+  --color-driftwood: #85796B;
+  --color-brass-gold: #B88945;
+  --color-mist-border: #D8D7D2;
+  --color-success: #527A5A;
+  --color-warning: #A46B2A;
+  --color-error: #A34A43;
+  --color-info: #567A96;
+
+  /* Font families */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing scale */
+  --spacing-section: 96px;
+  --spacing-section-compact: 64px;
+  --spacing-section-mobile: 64px;
+
+  /* Radius */
+  --radius-card: 18px;
+  --radius-input: 14px;
+  --radius-pill: 999px;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-slate);
+    background-color: var(--color-shell-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-ocean-ink);
+  }
+
+  /* Typography utility classes */
+  .text-hero {
+    font-family: var(--font-heading);
+    font-size: 68px;
+    line-height: 74px;
+    letter-spacing: -0.02em;
+  }
+
+  .text-h1 {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    line-height: 54px;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h2 {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .text-h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .text-body {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .text-body-sm {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .text-label {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .container-main {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .container-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    padding: 0 32px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 999px;
+    background-color: var(--color-gulf-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 250ms ease;
+    font-family: var(--font-body);
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-deep-gulf);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 93, 132, 0.25);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    padding: 0 32px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--color-ocean-ink);
+    border: 1.5px solid var(--color-mist-border);
+    cursor: pointer;
+    transition: all 250ms ease;
+    font-family: var(--font-body);
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-ocean-ink);
+    background-color: white;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-gulf-blue);
+    cursor: pointer;
+    transition: all 250ms ease;
+    font-family: var(--font-body);
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 4px 0;
+  }
+
+  .btn-ghost:hover {
+    color: var(--color-deep-gulf);
+    gap: 10px;
+  }
+
+  .section-standard {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .section-compact {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 400ms ease, transform 400ms ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    background-color: var(--color-sea-glass);
+    color: var(--color-ocean-ink);
+  }
+
+  .chip-success {
+    background-color: #E3F2E4;
+    color: var(--color-success);
+  }
+
+  .chip-warning {
+    background-color: #FDECD9;
+    color: var(--color-warning);
+  }
+
+  .chip-active {
+    background-color: #DCE9E7;
+    color: var(--color-gulf-blue);
+  }
+
+  .card-hover {
+    transition: all 350ms ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(16, 42, 58, 0.1);
+  }
+
+  .image-zoom {
+    overflow: hidden;
+  }
+
+  .image-zoom img {
+    transition: transform 400ms ease;
+  }
+
+  .image-zoom:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+  .container-main,
+  .container-content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .section-standard {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .text-hero {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .text-h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container-main,
+  .container-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .text-hero {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .text-h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .text-h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .text-h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .text-body {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
