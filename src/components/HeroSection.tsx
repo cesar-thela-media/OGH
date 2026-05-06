@@ -6,10 +6,16 @@ export default function HeroSection() {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Check if user prefers reduced motion
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced) return;
+
     const handleScroll = () => {
       if (!parallaxRef.current) return;
       const offset = window.scrollY * 0.35;
-      parallaxRef.current.style.transform = `translate3d(0, ${offset}px, 0) scale(1.05)`;
+      parallaxRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -18,16 +24,22 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Full-bleed hero image — highest quality exterior */}
-      <div ref={parallaxRef} className="absolute inset-0 transition-transform will-change-transform">
+      {/* Full-bleed hero image — high exterior */}
+      <div
+        ref={parallaxRef}
+        className="absolute inset-0 will-change-transform"
+        style={{ transform: "scale(1.05)" }}
+      >
         <img
           src="https://oceangloryhomes.com/wp-content/uploads/2025/10/103-St-Andrews-Front-Exterior-2-edited.jpg"
-          alt="Custom home exterior — Ocean Glory Homes"
+          alt="Stunning custom home exterior built by Ocean Glory Homes in Corpus Christi, Texas"
           className="w-full h-full object-cover"
+          sizes="100vw"
+          fetchPriority="high"
         />
         {/* AR Homes style gradient overlay — transparent top, dark bottom */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/70" />
-        {/* Subtle left/right vignette */}
+        {/* Subtle vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,black_100%)] opacity-40" />
       </div>
 
@@ -36,13 +48,13 @@ export default function HeroSection() {
 
       {/* Centered content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-white font-heading text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.08] font-[600] tracking-tight drop-shadow-2xl">
+        <h1 className="text-white font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[1.08] font-[600] tracking-tight drop-shadow-2xl">
           Homes Worthy of<br />
-          <span className="italic font-[400] text-[#f8a500]">Your Dreams</span>
+          <span className="italic font-[400] text-brand-gold">Your Dreams</span>
         </h1>
         {/* Thin gold accent line */}
-        <div className="mx-auto mt-8 w-16 h-[2px] bg-brand-gold/60 rounded-full" />
-        <p className="mt-6 text-white/70 text-lg md:text-xl font-[300] max-w-2xl mx-auto leading-relaxed tracking-wide">
+        <div className="mx-auto mt-6 md:mt-8 w-14 md:w-16 h-[2px] bg-brand-gold/60 rounded-full" />
+        <p className="mt-4 md:mt-6 text-white/60 md:text-white/70 text-sm md:text-base lg:text-xl font-[300] max-w-2xl mx-auto leading-relaxed tracking-wide">
           Custom homes in Corpus Christi &amp; Rockport, Texas
         </p>
       </div>

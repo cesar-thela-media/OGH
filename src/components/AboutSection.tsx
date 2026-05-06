@@ -43,6 +43,7 @@ export default function AboutSection() {
             <div className="relative">
               <div className="relative rounded-xl overflow-hidden shadow-2xl">
                 <img
+                  loading="lazy"
                   src="https://oceangloryhomes.com/wp-content/uploads/2022/11/entryway.jpg"
                   alt="Elegant entryway in an Ocean Glory Homes custom home"
                   className="w-full h-[400px] md:h-[500px] object-cover"

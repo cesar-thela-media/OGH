@@ -39,6 +39,34 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: "Ocean Glory Homes",
+  image:
+    "https://oceangloryhomes.com/wp-content/uploads/2022/11/exterior.jpg",
+  description:
+    "Custom home builder serving Corpus Christi and Rockport, Texas since 2004.",
+  telephone: "+13617658888",
+  email: "info@oceangloryhomes.com",
+  url: "https://ocean-glory-homes.vercel.app",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Corpus Christi",
+    addressRegion: "TX",
+    addressCountry: "US",
+  },
+  areaServed: [
+    { "@type": "City", name: "Corpus Christi" },
+    { "@type": "City", name: "Rockport" },
+  ],
+  foundingDate: "2004",
+  sameAs: [
+    "https://www.facebook.com/oceangloryhomes",
+    "https://www.instagram.com/oceanglory_homes/",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -47,6 +75,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${openSans.variable}`}>
       <body className="font-body antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
