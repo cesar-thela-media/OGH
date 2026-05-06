@@ -32,13 +32,46 @@ const communities = [
   },
 ];
 
+const iconComponents: Record<string, React.ReactNode> = {
+  "⛳": (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0071ce" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M8 12h8" />
+      <path d="M12 8v8" />
+      <circle cx="12" cy="12" r="3" fill="#0071ce" stroke="none" />
+    </svg>
+  ),
+  "🌲": (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0071ce" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L4 12h16L12 2z" />
+      <path d="M12 12v10" />
+      <path d="M8 16l4-4 4 4" />
+    </svg>
+  ),
+  "⛵": (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0071ce" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21h18" />
+      <path d="M12 21V3" />
+      <path d="M8 12l4-6 4 6" />
+      <path d="M6 17l6-3 6 3" />
+    </svg>
+  ),
+  "🌅": (
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0071ce" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5" />
+      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      <path d="M5 16h14" />
+    </svg>
+  ),
+};
+
 export default function CommunitiesSection() {
   return (
-    <section className="py-24 bg-warm-bg">
+    <section className="py-20 bg-warm-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
         <ScrollReveal animation="slide-up">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+            <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
               Our Communities
             </p>
             <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-brand-dark leading-tight mb-4">
@@ -59,13 +92,15 @@ export default function CommunitiesSection() {
           {communities.map((c) => (
             <div
               key={c.name}
-              className="bg-white rounded-xl p-8 border border-brand-grey card-hover text-center"
+              className="bg-white rounded-xl p-8 border border-card-border card-hover text-center"
             >
-              <div className="text-3xl mb-4">{c.icon}</div>
+              <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mx-auto mb-4">
+                {iconComponents[c.icon]}
+              </div>
               <h3 className="text-lg font-heading font-[700] text-brand-dark mb-2">
                 {c.name}
               </h3>
-              <p className="text-brand-gold text-xs font-[600] tracking-wider uppercase mb-3">
+              <p className="text-brand-blue text-xs font-[600] tracking-wider uppercase mb-3">
                 {c.tagline}
               </p>
               <p className="text-body text-sm leading-relaxed">

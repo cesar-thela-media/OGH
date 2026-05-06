@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
@@ -53,7 +53,7 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal animation="scale-in" delay={150}>
-              <div className="rounded-xl overflow-hidden shadow-xl bg-gradient-card-fallback">
+              <div className="rounded-xl overflow-hidden shadow-xl gradient-card-fallback">
                 <img
                   src="https://oceangloryhomes.com/wp-content/uploads/2022/11/exterior.jpg"
                   alt="Ocean Glory Homes custom builder"
@@ -71,7 +71,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
           <ScrollReveal animation="slide-up">
             <div className="text-center max-w-2xl mx-auto">
-              <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+              <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
                 Visit Us
               </p>
               <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-brand-dark leading-tight mb-4">
@@ -126,7 +126,7 @@ export default function AboutPage() {
               },
             ].map((v, i) => (
               <ScrollReveal key={v.title} animation="slide-up" delay={i * 80}>
-                <div className="bg-white rounded-xl p-8 border border-brand-grey card-hover">
+                <div className="bg-white rounded-xl p-8 border border-card-border card-hover">
                   <h3 className="text-xl font-heading font-[700] text-brand-dark mb-3">
                     {v.title}
                   </h3>
@@ -141,7 +141,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+      <section className="py-20 gradient-section text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%]">
           <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-white leading-tight mb-4">

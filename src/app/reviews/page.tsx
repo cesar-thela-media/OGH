@@ -39,7 +39,7 @@ export default function ReviewsPage() {
   return (
     <>
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
@@ -66,7 +66,7 @@ export default function ReviewsPage() {
             {reviews.map((r, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-8 border border-brand-grey card-hover"
+                className="bg-white rounded-2xl p-8 border border-card-border card-hover"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -96,7 +96,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+      <section className="py-20 gradient-section text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">

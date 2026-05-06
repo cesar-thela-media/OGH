@@ -11,7 +11,7 @@ const features = [
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#f8a500"
+        stroke="#0071ce"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -32,7 +32,7 @@ const features = [
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#f8a500"
+        stroke="#0071ce"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -52,7 +52,7 @@ const features = [
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#f8a500"
+        stroke="#0071ce"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -68,11 +68,11 @@ const features = [
 
 export default function CustomHomesSection() {
   return (
-    <section className="py-24 bg-warm-bg">
+    <section className="py-20 bg-warm-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
         <ScrollReveal animation="slide-up">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+            <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
               Your Land, Your Home
             </p>
             <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-brand-dark leading-tight mb-4">
@@ -94,9 +94,9 @@ export default function CustomHomesSection() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl p-8 border border-brand-grey card-hover"
+              className="bg-white rounded-xl p-8 border border-card-border card-hover"
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mb-5">
                 {f.icon}
               </div>
               <h3 className="text-xl font-heading font-[700] text-brand-dark mb-3">

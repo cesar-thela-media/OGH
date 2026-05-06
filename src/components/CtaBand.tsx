@@ -1,6 +1,6 @@
 export default function CtaBand() {
   return (
-    <section className="relative overflow-hidden py-24 gradient-dark-gold">
+    <section className="relative overflow-hidden py-20 gradient-section">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
 

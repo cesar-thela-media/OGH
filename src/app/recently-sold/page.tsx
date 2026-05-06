@@ -17,7 +17,7 @@ export default function RecentlySoldPage() {
   return (
     <>
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
@@ -44,12 +44,12 @@ export default function RecentlySoldPage() {
             {sold.map((p, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl overflow-hidden border border-brand-grey card-hover"
+                className="bg-white rounded-xl overflow-hidden border border-card-border card-hover"
               >
-                <div className="h-44 bg-gradient-card-fallback relative overflow-hidden">
+                <div className="h-44 gradient-card-fallback relative overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f8a500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2">
+                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#0071ce" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         <polyline points="9 22 9 12 15 12 15 22" />
                       </svg>
@@ -77,7 +77,7 @@ export default function RecentlySoldPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+      <section className="py-20 gradient-section text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">

@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
   const t = testimonials[current];
 
   return (
-    <section className="py-24 gradient-dark-gold overflow-hidden">
+    <section className="py-20 gradient-section overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
         <ScrollReveal animation="slide-up">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
         {/* Testimonial Card */}
         <ScrollReveal animation="slide-up" delay={100}>
           <div className="max-w-3xl mx-auto">
-            <div className="bg-warm-white rounded-2xl p-8 md:p-12 border border-brand-grey relative">
+            <div className="bg-white rounded-2xl p-8 md:p-12 border border-card-border relative">
               {/* Gold Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
@@ -106,14 +106,14 @@ export default function TestimonialsSection() {
               </p>
 
               {/* Navigation */}
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-brand-grey">
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-card-border">
                 <div className="text-xs text-muted">
                   {current + 1} of {testimonials.length}
                 </div>
                 <div className="flex gap-3">
                   <button
                     onClick={prev}
-                    className="w-10 h-10 rounded-full border border-brand-grey flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors"
+                    className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center hover:border-brand-blue hover:text-brand-blue transition-colors"
                     aria-label="Previous testimonial"
                   >
                     <svg
@@ -131,7 +131,7 @@ export default function TestimonialsSection() {
                   </button>
                   <button
                     onClick={next}
-                    className="w-10 h-10 rounded-full border border-brand-grey flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors"
+                    className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center hover:border-brand-blue hover:text-brand-blue transition-colors"
                     aria-label="Next testimonial"
                   >
                     <svg
@@ -153,7 +153,7 @@ export default function TestimonialsSection() {
           </div>
         </ScrollReveal>
 
-        {/* Gold Dots */}
+        {/* Blue Dots */}
         <div className="flex justify-center gap-2 mt-6">
           {testimonials.map((_, i) => (
             <button
@@ -164,7 +164,7 @@ export default function TestimonialsSection() {
               }}
               className={`rounded-full transition-all duration-300 ${
                 i === current
-                  ? "bg-brand-gold w-6 h-2"
+                  ? "bg-brand-blue w-6 h-2"
                   : "bg-white/30 w-2 h-2 hover:bg-white/50"
               }`}
               aria-label={`Go to testimonial ${i + 1}`}

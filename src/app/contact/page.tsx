@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
@@ -45,13 +45,13 @@ export default function ContactPage() {
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center shrink-0">
                       <svg
                         width="20"
                         height="20"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#f8a500"
+                        stroke="#0071ce"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -65,7 +65,7 @@ export default function ContactPage() {
                       </h3>
                       <a
                         href="tel:3617658888"
-                        className="text-brand-gold font-[600] text-lg hover:underline"
+                        className="text-brand-blue font-[600] text-lg hover:underline"
                       >
                         (361) 765-8888
                       </a>
@@ -73,13 +73,13 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center shrink-0">
                       <svg
                         width="20"
                         height="20"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#f8a500"
+                        stroke="#0071ce"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -97,13 +97,13 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center shrink-0">
                       <svg
                         width="20"
                         height="20"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#f8a500"
+                        stroke="#0071ce"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -127,7 +127,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <ScrollReveal animation="scale-in" delay={150}>
-              <div className="bg-white rounded-2xl p-8 md:p-10 border border-brand-grey">
+              <div className="bg-white rounded-2xl p-8 md:p-10 border border-card-border">
                 <h3 className="text-2xl font-heading font-[700] text-brand-dark mb-6">
                   Send Us a Message
                 </h3>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                         type="text"
                         id="name"
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-brand-grey bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-card-border bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
                         placeholder="Your name"
                       />
                     </div>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                         type="email"
                         id="email"
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-brand-grey bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-card-border bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -174,7 +174,7 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       id="phone"
-                      className="w-full px-4 py-3 rounded-xl border border-brand-grey bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                       id="message"
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-xl border border-brand-grey bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold/30 focus:border-brand-gold transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-card-border bg-warm-bg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all resize-none"
                       placeholder="Tell us about your dream home..."
                     />
                   </div>

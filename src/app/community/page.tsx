@@ -35,7 +35,7 @@ export default function CommunityPage() {
   return (
     <>
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
@@ -55,7 +55,7 @@ export default function CommunityPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
           <ScrollReveal animation="slide-up">
             <div className="text-center mb-12">
-              <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+              <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
                 Affiliations
               </p>
               <h2 className="text-3xl font-heading font-[700] text-brand-dark mb-4">
@@ -71,7 +71,7 @@ export default function CommunityPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {awards.map((a, i) => (
               <ScrollReveal key={a.title} animation="slide-up" delay={i * 100}>
-                <div className="bg-white rounded-xl p-8 border border-brand-grey card-hover">
+                <div className="bg-white rounded-xl p-8 border border-card-border card-hover">
                   <h3 className="text-xl font-heading font-[700] text-brand-dark mb-3">
                     {a.title}
                   </h3>
@@ -90,7 +90,7 @@ export default function CommunityPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
           <ScrollReveal animation="slide-up">
             <div className="text-center mb-12">
-              <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+              <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
                 Giving Back
               </p>
               <h2 className="text-3xl font-heading font-[700] text-brand-dark mb-4">
@@ -107,14 +107,14 @@ export default function CommunityPage() {
             <div className="space-y-4">
               {involvement.map((item, i) => (
                 <ScrollReveal key={i} animation="slide-up" delay={i * 80}>
-                  <div className="flex items-start gap-4 bg-warm-bg rounded-xl p-6 border border-brand-grey">
-                    <div className="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="flex items-start gap-4 bg-warm-bg rounded-xl p-6 border border-card-border">
+                    <div className="w-8 h-8 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0 mt-0.5">
                       <svg
                         width="16"
                         height="16"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#f8a500"
+                        stroke="#0071ce"
                         strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -132,7 +132,7 @@ export default function CommunityPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+      <section className="py-20 gradient-section text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">

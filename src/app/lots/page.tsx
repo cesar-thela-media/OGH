@@ -67,7 +67,7 @@ export default function LotsPage() {
   return (
     <>
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
@@ -89,18 +89,18 @@ export default function LotsPage() {
           <div className="space-y-8">
             {communities.map((c, i) => (
               <ScrollReveal key={c.name} animation="slide-up" delay={i * 100}>
-                <div className="bg-white rounded-2xl p-8 md:p-10 border border-brand-grey card-hover">
+                <div className="bg-white rounded-2xl p-8 md:p-10 border border-card-border card-hover">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-xs text-brand-gold font-[600] tracking-wider uppercase">
+                        <span className="text-xs text-brand-blue font-[600] tracking-wider uppercase">
                           Community {i + 1}
                         </span>
                       </div>
                       <h2 className="text-2xl md:text-3xl font-heading font-[700] text-brand-dark">
                         {c.name}
                       </h2>
-                      <p className="text-brand-gold font-[600] text-sm mt-1">
+                      <p className="text-brand-blue font-[600] text-sm mt-1">
                         {c.tagline}
                       </p>
                     </div>
@@ -112,7 +112,7 @@ export default function LotsPage() {
                     {c.features.map((f) => (
                       <span
                         key={f}
-                        className="text-xs font-[600] px-3 py-1.5 rounded-full bg-brand-gold/10 text-brand-gold"
+                        className="text-xs font-[600] px-3 py-1.5 rounded-full bg-brand-blue/10 text-brand-blue"
                       >
                         {f}
                       </span>
@@ -126,7 +126,7 @@ export default function LotsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+      <section className="py-20 gradient-section text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">

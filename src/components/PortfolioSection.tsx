@@ -3,39 +3,39 @@ import { ScrollReveal, ScrollRevealStagger } from "./ScrollReveal";
 
 const projects = [
   {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2026/01/905-Dunes-Exterior-Front-EDIT.jpg",
-    alt: "Modern home exterior at 905 Dunes",
+    src: "https://oceangloryhomes.com/wp-content/uploads/2025/10/103-St-Andrews-Front-Exterior-2-edited.jpg",
+    alt: "Stunning custom home exterior",
     label: "Exteriors",
     wide: true,
   },
   {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/bath.jpg",
-    alt: "Luxury bathroom with premium finishes",
-    label: "Bathrooms",
-    wide: false,
-  },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2025/07/103-St-Andrews-Livingroom.jpg",
-    alt: "Elegant living room in a custom home",
+    src: "https://oceangloryhomes.com/wp-content/uploads/2025/06/14-Tradewinds-Primary-Living-Area.jpg",
+    alt: "Spacious living area with natural light",
     label: "Living Spaces",
     wide: false,
   },
   {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/dining.jpg",
-    alt: "Elegant dining space",
-    label: "Dining",
+    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/entryway.jpg",
+    alt: "Grand entryway with beautiful finishes",
+    label: "Entryways",
+    wide: false,
+  },
+  {
+    src: "https://oceangloryhomes.com/wp-content/uploads/2026/01/905-Dunes-Exterior-Front-EDIT.jpg",
+    alt: "Modern home exterior",
+    label: "Modern Homes",
     wide: false,
   },
 ];
 
 export default function PortfolioSection() {
   return (
-    <section className="py-24 bg-warm-bg">
+    <section className="py-20 bg-warm-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
         <ScrollReveal animation="slide-up">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
             <div className="max-w-xl">
-              <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+              <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
                 Our Work
               </p>
               <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-brand-dark leading-tight">
@@ -44,7 +44,7 @@ export default function PortfolioSection() {
             </div>
             <Link
               href="/portfolio"
-              className="text-brand-gold font-[600] hover:text-[#e09500] transition-colors inline-flex items-center gap-2"
+              className="text-brand-blue font-[600] hover:text-[#0059a6] transition-colors inline-flex items-center gap-2"
             >
               View Full Portfolio
               <svg
@@ -72,7 +72,7 @@ export default function PortfolioSection() {
           {projects.map((project, i) => (
             <div
               key={i}
-              className={`relative rounded-xl overflow-hidden group card-hover shadow-md bg-gradient-card-fallback ${
+              className={`relative rounded-xl overflow-hidden group card-hover shadow-md gradient-card-fallback ${
                 project.wide
                   ? "md:col-span-2 h-[250px] md:h-[400px]"
                   : i === 1

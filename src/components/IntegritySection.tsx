@@ -8,9 +8,9 @@ export default function IntegritySection() {
       label: "Master Suites",
     },
     {
-      src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/kitchen.jpg",
-      alt: "Custom kitchen designed by Ocean Glory Homes",
-      label: "Custom Kitchens",
+      src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/bath.jpg",
+      alt: "Spa-inspired bathroom in a custom home",
+      label: "Luxury Bathrooms",
     },
     {
       src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/dining.jpg",
@@ -25,12 +25,12 @@ export default function IntegritySection() {
   ];
 
   return (
-    <section className="py-24 bg-warm-bg">
+    <section className="py-20 bg-warm-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
         {/* Header */}
         <ScrollReveal animation="slide-up">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+            <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
               Our Promise
             </p>
             <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-brand-dark leading-tight mb-4">
@@ -52,7 +52,7 @@ export default function IntegritySection() {
           {images.map((img, i) => (
             <div
               key={i}
-              className="relative rounded-xl overflow-hidden group h-[250px] md:h-[350px] card-hover shadow-md bg-gradient-card-fallback"
+              className="relative rounded-xl overflow-hidden group h-[250px] md:h-[350px] card-hover shadow-md gradient-card-fallback"
             >
               <img
                 src={img.src}

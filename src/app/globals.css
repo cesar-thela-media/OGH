@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors — Brickly-inspired OGH equivalents */
-  --color-brand-dark: #1a1a1a;
+  /* Brand Colors — OGH Original Blue/Cyan/Gold */
+  --color-brand-blue: #0071ce;
+  --color-brand-cyan: #00b3e4;
   --color-brand-gold: #f8a500;
-  --color-warm-white: #f4f4f4;
-  --color-brand-grey: #e0ddda;
-  --color-body: #4a4a4a;
-  --color-muted: #8a8a8a;
-  --color-card-border: #e0ddda;
-  --color-warm-bg: #f4f4f4;
+  --color-brand-dark: #1a1a1a;
+  --color-body: #444444;
+  --color-muted: #696969;
+  --color-light-grey: #aaaaaa;
+  --color-warm-bg: #fafaf9;
+  --color-warm-coastal: #faf6f0;
+  --color-light-bg: #f8f8f8;
+  --color-card-border: #e5e5e5;
 
   /* Fonts */
   --font-heading: 'PP Mori', 'Helvetica Neue', sans-serif;
-  --font-body: 'Helvetica Neue', 'PP Mori', sans-serif;
+  --font-body: 'Helvetica Neue', sans-serif;
 
   /* Spacing */
   --spacing-section: 96px;
@@ -64,23 +67,22 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    height: 52px;
-    padding: 0 32px;
-    font-size: 15px;
+    height: 48px;
+    padding: 0 28px;
+    font-size: 14px;
     font-weight: 600;
     font-family: var(--font-heading);
-    border-radius: 999px;
-    background-color: var(--color-brand-gold);
-    color: #1a1a1a;
+    border-radius: 6px;
+    background-color: #0071ce;
+    color: white;
     border: none;
     cursor: pointer;
     transition: all 250ms ease;
     text-decoration: none;
   }
   .btn-primary:hover {
-    background-color: #e09500;
+    background-color: #0059a6;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(248, 165, 0, 0.3);
   }
 
   .btn-outline {
@@ -88,23 +90,22 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    height: 52px;
-    padding: 0 32px;
-    font-size: 15px;
+    height: 48px;
+    padding: 0 28px;
+    font-size: 14px;
     font-weight: 600;
     font-family: var(--font-heading);
-    border-radius: 999px;
+    border-radius: 6px;
     background: transparent;
-    color: white;
-    border: 2px solid rgba(255,255,255,0.3);
+    color: #1a1a1a;
+    border: 1.5px solid #e5e5e5;
     cursor: pointer;
     transition: all 250ms ease;
     text-decoration: none;
   }
   .btn-outline:hover {
-    border-color: var(--color-brand-gold);
-    color: var(--color-brand-gold);
-    transform: translateY(-2px);
+    border-color: #0071ce;
+    color: #0071ce;
   }
 
   .card-hover {
@@ -125,17 +126,21 @@
     transform: scale(1.06);
   }
 
-  /* Gradients — Dark to Gold (Brickly-inspired) */
+  /* Gradients — Blue/Cyan/Gold (OGH Brand) */
   .gradient-hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #f8a500 100%);
+    background: linear-gradient(135deg, #0071ce 0%, #00b3e4 50%, #f8a500 100%);
   }
 
-  .gradient-dark-gold {
-    background: linear-gradient(135deg, #1a1a1a 0%, #f8a500 100%);
+  .gradient-section {
+    background: linear-gradient(135deg, #0071ce 0%, #00b3e4 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, rgba(0,113,206,0.05) 0%, rgba(248,165,0,0.08) 100%);
   }
 
   .gradient-card-fallback {
-    background: linear-gradient(135deg, rgba(26,26,26,0.05) 0%, rgba(248,165,0,0.1) 100%);
+    background: linear-gradient(135deg, rgba(0,113,206,0.05) 0%, rgba(248,165,0,0.1) 100%);
   }
 
   /* Gold accent line */

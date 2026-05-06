@@ -62,7 +62,7 @@ export default function PortfolioPage() {
   return (
     <>
       {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
@@ -79,7 +79,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Filter */}
-      <section className="py-12 bg-white border-b border-brand-grey">
+      <section className="py-12 bg-white border-b border-card-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((cat) => (
@@ -88,7 +88,7 @@ export default function PortfolioPage() {
                 onClick={() => setActive(cat.id)}
                 className={`text-sm font-[600] px-5 py-2.5 rounded-full transition-all duration-200 ${
                   active === cat.id
-                    ? "bg-brand-gold text-brand-dark shadow-md"
+                    ? "bg-brand-blue text-white shadow-md"
                     : "bg-warm-bg text-muted hover:bg-gray-200"
                 }`}
               >
@@ -114,7 +114,7 @@ export default function PortfolioPage() {
               {filtered.map((img, i) => (
                 <div
                   key={i}
-                  className="break-inside-avoid rounded-xl overflow-hidden group card-hover relative bg-gradient-card-fallback"
+                  className="break-inside-avoid rounded-xl overflow-hidden group card-hover relative gradient-card-fallback"
                 >
                   <img
                     src={img.src}
@@ -139,7 +139,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+      <section className="py-20 gradient-section text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">
