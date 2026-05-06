@@ -45,7 +45,7 @@ export default function CustomHomesSection() {
 
         {/* Bento Grid */}
         <ScrollRevealStagger
-          animation="slide-up"
+          animation="scale-in"
           staggerDelay={100}
           className="grid md:grid-cols-3 gap-4"
         >

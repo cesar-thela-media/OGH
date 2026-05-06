@@ -55,7 +55,7 @@ export default function PortfolioSection() {
 
         {/* Creative two-card bento grid */}
         <ScrollRevealStagger
-          animation="slide-up"
+          animation="clip-in"
           staggerDelay={120}
           className="grid grid-cols-1 md:grid-cols-3 gap-4"
         >

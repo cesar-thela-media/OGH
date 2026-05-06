@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, ReactNode } from "react";
 
-type AnimationType = "slide-up" | "scale-in" | "reveal" | "fade";
+type AnimationType = "slide-up" | "scale-in" | "reveal" | "fade" | "clip-in";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -39,7 +39,7 @@ export function ScrollReveal({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -62,7 +62,7 @@ export function ScrollReveal({
 export function ScrollRevealStagger({
   children,
   animation = "slide-up",
-  staggerDelay = 100,
+  staggerDelay = 120,
   className = "",
 }: ScrollRevealStaggerProps) {
   const ref = useRef<HTMLDivElement>(null);
