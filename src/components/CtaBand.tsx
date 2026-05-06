@@ -1,66 +1,34 @@
-import Link from "next/link";
-
-interface CtaBandProps {
-  headline: string;
-  body?: string;
-  primaryCta: { label: string; href: string };
-  secondaryCta?: { label: string; href: string };
-  variant?: "dark" | "light";
-}
-
-export default function CtaBand({
-  headline,
-  body,
-  primaryCta,
-  secondaryCta,
-  variant = "dark",
-}: CtaBandProps) {
-  const isDark = variant === "dark";
-
+export default function CtaBand() {
   return (
-    <div className={isDark ? "bg-ocean-ink" : "bg-sea-glass"}>
-      <div className="container-content section-standard text-center">
-        <h2
-          className={`text-h1 mb-4 ${
-            isDark ? "text-white" : "text-ocean-ink"
-          }`}
-        >
-          {headline}
+    <section className="relative overflow-hidden py-24">
+      {/* Gradient background */}
+      <div className="absolute inset-0 gradient-cta" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
+        <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-white leading-tight mb-4">
+          Start Building Your Dream Home
         </h2>
-        {body && (
-          <p
-            className={`text-body max-w-[600px] mx-auto mb-8 ${
-              isDark ? "text-white/70" : "text-slate"
-            }`}
+        <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+          Let&apos;s bring your vision to life. Call us today and take the first
+          step toward the home you&apos;ve always wanted.
+        </p>
+        <div className="flex flex-wrap gap-4 justify-center">
+          <a
+            href="tel:3617658888"
+            className="btn-gold text-lg font-heading font-[700]"
           >
-            {body}
-          </p>
-        )}
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href={primaryCta.href}
-            className={`btn-primary ${
-              isDark
-                ? "bg-white text-ocean-ink hover:bg-white/90"
-                : ""
-            }`}
+            Call (361) 765-8888
+          </a>
+          <a
+            href="/contact"
+            className="btn-secondary border-white/40 text-white hover:border-white"
           >
-            {primaryCta.label}
-          </Link>
-          {secondaryCta && (
-            <Link
-              href={secondaryCta.href}
-              className={`btn-secondary ${
-                isDark
-                  ? "border-white/30 text-white hover:border-white hover:bg-white/10"
-                  : ""
-              }`}
-            >
-              {secondaryCta.label}
-            </Link>
-          )}
+            Send Us a Message
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

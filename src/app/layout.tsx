@@ -1,36 +1,56 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Open_Sans } from "next/font/google";
 import "./globals.css";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
-const cormorantGaramond = Cormorant_Garamond({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
   display: "swap",
 });
 
-const inter = Inter({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Ocean Glory Homes | Custom Coastal Home Builder",
+  title: "Ocean Glory Homes | Custom Home Builder in Corpus Christi, Rockport, TX",
   description:
-    "Ocean Glory Homes builds custom coastal homes in the Corpus Christi area. From lot selection to move-in, we guide you home.",
+    "Ocean Glory Homes builds custom homes in Corpus Christi and Rockport, Texas. Quality craftsmanship, honest pricing, and transparent communication.",
+  keywords: [
+    "custom home builder",
+    "Corpus Christi",
+    "Rockport Texas",
+    "home construction",
+    "new home builder",
+  ],
+  openGraph: {
+    title: "Ocean Glory Homes | Custom Home Builder",
+    description:
+      "Building custom dream homes in Corpus Christi and Rockport, Texas since 2004.",
+    url: "https://ocean-glory-homes.vercel.app",
+    siteName: "Ocean Glory Homes",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html
-      lang="en"
-      className={`${cormorantGaramond.variable} ${inter.variable}`}
-    >
-      <body className="font-body antialiased">{children}</body>
+    <html lang="en" className={`${cormorant.variable} ${openSans.variable}`}>
+      <body className="font-body antialiased">
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }

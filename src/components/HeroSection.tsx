@@ -1,118 +1,46 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-
-interface HeroSectionProps {
-  eyebrow?: string;
-  headline: string;
-  body: string;
-  primaryCta?: { label: string; href: string };
-  secondaryCta?: { label: string; href: string };
-  backgroundImage: string;
-  height?: string;
-  overlay?: boolean;
-  maxCopyWidth?: number;
-  trustStats?: { value: string; label: string }[];
-  children?: React.ReactNode;
-}
-
-export default function HeroSection({
-  eyebrow,
-  headline,
-  body,
-  primaryCta,
-  secondaryCta,
-  backgroundImage,
-  height = "78vh",
-  overlay = true,
-  maxCopyWidth = 620,
-  trustStats,
-  children,
-}: HeroSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.querySelector(".hero-content")?.classList.add("visible");
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
+export default function HeroSection() {
   return (
-    <section
-      ref={ref}
-      className={`relative flex items-center overflow-hidden`}
-      style={{
-        minHeight: height,
-        maxHeight: "900px",
-      }}
-    >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
-      {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-r from-ocean-ink/80 via-ocean-ink/50 to-ocean-ink/30" />
-      )}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Gradient background — blue→cyan→gold */}
+      <div className="absolute inset-0 gradient-cta" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(248,165,0,0.15),transparent_50%)]" />
 
-      {/* Content */}
-      <div className="container-content relative z-10 w-full">
-        <div className="hero-content fade-up max-w-[620px]">
-          {eyebrow && (
-            <p className="text-label text-white/60 mb-4 flex flex-wrap gap-2">
-              {eyebrow.split("•").map((part, i) => (
-                <span key={i}>
-                  {i > 0 && (
-                    <span className="mx-1 text-white/30">•</span>
-                  )}
-                  {part.trim()}
-                </span>
-              ))}
-            </p>
-          )}
-          <h1 className="text-hero text-white font-semibold mb-6 leading-tight">
-            {headline}
-          </h1>
-          <p
-            className="text-body text-white/80 mb-8"
-            style={{ maxWidth: maxCopyWidth }}
-          >
-            {body}
-          </p>
-          <div className="flex flex-wrap gap-4 mb-10">
-            {primaryCta && (
-              <Link href={primaryCta.href} className="btn-primary bg-white text-ocean-ink hover:bg-white/90">
-                {primaryCta.label}
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link href={secondaryCta.href} className="btn-secondary border-white/30 text-white hover:border-white hover:bg-white/10">
-                {secondaryCta.label}
-              </Link>
-            )}
-          </div>
-          {trustStats && (
-            <div className="flex flex-wrap gap-8">
-              {trustStats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-h2 text-white font-semibold">{stat.value}</div>
-                  <div className="text-body-sm text-white/60">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          )}
-          {children}
-        </div>
+      {/* Background image with subtle overlay */}
+      <div className="absolute inset-0 opacity-30">
+        <img
+          src="https://oceangloryhomes.com/wp-content/uploads/2022/11/exterior.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Decorative elements — floating soft blobs */}
+      <div className="absolute top-1/4 left-[10%] w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 right-[15%] w-80 h-80 bg-yellow-300/5 rounded-full blur-3xl" />
+
+      {/* Centered tagline only — no CTA buttons */}
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <h1 className="text-white font-heading text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-[700] tracking-tight drop-shadow-lg">
+          Homes Worthy of<br />
+          <span className="italic font-[500]">Your Dreams</span>
+        </h1>
+      </div>
+
+      {/* Scroll indicator — bounce arrow */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+        </svg>
       </div>
     </section>
   );

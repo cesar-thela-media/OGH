@@ -1,27 +1,44 @@
 export default function TrustRibbon() {
-  const items = [
-    { value: "Custom Homes", desc: "Designed for your lifestyle" },
-    { value: "Available Homes", desc: "Move-in ready" },
-    { value: "Lots & Land", desc: "Find your perfect lot" },
-    { value: "Corpus Christi Area", desc: "Local expertise" },
-    { value: "Local Guidance", desc: "From lot to keys" },
+  const logos = [
+    {
+      src: "https://oceangloryhomes.com/wp-content/uploads/2018/06/TEXAS-ASSOCIATION.gif",
+      alt: "Texas Association of Builders",
+    },
+    {
+      src: "https://oceangloryhomes.com/wp-content/uploads/2018/06/NAHB.gif",
+      alt: "National Association of Home Builders",
+    },
+    {
+      src: "https://oceangloryhomes.com/wp-content/uploads/2018/06/COSTAL-BEND.gif",
+      alt: "Coastal Bend Builders Association",
+    },
+    {
+      src: "https://oceangloryhomes.com/wp-content/uploads/2018/06/BBB.gif",
+      alt: "Better Business Bureau Accredited",
+    },
   ];
 
   return (
-    <div className="bg-ocean-ink">
-      <div className="container-content py-8">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {items.map((item) => (
+    <section className="py-16 bg-warm-bg border-t border-b border-card-border">
+      <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
+        <p className="text-center text-xs text-muted tracking-[0.15em] uppercase mb-8 font-[600]">
+          Proudly Affiliated With
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          {logos.map((logo) => (
             <div
-              key={item.value}
-              className="text-center"
+              key={logo.alt}
+              className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
             >
-              <div className="text-body text-white font-semibold mb-1">{item.value}</div>
-              <div className="text-body-sm text-white/50">{item.desc}</div>
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-12 md:h-14 w-auto object-contain"
+              />
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
