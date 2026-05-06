@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Open_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const ppMori = localFont({
+  src: [
+    { path: "../../public/fonts/PPMori-Extralight.otf", weight: "200", style: "normal" },
+    { path: "../../public/fonts/PPMori-ExtralightItalic.otf", weight: "200", style: "italic" },
+    { path: "../../public/fonts/PPMori-Regular.otf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/PPMori-RegularItalic.otf", weight: "400", style: "italic" },
+    { path: "../../public/fonts/PPMori-SemiBold.otf", weight: "600", style: "normal" },
+    { path: "../../public/fonts/PPMori-SemiBoldItalic.otf", weight: "600", style: "italic" },
+  ],
   variable: "--font-heading",
-  display: "swap",
-});
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
   display: "swap",
 });
 
@@ -73,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${openSans.variable}`}>
+    <html lang="en" className={`${ppMori.variable}`}>
       <body className="font-body antialiased">
         <script
           type="application/ld+json"

@@ -63,11 +63,11 @@ export default function TestimonialsSection() {
   const t = testimonials[current];
 
   return (
-    <section className="py-24 gradient-bg">
+    <section className="py-24 gradient-dark-gold overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
         <ScrollReveal animation="slide-up">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-white/80 font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+            <p className="text-brand-gold/80 font-[600] text-sm tracking-[0.15em] uppercase mb-4">
               Homeowner Reviews
             </p>
             <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-white leading-tight">
@@ -79,8 +79,8 @@ export default function TestimonialsSection() {
         {/* Testimonial Card */}
         <ScrollReveal animation="slide-up" delay={100}>
           <div className="max-w-3xl mx-auto">
-            <div className="bg-warm-bg rounded-2xl p-8 md:p-12 border border-card-border relative">
-              {/* Stars */}
+            <div className="bg-warm-white rounded-2xl p-8 md:p-12 border border-brand-grey relative">
+              {/* Gold Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
                   <svg
@@ -97,25 +97,23 @@ export default function TestimonialsSection() {
                 ))}
               </div>
 
-              {/* Quote */}
               <blockquote className="text-lg md:text-xl text-body leading-relaxed mb-8 italic">
                 &ldquo;{t.text}&rdquo;
               </blockquote>
 
-              {/* Source */}
-              <p className="text-dark font-heading font-[700] text-sm">
+              <p className="text-brand-dark font-heading font-[700] text-sm">
                 — {t.name}
               </p>
 
               {/* Navigation */}
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-card-border">
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-brand-grey">
                 <div className="text-xs text-muted">
                   {current + 1} of {testimonials.length}
                 </div>
                 <div className="flex gap-3">
                   <button
                     onClick={prev}
-                    className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center hover:border-brand-blue hover:text-brand-blue transition-colors"
+                    className="w-10 h-10 rounded-full border border-brand-grey flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors"
                     aria-label="Previous testimonial"
                   >
                     <svg
@@ -133,7 +131,7 @@ export default function TestimonialsSection() {
                   </button>
                   <button
                     onClick={next}
-                    className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center hover:border-brand-blue hover:text-brand-blue transition-colors"
+                    className="w-10 h-10 rounded-full border border-brand-grey flex items-center justify-center hover:border-brand-gold hover:text-brand-gold transition-colors"
                     aria-label="Next testimonial"
                   >
                     <svg
@@ -155,7 +153,7 @@ export default function TestimonialsSection() {
           </div>
         </ScrollReveal>
 
-        {/* Dots */}
+        {/* Gold Dots */}
         <div className="flex justify-center gap-2 mt-6">
           {testimonials.map((_, i) => (
             <button
@@ -164,10 +162,10 @@ export default function TestimonialsSection() {
                 setIsAutoPlaying(false);
                 setCurrent(i);
               }}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`rounded-full transition-all duration-300 ${
                 i === current
-                  ? "bg-brand-blue w-6"
-                  : "bg-gray-300 hover:bg-gray-400"
+                  ? "bg-brand-gold w-6 h-2"
+                  : "bg-white/30 w-2 h-2 hover:bg-white/50"
               }`}
               aria-label={`Go to testimonial ${i + 1}`}
             />

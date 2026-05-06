@@ -1,3 +1,5 @@
+import { ScrollReveal } from "@/components/ScrollReveal";
+
 export default function CommunityPage() {
   const awards = [
     {
@@ -32,9 +34,9 @@ export default function CommunityPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-dark to-brand-blue overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,179,228,0.15),transparent_50%)]" />
+      {/* Hero header */}
+      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
             Community &amp; Awards
@@ -49,72 +51,80 @@ export default function CommunityPage() {
       </section>
 
       {/* Awards */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-warm-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-[700] text-dark mb-4">
-              Professional Affiliations &amp; Awards
-            </h2>
-            <p className="text-body max-w-2xl mx-auto">
-              Our memberships and accreditations reflect our dedication to
-              quality, professionalism, and ethical building practices.
-            </p>
-          </div>
+          <ScrollReveal animation="slide-up">
+            <div className="text-center mb-12">
+              <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+                Affiliations
+              </p>
+              <h2 className="text-3xl font-heading font-[700] text-brand-dark mb-4">
+                Professional Affiliations &amp; Awards
+              </h2>
+              <p className="text-body max-w-2xl mx-auto">
+                Our memberships and accreditations reflect our dedication to
+                quality, professionalism, and ethical building practices.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {awards.map((a) => (
-              <div
-                key={a.title}
-                className="bg-warm-bg rounded-xl p-8 border border-card-border card-hover"
-              >
-                <h3 className="text-xl font-heading font-[700] text-dark mb-3">
-                  {a.title}
-                </h3>
-                <p className="text-body text-muted text-sm leading-relaxed">
-                  {a.description}
-                </p>
-              </div>
+            {awards.map((a, i) => (
+              <ScrollReveal key={a.title} animation="slide-up" delay={i * 100}>
+                <div className="bg-white rounded-xl p-8 border border-brand-grey card-hover">
+                  <h3 className="text-xl font-heading font-[700] text-brand-dark mb-3">
+                    {a.title}
+                  </h3>
+                  <p className="text-body text-muted text-sm leading-relaxed">
+                    {a.description}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Community Involvement */}
-      <section className="py-24 bg-warm-bg">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-[700] text-dark mb-4">
-              Community Involvement
-            </h2>
-            <p className="text-body max-w-2xl mx-auto">
-              We are proud to be an active part of the Corpus Christi and
-              Rockport communities.
-            </p>
-          </div>
+          <ScrollReveal animation="slide-up">
+            <div className="text-center mb-12">
+              <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+                Giving Back
+              </p>
+              <h2 className="text-3xl font-heading font-[700] text-brand-dark mb-4">
+                Community Involvement
+              </h2>
+              <p className="text-body max-w-2xl mx-auto">
+                We are proud to be an active part of the Corpus Christi and
+                Rockport communities.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="max-w-3xl mx-auto">
             <div className="space-y-4">
               {involvement.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 bg-white rounded-xl p-6 border border-card-border"
-                >
-                  <div className="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#f8a500"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
+                <ScrollReveal key={i} animation="slide-up" delay={i * 80}>
+                  <div className="flex items-start gap-4 bg-warm-bg rounded-xl p-6 border border-brand-grey">
+                    <div className="w-8 h-8 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#f8a500"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <p className="text-body text-sm leading-relaxed">{item}</p>
                   </div>
-                  <p className="text-body text-sm leading-relaxed">{item}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -122,13 +132,13 @@ export default function CommunityPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-cta text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">
             Want to Learn More?
           </h2>
-          <a href="tel:3617658888" className="btn-gold text-lg inline-flex">
+          <a href="tel:3617658888" className="btn-primary text-lg inline-flex">
             Call (361) 765-8888
           </a>
         </div>

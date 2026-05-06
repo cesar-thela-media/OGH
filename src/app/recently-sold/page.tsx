@@ -1,22 +1,24 @@
-export default function RecentlySoldPage() {
-  const sold = [
-    { address: "115 Forest Hills", community: "Rockport Country Club", year: 2025 },
-    { address: "102 Cypress Point", community: "Rockport Country Club", year: 2025 },
-    { address: "12 Westpointe", community: "Rockport Country Club", year: 2024 },
-    { address: "9 Tradewinds", community: "Southwind Harbor", year: 2024 },
-    { address: "1505 Cape Velero", community: "Southwind Harbor", year: 2024 },
-    { address: "2201 N Fulton Beach", community: "Rockport", year: 2024 },
-    { address: "104 St Andrews", community: "Rockport", year: 2023 },
-    { address: "117 Forest Hills", community: "Rockport Country Club", year: 2023 },
-    { address: "7 Westpointe", community: "Rockport Country Club", year: 2023 },
-    { address: "13 Tradewinds", community: "Southwind Harbor", year: 2023 },
-  ];
+import { ScrollRevealStagger } from "@/components/ScrollReveal";
 
+const sold = [
+  { address: "115 Forest Hills", community: "Rockport Country Club", year: 2025 },
+  { address: "102 Cypress Point", community: "Rockport Country Club", year: 2025 },
+  { address: "12 Westpointe", community: "Rockport Country Club", year: 2024 },
+  { address: "9 Tradewinds", community: "Southwind Harbor", year: 2024 },
+  { address: "1505 Cape Velero", community: "Southwind Harbor", year: 2024 },
+  { address: "2201 N Fulton Beach", community: "Rockport", year: 2024 },
+  { address: "104 St Andrews", community: "Rockport", year: 2023 },
+  { address: "117 Forest Hills", community: "Rockport Country Club", year: 2023 },
+  { address: "7 Westpointe", community: "Rockport Country Club", year: 2023 },
+  { address: "13 Tradewinds", community: "Southwind Harbor", year: 2023 },
+];
+
+export default function RecentlySoldPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-dark to-brand-blue overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,179,228,0.15),transparent_50%)]" />
+      {/* Hero header */}
+      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
             Past Sales
@@ -34,24 +36,27 @@ export default function RecentlySoldPage() {
       {/* Sold Grid */}
       <section className="py-24 bg-warm-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ScrollRevealStagger
+            animation="slide-up"
+            staggerDelay={80}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             {sold.map((p, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl overflow-hidden border border-card-border card-hover"
+                className="bg-white rounded-xl overflow-hidden border border-brand-grey card-hover"
               >
-                <div className="h-44 bg-gray-100 relative overflow-hidden">
+                <div className="h-44 bg-gradient-card-fallback relative overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2">
+                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#f8a500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         <polyline points="9 22 9 12 15 12 15 22" />
                       </svg>
                       <span className="text-xs text-muted">Sold</span>
                     </div>
                   </div>
-                  {/* SOLD overlay */}
-                  <div className="absolute top-3 left-3 bg-gray-800 text-white text-xs font-[700] px-3 py-1 rounded-full">
+                  <div className="absolute top-3 left-3 bg-brand-dark text-white text-xs font-[700] px-3 py-1 rounded-full">
                     SOLD
                   </div>
                 </div>
@@ -60,25 +65,25 @@ export default function RecentlySoldPage() {
                     <span className="text-xs text-muted">{p.community}</span>
                     <span className="text-xs text-muted">{p.year}</span>
                   </div>
-                  <h3 className="text-lg font-heading font-[700] text-dark">
+                  <h3 className="text-lg font-heading font-[700] text-brand-dark">
                     {p.address}
                   </h3>
                   <p className="text-xs text-muted mt-1">Rockport, Texas</p>
                 </div>
               </div>
             ))}
-          </div>
+          </ScrollRevealStagger>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-cta text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">
             Want to Be Our Next Success Story?
           </h2>
-          <a href="tel:3617658888" className="btn-gold text-lg inline-flex">
+          <a href="tel:3617658888" className="btn-primary text-lg inline-flex">
             Call (361) 765-8888
           </a>
         </div>

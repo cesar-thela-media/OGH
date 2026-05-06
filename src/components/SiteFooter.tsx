@@ -13,7 +13,7 @@ const footerLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-dark text-white">
+    <footer className="bg-brand-dark text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%] py-16">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Brand */}
@@ -39,7 +39,7 @@ export default function SiteFooter() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white/60 hover:text-white text-sm transition-colors"
+                  className="text-white/60 hover:text-brand-gold text-sm transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -58,12 +58,15 @@ export default function SiteFooter() {
             >
               (361) 765-8888
             </a>
+            <p className="text-white/60 text-sm mb-4">
+              6725 Wall St, Corpus Christi, TX 78414
+            </p>
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/oceangloryhomes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"
                 aria-label="Facebook"
               >
                 <svg
@@ -79,7 +82,7 @@ export default function SiteFooter() {
                 href="https://www.instagram.com/oceanglory_homes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"
                 aria-label="Instagram"
               >
                 <svg
@@ -106,13 +109,13 @@ export default function SiteFooter() {
           <div className="flex gap-6 text-xs">
             <Link
               href="/contact"
-              className="text-white/40 hover:text-white transition-colors"
+              className="text-white/40 hover:text-brand-gold transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/contact"
-              className="text-white/40 hover:text-white transition-colors"
+              className="text-white/40 hover:text-brand-gold transition-colors"
             >
               Corpus Christi Home Builder News
             </Link>

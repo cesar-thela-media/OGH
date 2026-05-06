@@ -25,25 +25,25 @@ export default function IntegritySection() {
   ];
 
   return (
-    <section className="py-24 gradient-warm-blue">
+    <section className="py-24 bg-warm-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-        {/* Text header */}
+        {/* Header */}
         <ScrollReveal animation="slide-up">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-white/80 font-[600] text-sm tracking-[0.15em] uppercase mb-4">
+            <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
               Our Promise
             </p>
-            <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-white leading-tight mb-4">
-              Building with Integrity
+            <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-brand-dark leading-tight mb-4">
+              Built with Integrity
             </h2>
-            <p className="text-white/85 leading-relaxed text-lg">
+            <p className="text-body leading-relaxed text-lg">
               Every home is built with honest pricing, quality craftsmanship, and
               constant communication.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Image Grid — 2x2 bento */}
+        {/* 2x2 Image Grid */}
         <ScrollRevealStagger
           animation="slide-up"
           staggerDelay={120}
@@ -52,14 +52,15 @@ export default function IntegritySection() {
           {images.map((img, i) => (
             <div
               key={i}
-              className="relative rounded-xl overflow-hidden group h-[250px] md:h-[350px] card-hover shadow-md"
+              className="relative rounded-xl overflow-hidden group h-[250px] md:h-[350px] card-hover shadow-md bg-gradient-card-fallback"
             >
               <img
                 src={img.src}
                 alt={img.alt}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
-              {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                 <span className="text-white text-sm font-[600] tracking-wider uppercase">

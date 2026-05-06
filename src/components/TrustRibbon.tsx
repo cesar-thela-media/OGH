@@ -19,12 +19,12 @@ export default function TrustRibbon() {
   ];
 
   return (
-    <section className="py-16 bg-warm-bg border-t border-b border-card-border">
+    <section className="py-16 bg-warm-bg border-t border-b border-brand-grey">
       <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
         <p className="text-center text-xs text-muted tracking-[0.15em] uppercase mb-8 font-[600]">
           Proudly Affiliated With
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
           {logos.map((logo) => (
             <div
               key={logo.alt}
@@ -33,6 +33,7 @@ export default function TrustRibbon() {
               <img
                 src={logo.src}
                 alt={logo.alt}
+                loading="lazy"
                 className="h-12 md:h-14 w-auto object-contain"
               />
             </div>

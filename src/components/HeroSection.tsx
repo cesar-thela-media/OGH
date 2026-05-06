@@ -6,7 +6,6 @@ export default function HeroSection() {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Check if user prefers reduced motion
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -24,7 +23,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Full-bleed hero image — high exterior */}
+      {/* Background layer — image + overlays */}
       <div
         ref={parallaxRef}
         className="absolute inset-0 will-change-transform"
@@ -37,29 +36,26 @@ export default function HeroSection() {
           sizes="100vw"
           fetchPriority="high"
         />
-        {/* AR Homes style gradient overlay — transparent top, dark bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/70" />
-        {/* Subtle vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,black_100%)] opacity-40" />
+        {/* Dark overlay with gold rise at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/20 via-transparent to-transparent" />
       </div>
-
-      {/* Warm glow from below */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-48 bg-gradient-to-t from-brand-gold/10 to-transparent" />
 
       {/* Centered content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <h1 className="text-white font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[1.08] font-[600] tracking-tight drop-shadow-2xl">
           Homes Worthy of<br />
-          <span className="italic font-[400] text-brand-gold">Your Dreams</span>
+          <span className="italic font-[400]" style={{ color: "#f8a500" }}>
+            Your Dreams
+          </span>
         </h1>
-        {/* Thin gold accent line */}
         <div className="mx-auto mt-6 md:mt-8 w-14 md:w-16 h-[2px] bg-brand-gold/60 rounded-full" />
-        <p className="mt-4 md:mt-6 text-white/60 md:text-white/70 text-sm md:text-base lg:text-xl font-[300] max-w-2xl mx-auto leading-relaxed tracking-wide">
+        <p className="mt-4 md:mt-6 text-white/50 text-sm md:text-base lg:text-xl font-[300] max-w-2xl mx-auto leading-relaxed tracking-wide">
           Custom homes in Corpus Christi &amp; Rockport, Texas
         </p>
       </div>
 
-      {/* Scroll indicator — bounce arrow */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <svg
           width="24"

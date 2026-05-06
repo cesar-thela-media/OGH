@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const categories = [
   { id: "all", label: "All" },
@@ -60,9 +61,9 @@ export default function PortfolioPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-dark to-brand-blue overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,179,228,0.15),transparent_50%)]" />
+      {/* Hero header */}
+      <section className="relative pt-32 pb-20 gradient-dark-gold overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
           <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
             Our Work
@@ -78,7 +79,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Filter */}
-      <section className="py-12 bg-white border-b border-card-border">
+      <section className="py-12 bg-white border-b border-brand-grey">
         <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((cat) => (
@@ -87,7 +88,7 @@ export default function PortfolioPage() {
                 onClick={() => setActive(cat.id)}
                 className={`text-sm font-[600] px-5 py-2.5 rounded-full transition-all duration-200 ${
                   active === cat.id
-                    ? "bg-brand-blue text-white shadow-md"
+                    ? "bg-brand-gold text-brand-dark shadow-md"
                     : "bg-warm-bg text-muted hover:bg-gray-200"
                 }`}
               >
@@ -113,13 +114,15 @@ export default function PortfolioPage() {
               {filtered.map((img, i) => (
                 <div
                   key={i}
-                  className="break-inside-avoid rounded-xl overflow-hidden group card-hover relative"
+                  className="break-inside-avoid rounded-xl overflow-hidden group card-hover relative bg-gradient-card-fallback"
                 >
                   <img
                     src={img.src}
                     alt={img.alt}
+                    loading="lazy"
                     className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     style={{ minHeight: "250px" }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
@@ -136,8 +139,8 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-cta text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+      <section className="py-20 gradient-dark-gold text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <h2 className="text-3xl font-heading font-[700] text-white mb-4">
             Want to See More?
@@ -145,7 +148,7 @@ export default function PortfolioPage() {
           <p className="text-white/70 mb-6">
             Schedule a visit to tour our model homes.
           </p>
-          <a href="tel:3617658888" className="btn-gold text-lg inline-flex">
+          <a href="tel:3617658888" className="btn-primary text-lg inline-flex">
             Call (361) 765-8888
           </a>
         </div>
