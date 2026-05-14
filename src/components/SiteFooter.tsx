@@ -1,80 +1,51 @@
-import Link from "next/link";
+import Link from "next/link"
 
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/for-sale", label: "For Sale" },
-  { href: "/lots", label: "Available Lots" },
-  { href: "/recently-sold", label: "Recently Sold" },
-  { href: "/portfolio", label: "Portfolio" },
+const quickLinks = [
   { href: "/about", label: "About Us" },
-  { href: "/reviews", label: "Reviews" },
+  { href: "/portfolio", label: "Our Projects" },
+  { href: "/community", label: "Villas" },
+  { href: "/apartments", label: "Apartments" },
+  { href: "/why-ogh", label: "Why OGH" },
   { href: "/contact", label: "Contact" },
-];
+]
+
+const projectLinks = [
+  { href: "/portfolio", label: "Azure Bay Villas" },
+  { href: "/portfolio", label: "Oceanview Residences" },
+  { href: "/portfolio", label: "Coral Crest Villas" },
+  { href: "/portfolio", label: "All Projects" },
+]
 
 export default function SiteFooter() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="bg-brand-dark text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-[15%] py-16">
-        <div className="grid md:grid-cols-3 gap-10">
-          {/* Brand */}
+    <footer className="bg-[#C5A368] text-[#333333]">
+      <div className="w-full px-[5%] py-16 md:py-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+          {/* Column 1: Brand */}
           <div>
-            <img
-              src="https://oceangloryhomes.com/wp-content/uploads/2016/06/ocean-glory-homes-.png"
-              alt="Ocean Glory Homes"
-              className="h-10 w-auto brightness-0 invert mb-4"
-            />
-            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              Building custom homes with integrity and quality craftsmanship in
-              Corpus Christi and Rockport, Texas.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-heading font-[700] text-sm tracking-[0.1em] uppercase mb-4">
-              Quick Links
-            </h4>
-            <div className="grid grid-cols-2 gap-2">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-white/60 hover:text-brand-gold text-sm transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            {/* Logo */}
+            <div className="flex items-center mb-5">
+              <img
+                src="https://oceangloryhomes.com/wp-content/uploads/2016/06/ocean-glory-homes-.png"
+                alt="Ocean Glory Homes"
+                className="h-[32px] md:h-[38px] w-auto brightness-0 invert"
+              />
             </div>
-          </div>
-
-          {/* Contact & Social */}
-          <div>
-            <h4 className="text-white font-heading font-[700] text-sm tracking-[0.1em] uppercase mb-4">
-              Contact
-            </h4>
-            <a
-              href="tel:3617658888"
-              className="text-white font-heading font-[600] text-xl block mb-4 hover:text-brand-gold transition-colors"
-            >
-              (361) 765-8888
-            </a>
-            <p className="text-white/60 text-sm mb-4">
-              6725 Wall St, Corpus Christi, TX 78414
+            <p className="text-sm leading-relaxed max-w-xs mb-6">
+              Crafting timeless oceanfront homes that inspire generations.
             </p>
-            <div className="flex gap-4">
+            {/* Social Icons — brand outline, no background */}
+            <div className="flex gap-3">
               <a
                 href="https://www.facebook.com/oceangloryhomes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"
+                className="w-8 h-8 rounded-full border border-black/30 flex items-center justify-center hover:bg-black/10 transition-all duration-200"
                 aria-label="Facebook"
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="white"
-                >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A368">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
@@ -82,46 +53,138 @@ export default function SiteFooter() {
                 href="https://www.instagram.com/oceanglory_homes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-gold transition-colors"
+                className="w-8 h-8 rounded-full border border-black/30 flex items-center justify-center hover:bg-black/10 transition-all duration-200"
                 aria-label="Instagram"
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="white"
-                >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A368">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
               </a>
+              <a
+                href="https://www.linkedin.com/company/ocean-glory-homes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-black/30 flex items-center justify-center hover:bg-black/10 transition-all duration-200"
+                aria-label="LinkedIn"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A368">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-black/30 flex items-center justify-center hover:bg-black/10 transition-all duration-200"
+                aria-label="YouTube"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#C5A368">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div>
+            <h4 className="font-body text-white text-[12px] uppercase tracking-[2px] font-[600] mb-5">
+              QUICK LINKS
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm hover:text-black transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Projects */}
+          <div>
+            <h4 className="font-body text-white text-[12px] uppercase tracking-[2px] font-[600] mb-5">
+              OUR PROJECTS
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {projectLinks.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    href={link.href}
+                    className="text-sm hover:text-black transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact */}
+          <div>
+            <h4 className="font-body text-white text-[12px] uppercase tracking-[2px] font-[600] mb-5">
+              CONTACT US
+            </h4>
+            <div className="flex flex-col gap-4">
+              {/* Phone */}
+              <a
+                href="tel:3617658888"
+                className="flex items-start gap-3 text-sm hover:text-black transition-colors duration-200"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C5A368" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +91 2345 67890
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:info@oceangloryhomes.com"
+                className="flex items-start gap-3 text-sm hover:text-black transition-colors duration-200"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C5A368" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                info@oceangloryhomes.com
+              </a>
+
+              {/* Address */}
+              <div className="flex items-start gap-3 text-sm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C5A368" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>
+                  Ocean Glory Homes,<br />
+                  Coastal Road, Mumbai - 400001, India
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-[15%] py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-xs">
-            Copyright &copy; {new Date().getFullYear()} Ocean Glory Homes |
-            All Rights Reserved
+      {/* Copyright Strip */}
+      <div className="bg-[__GOLD_TRANSPARENT__] border-t border-[__GOLD_BORDER__]">
+        <div className="w-full px-[5%] py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[12px] text-[#333333]">
+            &copy; {currentYear} Ocean Glory Homes. All Rights Reserved.
           </p>
-          <div className="flex gap-6 text-xs">
-            <Link
-              href="/contact"
-              className="text-white/40 hover:text-brand-gold transition-colors"
-            >
+          <div className="flex gap-4 text-[12px] text-[#333333]">
+            <Link href="/contact" className="hover:text-black transition-colors">
               Privacy Policy
             </Link>
-            <Link
-              href="/contact"
-              className="text-white/40 hover:text-brand-gold transition-colors"
-            >
-              Corpus Christi Home Builder News
+            <span>|</span>
+            <Link href="/contact" className="hover:text-black transition-colors">
+              Terms &amp; Conditions
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -1,104 +1,118 @@
-import Link from "next/link";
-import { ScrollReveal, ScrollRevealStagger } from "./ScrollReveal";
+'use client'
+
+import Link from "next/link"
 
 const projects = [
   {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2025/10/103-St-Andrews-Front-Exterior-2-edited.jpg",
-    alt: "Stunning custom home exterior",
-    label: "Exteriors",
-    wide: true,
+    title: "Azure Bay Villas",
+    description: "Private oceanfront villas.",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    tag: "VILLAS",
   },
   {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2025/06/14-Tradewinds-Primary-Living-Area.jpg",
-    alt: "Spacious living area with natural light",
-    label: "Living Spaces",
-    wide: false,
+    title: "Oceanview Residences",
+    description: "Luxury sea-facing apartments.",
+    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
+    tag: "APARTMENTS",
   },
   {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/entryway.jpg",
-    alt: "Grand entryway with beautiful finishes",
-    label: "Entryways",
-    wide: false,
+    title: "Coral Crest Villas",
+    description: "Bespoke villas with timeless design.",
+    image: "https://images.unsplash.com/photo-1605146768851-eda79da39897?w=800&q=80",
+    tag: "VILLAS",
   },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2026/01/905-Dunes-Exterior-Front-EDIT.jpg",
-    alt: "Modern home exterior",
-    label: "Modern Homes",
-    wide: false,
-  },
-];
+]
 
 export default function PortfolioSection() {
   return (
-    <section className="py-20 bg-warm-bg">
-      <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-        <ScrollReveal animation="slide-up">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
-            <div className="max-w-xl">
-              <p className="text-brand-blue font-[600] text-sm tracking-[0.15em] uppercase mb-4">
-                Our Work
-              </p>
-              <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-brand-dark leading-tight">
-                Our Recent Work
-              </h2>
-            </div>
-            <Link
-              href="/portfolio"
-              className="text-brand-blue font-[600] hover:text-[#0059a6] transition-colors inline-flex items-center gap-2"
-            >
-              View Full Portfolio
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </ScrollReveal>
+    <section className="bg-[#000000] py-28 lg:py-36 overflow-hidden">
+      <div className="w-full px-[5%]">
+        {/* Section Label */}
+        <p className="text-center text-[13px] font-[500] uppercase tracking-[4px] text-[#C5A368] mb-4">
+          OUR PROJECTS
+        </p>
 
-        {/* Bento grid */}
-        <ScrollRevealStagger
-          animation="scale-in"
-          staggerDelay={120}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
-        >
-          {projects.map((project, i) => (
-            <div
-              key={i}
-              className={`relative rounded-xl overflow-hidden group card-hover shadow-md gradient-card-fallback ${
-                project.wide
-                  ? "md:col-span-2 h-[250px] md:h-[400px]"
-                  : i === 1
-                  ? "md:col-span-1 h-[190px] md:h-[192px]"
-                  : i === 2
-                  ? "md:col-span-1 md:row-span-2 h-[190px] md:h-[400px]"
-                  : "md:col-span-1 h-[190px] md:h-[192px]"
-              }`}
+        {/* Headline */}
+        <h2 className="font-heading text-center text-[42px] md:text-[52px] leading-[1.2] text-white font-[400] tracking-[-0.5px]">
+          Exquisite Spaces. Extraordinary Living.
+        </h2>
+
+        {/* Brand divider line */}
+        <div className="flex justify-center mt-6 mb-16 lg:mb-20">
+          <div className="w-[60px] h-[1px] bg-[#013773]" />
+        </div>
+
+        {/* Carousel wrapper */}
+        <div className="relative max-w-[1280px] mx-auto flex items-center gap-0">
+          {/* Left Arrow — outside cards */}
+          <div className="shrink-0 mr-4 xl:mr-6">
+            <button
+              className="w-[50px] h-[50px] rounded-full border border-white/40 flex items-center justify-center bg-black hover:border-white/60 transition-all duration-300"
+              aria-label="Previous project"
             >
-              <img
-                src={project.src}
-                alt={project.alt}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-white text-sm font-[600] tracking-wider uppercase">
-                  {project.label}
-                </span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Cards — centered in remaining space */}
+          <div className="flex-1 flex justify-center gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="w-full max-w-[380px] bg-black overflow-hidden group"
+              >
+                {/* Image — 3:2 aspect ratio */}
+                <div className="relative">
+                  <div
+                    className="aspect-[3/2] bg-cover bg-center"
+                    style={{ backgroundImage: `url('${project.image}')` }}
+                  />
+                  {/* Category tag over image */}
+                  <div className="absolute top-4 left-4 bg-[#013773]/90 px-3 py-1.5">
+                    <span className="text-[11px] font-[500] uppercase tracking-[2px] text-white">
+                      {project.tag}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-6 md:p-8">
+                  <h3 className="font-heading text-[24px] md:text-[26px] text-white font-[400] mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-[15px] md:text-[16px] text-[#A0A0A0] leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                  <Link
+                    href="/portfolio"
+                    className="inline-flex items-center gap-2 text-[13px] font-[500] uppercase tracking-[2px] text-[#C5A368] hover:text-[#D4B47A] transition-colors duration-300 group/link"
+                  >
+                    VIEW PROJECT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover/link:translate-x-1 transition-transform duration-300">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
-        </ScrollRevealStagger>
+            ))}
+          </div>
+
+          {/* Right Arrow — outside cards */}
+          <div className="shrink-0 ml-4 xl:ml-6">
+            <button
+              className="w-[50px] h-[50px] rounded-full border border-white/40 flex items-center justify-center bg-black hover:border-white/60 transition-all duration-300"
+              aria-label="Next project"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,158 +1,107 @@
-"use client";
-
-import { useState } from "react";
-import { ScrollReveal } from "@/components/ScrollReveal";
+import Link from "next/link"
 
 const categories = [
-  { id: "all", label: "All" },
-  { id: "exteriors", label: "Exteriors" },
-  { id: "kitchens", label: "Kitchens" },
-  { id: "bathrooms", label: "Bathrooms" },
-  { id: "living", label: "Living Spaces" },
-  { id: "dining", label: "Dining Spaces" },
-  { id: "foyers", label: "Foyers" },
-];
-
-const images: { src: string; alt: string; category: string }[] = [
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/exterior.jpg",
-    alt: "Custom home exterior in Corpus Christi",
-    category: "exteriors",
-  },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/kitchen.jpg",
-    alt: "Luxury custom kitchen with premium finishes",
-    category: "kitchens",
-  },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/bath.jpg",
-    alt: "Spa-inspired bathroom with modern fixtures",
-    category: "bathrooms",
-  },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/dining.jpg",
-    alt: "Elegant dining room with custom details",
-    category: "dining",
-  },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/entryway.jpg",
-    alt: "Grand entryway with beautiful finishes",
-    category: "foyers",
-  },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2022/11/bedroom.jpg",
-    alt: "Spacious bedroom with natural light",
-    category: "living",
-  },
-  {
-    src: "https://oceangloryhomes.com/wp-content/uploads/2026/04/home-builder-details.jpg",
-    alt: "Home builder construction details",
-    category: "exteriors",
-  },
-];
+  { id: "exteriors", label: "Exteriors", desc: "Stunning curb appeal and architectural design", count: 42 },
+  { id: "kitchens", label: "Kitchens", desc: "Gourmet kitchens with premium finishes", count: 38 },
+  { id: "bathrooms", label: "Bathrooms", desc: "Spa-inspired luxury bathrooms", count: 35 },
+  { id: "living", label: "Living Spaces", desc: "Open, elegant living areas", count: 48 },
+  { id: "features", label: "Features", desc: "Custom details and premium features", count: 52 },
+  { id: "foyers", label: "Foyers", desc: "Grand entrances that make an impression", count: 28 },
+  { id: "dining", label: "Dining Spaces", desc: "Beautiful dining rooms for entertaining", count: 30 },
+]
 
 export default function PortfolioPage() {
-  const [active, setActive] = useState("all");
-
-  const filtered =
-    active === "all"
-      ? images
-      : images.filter((img) => img.category === active);
-
   return (
     <>
-      {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
-          <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
-            Our Work
+      {/* Hero */}
+      <section className="bg-[#111111] pt-40 lg:pt-48 pb-28 lg:pb-36">
+        <div className="w-full px-[5%] max-w-[1440px] mx-auto text-center">
+          <p className="text-[13px] font-[500] uppercase tracking-[4px] text-black/60 mb-4">
+            PORTFOLIO
           </p>
-          <h1 className="text-4xl md:text-[4rem] font-heading font-[700] text-white leading-tight mb-4">
-            Portfolio of Homes
+          <h1 className="font-heading text-[42px] md:text-[56px] lg:text-[64px] leading-[1.15] text-white font-[400] mb-6 max-w-[700px] mx-auto">
+            Our Portfolio
           </h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Browse our collection of custom homes showcasing our craftsmanship
-            and attention to detail.
+          <div className="w-[60px] h-[1px] bg-white/30 mx-auto mb-6" />
+          <p className="text-[16px] md:text-[18px] leading-[1.7] text-[#555555] max-w-[600px] mx-auto">
+            Browse our collection of custom homes showcasing our craftsmanship and attention to detail.
           </p>
         </div>
       </section>
 
-      {/* Filter */}
-      <section className="py-12 bg-white border-b border-card-border">
-        <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map((cat) => (
-              <button
+      {/* Category Grid */}
+      <section className="bg-[#C5A368] py-28 lg:py-36">
+        <div className="w-full px-[5%] max-w-[1440px] mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categories.map((cat, i) => (
+              <div
                 key={cat.id}
-                onClick={() => setActive(cat.id)}
-                className={`text-sm font-[600] px-5 py-2.5 rounded-full transition-all duration-200 ${
-                  active === cat.id
-                    ? "bg-brand-blue text-white shadow-md"
-                    : "bg-warm-bg text-muted hover:bg-gray-200"
-                }`}
+                className="bg-[#111111] border border-[#013773]/20 hover:border-[#013773]/50 transition-all duration-300 group cursor-pointer"
               >
-                {cat.label}
-              </button>
+                {/* Gradient placeholder image */}
+                <div className="aspect-[3/2] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center border-b border-[#013773]/10">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C5A368" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                </div>
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-heading text-[22px] md:text-[24px] text-white font-[400]">
+                      {cat.label}
+                    </h3>
+                    <span className="text-[12px] text-black/60/60 font-[500]">
+                      {cat.count}
+                    </span>
+                  </div>
+                  <p className="text-[14px] text-[#555555] leading-relaxed mb-4">
+                    {cat.desc}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-[12px] font-[600] uppercase tracking-[2px] text-black/60 group-hover:gap-3 transition-all duration-300">
+                    VIEW GALLERY
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-10 py-4 text-[13px] font-[600] uppercase tracking-[2px] border border-[#013773] text-[#C5A368] hover:bg-[#013773]/10 transition-all duration-300"
+            >
+              VIEW ALL PROJECTS
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-24 bg-warm-bg min-h-[50vh]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-          {filtered.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-muted">No images in this category yet.</p>
-              <p className="text-xs text-muted mt-2">
-                Check back soon for updates.
-              </p>
-            </div>
-          ) : (
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-              {filtered.map((img, i) => (
-                <div
-                  key={i}
-                  className="break-inside-avoid rounded-xl overflow-hidden group card-hover relative gradient-card-fallback"
-                >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ minHeight: "250px" }}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <span className="text-white text-xs font-[600] tracking-wider uppercase">
-                      {categories.find((c) => c.id === img.category)?.label ||
-                        img.category}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-20 gradient-section text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
-        <div className="relative z-10 max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl font-heading font-[700] text-white mb-4">
+      <section className="bg-[#C5A368] py-24 lg:py-28">
+        <div className="w-full px-[5%] max-w-[1440px] mx-auto text-center">
+          <h2 className="font-heading text-[34px] md:text-[42px] text-white font-[500] leading-tight mb-4">
             Want to See More?
           </h2>
-          <p className="text-white/70 mb-6">
+          <p className="text-[#555555] text-[16px] leading-relaxed max-w-md mx-auto mb-10">
             Schedule a visit to tour our model homes.
           </p>
-          <a href="tel:3617658888" className="btn-primary text-lg inline-flex">
-            Call (361) 765-8888
-          </a>
+          <Link
+            href="tel:3617658888"
+            className="inline-flex items-center gap-3 px-10 py-4 text-[13px] font-[600] uppercase tracking-[2px] bg-[#013773] text-white hover:bg-[#014B9A] transition-all duration-300"
+          >
+            (361) 765-8888
+          </Link>
         </div>
       </section>
     </>
-  );
+  )
 }

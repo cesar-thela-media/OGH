@@ -1,112 +1,80 @@
-import { ScrollRevealStagger } from "@/components/ScrollReveal";
+import Link from "next/link"
 
-const reviews = [
-  {
-    title: "Built Our Dream Home!",
-    text: "We bought our home last year and are so grateful to this amazing builder! He literally built our dream home. Please call to have your home built by this builder. He is conscientious, professional and has gone above and beyond.",
-  },
-  {
-    title: "Committed to Customer Support",
-    text: "Ocean Glory Homes is fully committed to customer support. They are quick and responsive and go out of their way to provide quick resolution to any issues you may encounter on your home. Completely satisfied with my home.",
-  },
-  {
-    title: "Precise and Beautifully Finished",
-    text: "Ocean Glory Homes assured that all my plans were done to my specifications, and that the details were precise and beautifully finished.",
-  },
-  {
-    title: "Attentive and Detail Oriented",
-    text: "After moving back to CC, Ocean Glory built my custom home. Reza is very attentive and detail oriented.",
-  },
-  {
-    title: "Wowed Beyond Belief",
-    text: "We walked in to our new home and we were wowed beyond belief. Beautiful. Good quality control. There was no damage after Harvey.",
-  },
-  {
-    title: "Very Personable",
-    text: "Reza is very personable and easy to get along with. He did all that we asked of him and the house was very tastefully and well built.",
-  },
-  {
-    title: "No Regrets",
-    text: "I purchased my first house from Ocean Glory Homes… I loved it from the first showing.",
-  },
-  {
-    title: "Completely Satisfied",
-    text: "I have been completely satisfied with my purchase. The quality, design and amenities was second to none.",
-  },
-];
+const testimonials = [
+  { text: "We bought our home last year and are so grateful to this amazing builder! He literally built our dream home. Please call to have your home built by this builder. He is conscientious, professional and has gone above and beyond.", name: "Maria & David" },
+  { text: "Ocean Glory Homes is fully committed to customer support. They are quick and responsive. Completely satisfied with my home.", name: "Jennifer T." },
+  { text: "Ocean Glory Homes assured that all my plans were done to my specifications, the details were precise and beautifully finished.", name: "Robert K." },
+  { text: "Reza is very attentive and detail oriented. He worked with me throughout the process. I'm thankful I chose Ocean Glory Homes.", name: "Michael S." },
+  { text: "The quality of this home is great!! Thank you for making our crazy ideas come to light!", name: "Ryan & Kassandra" },
+  { text: "We truly couldn't have picked anyone better. Our home was completed on budget and on time.", name: "Sarah & Tom" },
+  { text: "Reza is a pleasure to work with — personable, conscientious and detail oriented. He went above and beyond.", name: "Amanda P." },
+  { text: "Ocean Glory Homes built my family a beautiful home for us to enjoy for years to come. I highly recommend them.", name: "Patricia M." },
+]
 
 export default function ReviewsPage() {
   return (
     <>
-      {/* Hero header */}
-      <section className="relative pt-32 pb-20 gradient-section overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-[15%] text-center">
-          <p className="text-brand-gold font-[600] text-sm tracking-[0.15em] uppercase mb-4">
-            Testimonials
+      {/* Hero */}
+      <section className="bg-[#111111] pt-40 lg:pt-48 pb-28 lg:pb-36">
+        <div className="w-full px-[5%] max-w-[1440px] mx-auto text-center">
+          <p className="text-[13px] font-[500] uppercase tracking-[4px] text-black/60 mb-4">
+            TESTIMONIALS
           </p>
-          <h1 className="text-4xl md:text-[4rem] font-heading font-[700] text-white leading-tight mb-4">
+          <h1 className="font-heading text-[42px] md:text-[56px] lg:text-[64px] leading-[1.15] text-white font-[400] mb-6 max-w-[800px] mx-auto">
             What Our Homeowners Say
           </h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Don&apos;t take our word for it. Hear from the families who call an
-            Ocean Glory home their own.
+          <div className="w-[60px] h-[1px] bg-white/30 mx-auto mb-6" />
+          <p className="text-[16px] md:text-[18px] leading-[1.7] text-[#555555] max-w-[600px] mx-auto">
+            Don&apos;t take our word for it. Hear from the families who call an Ocean Glory home their own.
           </p>
         </div>
       </section>
 
-      {/* Reviews Grid */}
-      <section className="py-24 bg-warm-bg">
-        <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-          <ScrollRevealStagger
-            animation="slide-up"
-            staggerDelay={80}
-            className="grid md:grid-cols-2 gap-6"
-          >
-            {reviews.map((r, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-8 border border-card-border card-hover"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <svg
-                      key={j}
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="#f8a500"
-                      stroke="#f8a500"
-                      strokeWidth="1"
-                    >
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-body leading-relaxed mb-6 italic">
-                  &ldquo;{r.text}&rdquo;
+      {/* Testimonials Grid */}
+      <section className="bg-[#C5A368] py-28 lg:py-36">
+        <div className="w-full px-[5%] max-w-[1440px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-[#111111] p-8 md:p-10 border-l-4 border-[#013773] border border-[#013773]/10 hover:border-[#013773]/30 transition-all duration-300">
+                {/* Quote graphic */}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C5A368" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-5 opacity-50">
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+                </svg>
+                <blockquote className="font-heading text-[18px] md:text-[20px] leading-[1.6] text-white font-[400] italic mb-6">
+                  &ldquo;{t.text}&rdquo;
                 </blockquote>
-                <p className="text-brand-dark font-heading font-[700] text-sm">
-                  — {r.title}
+                <div className="w-[40px] h-[1px] bg-white/30 mb-4" />
+                <p className="text-[14px] text-black/60 font-[500] uppercase tracking-[2px]">
+                  — {t.name}
                 </p>
               </div>
             ))}
-          </ScrollRevealStagger>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-section text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(248,165,0,0.15),transparent_50%)]" />
-        <div className="relative z-10 max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl font-heading font-[700] text-white mb-4">
-            Ready to Join Our Happy Homeowners?
+      <section className="bg-[#C5A368] py-24 lg:py-28">
+        <div className="w-full px-[5%] max-w-[1440px] mx-auto text-center">
+          <h2 className="font-heading text-[34px] md:text-[42px] text-white font-[500] leading-tight mb-4">
+            Ready to Start Your Journey?
           </h2>
-          <a href="tel:3617658888" className="btn-primary text-lg inline-flex">
-            Call (361) 765-8888
-          </a>
+          <p className="text-[#555555] text-[16px] leading-relaxed max-w-md mx-auto mb-10">
+            Join our family of happy homeowners.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 px-10 py-4 text-[13px] font-[600] uppercase tracking-[2px] bg-[#013773] text-white hover:bg-[#014B9A] transition-all duration-300"
+          >
+            INQUIRE NOW
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </Link>
         </div>
       </section>
     </>
-  );
+  )
 }

@@ -1,171 +1,86 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import { ScrollReveal } from "./ScrollReveal";
+import { useState } from "react"
 
 const testimonials = [
   {
-    name: "Built Our Dream Home!",
-    text: "We bought our home last year and are so grateful to this amazing builder! He literally built our dream home. Please call to have your home built by this builder. He is conscientious, professional and has gone above and beyond.",
+    text: "Ocean Glory Homes exceeded our expectations in every way. From the stunning design to the impeccable craftsmanship, our home is a true sanctuary.",
+    name: "PRIYA & ARJUN MEHTA",
+    title: "Azure Bay Villa Owners",
   },
   {
-    name: "Committed to Customer Support",
-    text: "Ocean Glory Homes is fully committed to customer support. They are quick and responsive and go out of their way to provide quick resolution to any issues you may encounter on your home. Completely satisfied with my home.",
+    text: "The attention to detail and commitment to quality was exceptional throughout the entire process. Every room reflects the highest standards of luxury living.",
+    name: "SARAH & MICHAEL THOMPSON",
+    title: "Bayfront Paradise Owners",
   },
   {
-    name: "Precise and Beautifully Finished",
-    text: "Ocean Glory Homes assured that all my plans were done to my specifications, and that the details were precise and beautifully finished.",
+    text: "We interviewed several builders before choosing Ocean Glory Homes. Their transparency, dedication, and craftsmanship made all the difference.",
+    name: "ROBERT & LISA CHEN",
+    title: "Oceanview Residence Owners",
   },
-  {
-    name: "Attentive and Detail Oriented",
-    text: "After moving back to CC, Ocean Glory built my custom home. Reza is very attentive and detail oriented.",
-  },
-  {
-    name: "Wowed Beyond Belief",
-    text: "We walked in to our new home and we were wowed beyond belief. Beautiful. Good quality control. There was no damage after Harvey.",
-  },
-  {
-    name: "Very Personable",
-    text: "Reza is very personable and easy to get along with. He did all that we asked of him and the house was very tastefully and well built.",
-  },
-  {
-    name: "No Regrets",
-    text: "I purchased my first house from Ocean Glory Homes… I loved it from the first showing.",
-  },
-  {
-    name: "Completely Satisfied",
-    text: "I have been completely satisfied with my purchase. The quality, design and amenities was second to none.",
-  },
-];
+]
 
 export default function TestimonialsSection() {
-  const [current, setCurrent] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
-
-  const prev = () => {
-    setIsAutoPlaying(false);
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const next = () => {
-    setIsAutoPlaying(false);
-    setCurrent((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const t = testimonials[current];
+  const [current, setCurrent] = useState(0)
+  const t = testimonials[current]
 
   return (
-    <section className="py-20 gradient-section overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-[15%]">
-        <ScrollReveal animation="slide-up">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-brand-gold/80 font-[600] text-sm tracking-[0.15em] uppercase mb-4">
-              Homeowner Reviews
+    <section className="bg-[#111111] py-24 lg:py-32 overflow-hidden">
+      <div className="w-full px-[5%]">
+        {/* Section label */}
+        <p className="text-center text-[13px] font-[500] uppercase tracking-[4px] text-[#C5A368] mb-4">
+          WHAT OUR CLIENTS SAY
+        </p>
+
+        {/* Quote with navigation arrows */}
+        <div className="relative max-w-4xl mx-auto px-14 lg:px-20">
+          {/* Left Arrow */}
+          <button
+            onClick={() => setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-[#C5A368] hover:text-[#D4B47A] transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() => setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-[#C5A368] hover:text-[#D4B47A] transition-colors"
+            aria-label="Next testimonial"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
+          {/* Quote content */}
+          <div className="text-center">
+            <blockquote className="font-heading text-[28px] md:text-[36px] leading-[1.35] text-white font-[400] mb-8">
+              &ldquo;{t.text}&rdquo;
+            </blockquote>
+
+            {/* Stars — intentionally absent per reference */}
+
+            <p className="font-body text-white text-[14px] uppercase tracking-[3px] font-[500] mb-1">
+              {t.name}
             </p>
-            <h2 className="text-3xl md:text-[3rem] font-heading font-[700] text-white leading-tight">
-              What Our Homeowners Say
-            </h2>
+            <p className="font-body text-[#A0A0A0] text-sm">
+              {t.title}
+            </p>
           </div>
-        </ScrollReveal>
+        </div>
 
-        {/* Testimonial Card */}
-        <ScrollReveal animation="slide-up" delay={100}>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 md:p-12 border border-card-border relative">
-              {/* Gold Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="#f8a500"
-                    stroke="#f8a500"
-                    strokeWidth="1"
-                  >
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                ))}
-              </div>
-
-              <blockquote className="text-lg md:text-xl text-body leading-relaxed mb-8 italic">
-                &ldquo;{t.text}&rdquo;
-              </blockquote>
-
-              <p className="text-brand-dark font-heading font-[700] text-sm">
-                — {t.name}
-              </p>
-
-              {/* Navigation */}
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-card-border">
-                <div className="text-xs text-muted">
-                  {current + 1} of {testimonials.length}
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    onClick={prev}
-                    className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center hover:border-brand-blue hover:text-brand-blue transition-colors"
-                    aria-label="Previous testimonial"
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={next}
-                    className="w-10 h-10 rounded-full border border-card-border flex items-center justify-center hover:border-brand-blue hover:text-brand-blue transition-colors"
-                    aria-label="Next testimonial"
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* Blue Dots */}
-        <div className="flex justify-center gap-2 mt-6">
+        {/* Pagination dots */}
+        <div className="flex justify-center gap-2 mt-10">
           {testimonials.map((_, i) => (
             <button
               key={i}
-              onClick={() => {
-                setIsAutoPlaying(false);
-                setCurrent(i);
-              }}
-              className={`rounded-full transition-all duration-300 ${
-                i === current
-                  ? "bg-brand-blue w-6 h-2"
-                  : "bg-white/30 w-2 h-2 hover:bg-white/50"
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full border border-[#013773] transition-all duration-300 ${
+                i === current ? "bg-[#013773]" : "bg-transparent"
               }`}
               aria-label={`Go to testimonial ${i + 1}`}
             />
@@ -173,5 +88,5 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
