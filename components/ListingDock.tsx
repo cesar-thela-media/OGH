@@ -20,12 +20,15 @@ export default function ListingDock() {
         <div
           key={listing.id}
           style={{
+            position: 'relative',
+            overflow: 'hidden',
             display: 'flex',
             gap: 14,
             backgroundColor: COLORS.navyOverlay,
             backdropFilter: 'blur(6px)',
             borderRadius: 16,
             padding: 14,
+            minWidth: 0,
           }}
         >
           <img

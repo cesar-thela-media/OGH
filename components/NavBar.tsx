@@ -30,6 +30,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
           padding: isMobile ? '16px 24px' : '20px 48px',
           backgroundColor: 'rgba(13,43,82,0.25)',
           backdropFilter: 'blur(10px)',
+          isolation: 'isolate',
           borderBottom: '1px solid rgba(255,255,255,0.12)',
         }}
       >
