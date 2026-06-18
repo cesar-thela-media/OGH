@@ -32,14 +32,13 @@ export default function TransparencySection() {
         <h2
           style={{
             fontFamily: FONTS.serif,
-            fontSize: 'clamp(36px, 4.5vw, 56px)',
+            fontSize: 'clamp(40px, 4.8vw, 64px)',
             color: COLORS.white,
             marginTop: 16,
             fontWeight: 400,
           }}
         >
-          Built on Complete{' '}
-          <span style={{ fontStyle: 'italic', color: COLORS.gold }}>Transparency.</span>
+          Built on Complete Transparency.
         </h2>
       </div>
 

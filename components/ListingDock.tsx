@@ -8,7 +8,7 @@ export default function ListingDock() {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: 16,
-        maxWidth: 1180,
+        maxWidth: 1360,
         margin: '0 auto',
       }}
     >
@@ -30,7 +30,7 @@ export default function ListingDock() {
           <img
             src={listing.image}
             alt={listing.address}
-            style={{ width: 110, height: 110, objectFit: 'cover', borderRadius: 10, flexShrink: 0 }}
+            style={{ width: 120, height: 120, objectFit: 'cover', borderRadius: 10, flexShrink: 0 }}
           />
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: 0, flex: 1 }}>
             <div style={{ minWidth: 0 }}>
