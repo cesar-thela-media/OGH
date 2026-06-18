@@ -30,7 +30,7 @@ export default function ListingDock() {
           <img
             src={listing.image}
             alt={listing.address}
-            style={{ width: 92, height: 92, objectFit: 'cover', borderRadius: 10, flexShrink: 0 }}
+            style={{ width: 110, height: 110, objectFit: 'cover', borderRadius: 10, flexShrink: 0 }}
           />
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: 0, flex: 1 }}>
             <div style={{ minWidth: 0 }}>

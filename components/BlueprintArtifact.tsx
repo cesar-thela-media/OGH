@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { COLORS, FONTS } from '@/lib/constants';
 
 export default function BlueprintArtifact() {
@@ -15,14 +14,11 @@ export default function BlueprintArtifact() {
         boxShadow: '0 24px 60px rgba(13,43,82,0.16)',
       }}
     >
-      {/* REPLACE: swap /images/blueprint-to-house.jpg with a real composite photo showing blueprint on the left and the finished home on the right */}
-      <Image
+      {/* REPLACE: swap with licensed blueprint-to-house composite photography */}
+      <img
         src="/images/blueprint-to-house.jpg"
         alt="Architectural floor plan transforming into the finished home — Ocean Glory Homes designs and builds under one roof"
-        width={1600}
-        height={900}
         style={{ width: '100%', height: 'auto', display: 'block' }}
-        priority
       />
 
       <div

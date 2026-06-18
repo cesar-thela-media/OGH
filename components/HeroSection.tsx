@@ -7,11 +7,11 @@ export default function HeroSection() {
     <section style={{ position: 'relative', minHeight: '92vh', overflow: 'hidden' }}>
 
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        {/* REPLACE: swap /images/hero-mansion.jpg with a real full-bleed hero photograph */}
+        {/* REPLACE: swap Unsplash placeholder with licensed photography of the actual home */}
         <img
-          src="/images/hero-mansion.jpg"
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2160&q=85"
           alt="Ocean Glory custom coastal home at the waterfront"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
         />
         <div
           style={{
@@ -24,7 +24,7 @@ export default function HeroSection() {
 
       <NavBar transparent />
 
-      <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingTop: '18vh' }}>
+      <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingTop: 'clamp(100px, 24vh, 260px)' }}>
         <h1 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(48px, 6vw, 88px)', lineHeight: 1.08, color: COLORS.white, margin: 0 }}>
           Homes Worthy
           <br />
