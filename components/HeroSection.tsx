@@ -19,7 +19,7 @@ export default function HeroSection() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to bottom, rgba(13,43,82,0) 18%, rgba(13,43,82,0.38) 52%, rgba(13,43,82,0.96) 100%)',
+            background: 'linear-gradient(to bottom, rgba(13,43,82,0) 30%, rgba(13,43,82,0.42) 62%, rgba(13,43,82,0.97) 100%)',
           }}
         />
       </div>

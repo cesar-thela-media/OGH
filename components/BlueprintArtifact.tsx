@@ -10,7 +10,7 @@ export default function BlueprintArtifact() {
         margin: '0 auto',
         borderRadius: 12,
         overflow: 'hidden',
-        border: `2px solid ${COLORS.gold}`,
+        border: `3px solid ${COLORS.gold}`,
         boxShadow: '0 24px 60px rgba(13,43,82,0.16)',
       }}
     >

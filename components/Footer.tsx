@@ -15,7 +15,7 @@ export default function Footer() {
       <div
         style={{
           borderTop: `1px solid ${COLORS.goldSoft}`,
-          padding: '32px 64px',
+          padding: '32px 48px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -72,7 +72,7 @@ export default function Footer() {
           right: -20,
           fontFamily: FONTS.serif,
           fontSize: 260,
-          color: 'rgba(107,174,212,0.06)',
+          color: 'rgba(107,174,212,0.10)',
           lineHeight: 1,
           pointerEvents: 'none',
           userSelect: 'none',

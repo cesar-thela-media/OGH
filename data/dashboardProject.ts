@@ -3,10 +3,12 @@ export interface DashboardStage {
   status: 'complete' | 'active' | 'upcoming';
 }
 
+export type LedgerPill = 'green' | 'gray' | 'none';
+
 export interface LedgerRow {
   label: string;
   value: string;
-  positive?: boolean;
+  pill: LedgerPill;
 }
 
 export const dashboardProject = {
@@ -20,8 +22,8 @@ export const dashboardProject = {
     { label: 'Walkthrough', status: 'upcoming' },
   ] as DashboardStage[],
   ledger: [
-    { label: 'Foundation Pour',  value: 'On Schedule ✓', positive: true },
-    { label: 'Framing Lumber',   value: 'Confirmed ✓',   positive: true },
-    { label: 'Budget Variance',  value: '$0',             positive: true },
+    { label: 'Foundation Pour',  value: 'On Schedule ✓', pill: 'green' },
+    { label: 'Framing Lumber',   value: 'Confirmed ✓',   pill: 'gray'  },
+    { label: 'Budget Variance',  value: '$0',             pill: 'gray'  },
   ] as LedgerRow[],
 };

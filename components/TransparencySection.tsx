@@ -45,7 +45,7 @@ export default function TransparencySection() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : '45fr 55fr',
+          gridTemplateColumns: isMobile ? '1fr' : '40fr 60fr',
           gap: isMobile ? 48 : 64,
           maxWidth: 1180,
           margin: '0 auto',

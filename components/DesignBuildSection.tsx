@@ -20,7 +20,7 @@ export default function DesignBuildSection() {
         style={{
           fontFamily: FONTS.sans,
           fontSize: 13,
-          letterSpacing: '0.18em',
+          letterSpacing: '0.14em',
           textTransform: 'uppercase',
           color: COLORS.gold,
           fontWeight: 600,

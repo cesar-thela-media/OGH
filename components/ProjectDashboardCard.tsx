@@ -1,4 +1,5 @@
 import { dashboardProject } from '@/data/dashboardProject';
+import type { LedgerPill } from '@/data/dashboardProject';
 import { COLORS, FONTS } from '@/lib/constants';
 
 export default function ProjectDashboardCard() {
@@ -28,12 +29,13 @@ export default function ProjectDashboardCard() {
             color: COLORS.grayText,
           }}
         >
+          {/* Green dot = live/active indicator, matching reference */}
           <span
             style={{
               width: 8,
               height: 8,
               borderRadius: '50%',
-              backgroundColor: COLORS.gold,
+              backgroundColor: '#4CAF50',
               display: 'inline-block',
             }}
           />
@@ -59,7 +61,6 @@ export default function ProjectDashboardCard() {
                   fontFamily: FONTS.sans,
                   fontSize: 12,
                   color: COLORS.grayText,
-                  marginTop: 8,
                   whiteSpace: 'nowrap',
                   margin: '8px 0 0',
                 }}
@@ -99,19 +100,7 @@ export default function ProjectDashboardCard() {
             }}
           >
             <span style={{ fontFamily: FONTS.sans, fontSize: 15, color: COLORS.navy }}>{row.label}</span>
-            <span
-              style={{
-                fontFamily: FONTS.sans,
-                fontSize: 13,
-                fontWeight: 600,
-                color: row.positive ? COLORS.pillGreenText : COLORS.navy,
-                backgroundColor: row.positive ? COLORS.pillGreen : 'transparent',
-                padding: row.positive ? '4px 12px' : '0',
-                borderRadius: 999,
-              }}
-            >
-              {row.value}
-            </span>
+            <PillValue pill={row.pill} value={row.value} />
           </div>
         ))}
       </div>
@@ -135,6 +124,32 @@ export default function ProjectDashboardCard() {
         View Timeline →
       </button>
     </div>
+  );
+}
+
+function PillValue({ pill, value }: { pill: LedgerPill; value: string }) {
+  const styles: Record<LedgerPill, React.CSSProperties> = {
+    green: {
+      color: COLORS.pillGreenText,
+      backgroundColor: COLORS.pillGreen,
+      padding: '4px 12px',
+      borderRadius: 999,
+    },
+    gray: {
+      color: COLORS.grayText,
+      backgroundColor: 'rgba(123,135,148,0.12)',
+      padding: '4px 12px',
+      borderRadius: 999,
+    },
+    none: {
+      color: COLORS.navy,
+    },
+  };
+
+  return (
+    <span style={{ fontFamily: FONTS.sans, fontSize: 13, fontWeight: 600, ...styles[pill] }}>
+      {value}
+    </span>
   );
 }
 
