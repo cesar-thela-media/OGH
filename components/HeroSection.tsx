@@ -7,10 +7,11 @@ export default function HeroSection() {
     <section style={{ position: 'relative', minHeight: '92vh', overflow: 'hidden' }}>
 
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        {/* REPLACE: swap /images/hero-mansion.jpg with a real full-bleed hero photograph */}
         <img
           src="/images/hero-mansion.jpg"
           alt="Ocean Glory custom coastal home at the waterfront"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
         />
         <div
           style={{

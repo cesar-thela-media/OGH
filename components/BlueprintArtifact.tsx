@@ -15,6 +15,7 @@ export default function BlueprintArtifact() {
         boxShadow: '0 24px 60px rgba(13,43,82,0.16)',
       }}
     >
+      {/* REPLACE: swap /images/blueprint-to-house.jpg with a real composite photo showing blueprint on the left and the finished home on the right */}
       <Image
         src="/images/blueprint-to-house.jpg"
         alt="Architectural floor plan transforming into the finished home — Ocean Glory Homes designs and builds under one roof"
