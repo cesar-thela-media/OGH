@@ -5,8 +5,8 @@ out/
 # Node
 node_modules/
 
-# Debug scripts (not needed in repo)
-scripts/
+# Asset preparation scripts (tracked — used to regenerate image assets from source render)
+# scripts/ — intentionally tracked: crop-images.ps1 regenerates all image crops
 
 # Env
 .env
