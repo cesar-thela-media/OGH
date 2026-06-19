@@ -88,7 +88,7 @@ export default function PortfolioPage() {
               color: COLORS.white,
               marginTop: 14,
               marginBottom: 0,
-              letterSpacing: '-0.01em',
+              letterSpacing: '-0.02em',
               lineHeight: 1.08,
             }}
           >
@@ -165,7 +165,7 @@ export default function PortfolioPage() {
                       fontWeight: 400,
                       color: COLORS.navy,
                       margin: '0 0 4px',
-                      letterSpacing: '-0.01em',
+                      letterSpacing: '-0.02em',
                     }}
                   >
                     {project.name}

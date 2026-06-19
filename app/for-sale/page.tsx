@@ -38,7 +38,7 @@ export default function ForSalePage() {
               color: COLORS.white,
               marginTop: 14,
               marginBottom: 0,
-              letterSpacing: '-0.01em',
+              letterSpacing: '-0.02em',
               lineHeight: 1.08,
             }}
           >
@@ -103,7 +103,7 @@ export default function ForSalePage() {
                       fontWeight: 400,
                       color: COLORS.navy,
                       margin: '0 0 10px',
-                      letterSpacing: '-0.01em',
+                      letterSpacing: '-0.02em',
                     }}
                   >
                     {listing.address}

@@ -68,7 +68,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
                 fontWeight: 400,
                 color: COLORS.white,
                 margin: 0,
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.02em',
               }}
             >
               {listing.address}
@@ -153,7 +153,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
                 fontWeight: 400,
                 color: COLORS.navy,
                 margin: '0 0 28px',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.02em',
               }}
             >
               Construction Progress

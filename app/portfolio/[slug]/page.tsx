@@ -121,7 +121,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
                 fontWeight: 400,
                 color: COLORS.white,
                 margin: '0 0 4px',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.02em',
               }}
             >
               {project.name}
@@ -151,7 +151,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
                 fontWeight: 400,
                 color: COLORS.navy,
                 margin: '0 0 16px',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.02em',
               }}
             >
               Project Overview

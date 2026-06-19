@@ -15,7 +15,7 @@ export default function Footer() {
       <div
         style={{
           borderTop: '1px solid rgba(201,168,78,0.28)',
-          padding: '30px 52px',
+          padding: '30px 60px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',

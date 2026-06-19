@@ -27,7 +27,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: isMobile ? '18px 24px' : '22px 52px',
+          padding: isMobile ? '18px 24px' : '22px 60px',
           backgroundColor: transparent ? 'rgba(13,43,82,0.22)' : COLORS.navy,
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',

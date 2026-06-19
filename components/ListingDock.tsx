@@ -8,7 +8,9 @@ export default function ListingDock() {
       style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: 14,
+        gap: 16,
+        maxWidth: 1360,
+        margin: '0 auto',
       }}
     >
       {listings.map(listing => (
@@ -17,25 +19,26 @@ export default function ListingDock() {
           href={`/for-sale/${listing.id}`}
           style={{
             display: 'flex',
-            gap: 14,
-            backgroundColor: 'rgba(13,43,82,0.72)',
-            backdropFilter: 'blur(14px)',
-            WebkitBackdropFilter: 'blur(14px)',
-            borderRadius: 14,
-            padding: '12px 14px',
-            border: '1px solid rgba(255,255,255,0.10)',
+            gap: 16,
+            backgroundColor: 'rgba(8,28,58,0.76)',
+            backdropFilter: 'blur(18px)',
+            WebkitBackdropFilter: 'blur(18px)',
+            borderRadius: 16,
+            padding: '14px 16px',
+            border: '1px solid rgba(255,255,255,0.09)',
             textDecoration: 'none',
             minWidth: 0,
+            transition: 'background 0.2s',
           }}
         >
           <img
             src={listing.image}
             alt={listing.address}
             style={{
-              width: 86,
-              height: 86,
+              width: 96,
+              height: 96,
               objectFit: 'cover',
-              borderRadius: 8,
+              borderRadius: 10,
               flexShrink: 0,
             }}
           />
@@ -44,19 +47,20 @@ export default function ListingDock() {
               <p
                 style={{
                   fontFamily: FONTS.serif,
-                  fontSize: 17,
+                  fontSize: 18,
                   fontWeight: 400,
                   color: COLORS.white,
                   margin: 0,
                   whiteSpace: 'nowrap',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
-                  letterSpacing: '0.01em',
+                  letterSpacing: '-0.005em',
+                  lineHeight: 1.2,
                 }}
               >
                 {listing.address}
               </p>
-              <div style={{ display: 'flex', gap: 10, marginTop: 5 }}>
+              <div style={{ display: 'flex', gap: 10, marginTop: 6 }}>
                 <Spec icon="bed" value={listing.beds} />
                 <Spec icon="bath" value={listing.baths} />
                 <Spec icon="sqft" value={listing.sqft.toLocaleString()} />
@@ -66,10 +70,11 @@ export default function ListingDock() {
               <span
                 style={{
                   fontFamily: FONTS.sans,
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: COLORS.gold,
                   whiteSpace: 'nowrap',
+                  letterSpacing: '-0.01em',
                 }}
               >
                 {listing.price}
@@ -80,12 +85,12 @@ export default function ListingDock() {
                   fontSize: 10,
                   fontWeight: 500,
                   color: COLORS.gold,
-                  border: `1px solid rgba(201,168,78,0.6)`,
+                  border: `1px solid rgba(201,168,78,0.55)`,
                   borderRadius: 999,
-                  padding: '3px 10px',
+                  padding: '3px 11px',
                   whiteSpace: 'nowrap',
                   flexShrink: 0,
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.05em',
                 }}
               >
                 {listing.stage}
@@ -100,7 +105,7 @@ export default function ListingDock() {
 
 function Spec({ icon, value }: { icon: 'bed' | 'bath' | 'sqft'; value: string | number }) {
   return (
-    <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'rgba(255,255,255,0.65)', fontFamily: FONTS.sans, whiteSpace: 'nowrap' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'rgba(255,255,255,0.60)', fontFamily: FONTS.sans, whiteSpace: 'nowrap' }}>
       <SpecIcon type={icon} /> {value}
     </span>
   );

@@ -72,7 +72,7 @@ export default function ContactPage() {
               color: COLORS.white,
               marginTop: 14,
               marginBottom: 0,
-              letterSpacing: '-0.01em',
+              letterSpacing: '-0.02em',
               lineHeight: 1.08,
             }}
           >
@@ -125,7 +125,7 @@ export default function ContactPage() {
                     textDecoration: 'none',
                     display: 'block',
                     marginBottom: 8,
-                    letterSpacing: '-0.01em',
+                    letterSpacing: '-0.02em',
                   }}
                 >
                   {card.value}
@@ -154,7 +154,7 @@ export default function ContactPage() {
                 fontWeight: 400,
                 color: COLORS.navy,
                 margin: '0 0 6px',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.02em',
               }}
             >
               Send a Message

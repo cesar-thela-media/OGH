@@ -12,15 +12,16 @@ export default function DesignBuildSection() {
     <section
       style={{
         backgroundColor: COLORS.offWhite,
-        padding: isMobile ? '72px 24px 64px' : '100px 24px 80px',
+        padding: isMobile ? '72px 24px 64px' : '104px 24px 88px',
         textAlign: 'center',
       }}
     >
+      {/* Gold eyebrow */}
       <p
         style={{
           fontFamily: FONTS.sans,
           fontSize: 11,
-          letterSpacing: '0.20em',
+          letterSpacing: '0.22em',
           textTransform: 'uppercase',
           color: COLORS.gold,
           fontWeight: 600,
@@ -30,15 +31,16 @@ export default function DesignBuildSection() {
         Design + Build — One Company
       </p>
 
+      {/* Main headline */}
       <h2
         style={{
           fontFamily: FONTS.serif,
-          fontSize: 'clamp(40px, 5vw, 72px)',
+          fontSize: isMobile ? 'clamp(38px, 8vw, 56px)' : 'clamp(44px, 4.8vw, 76px)',
           fontWeight: 400,
           color: COLORS.navy,
-          lineHeight: 1.08,
-          margin: '16px 0 0',
-          letterSpacing: '-0.01em',
+          lineHeight: 1.10,
+          margin: '18px 0 0',
+          letterSpacing: '-0.02em',
         }}
       >
         We Design It.
@@ -46,12 +48,13 @@ export default function DesignBuildSection() {
         We <em style={{ fontStyle: 'italic', color: COLORS.gold }}>Build It.</em>
       </h2>
 
+      {/* Subtitle */}
       <p
         style={{
           fontFamily: FONTS.sans,
-          fontSize: 16,
+          fontSize: 15,
           color: COLORS.grayText,
-          marginTop: 16,
+          marginTop: 18,
           marginBottom: 0,
           letterSpacing: '0.01em',
         }}
@@ -59,7 +62,8 @@ export default function DesignBuildSection() {
         No architect. No handoff. No surprises.
       </p>
 
-      <div style={{ marginTop: 52 }}>
+      {/* Blueprint artifact */}
+      <div style={{ marginTop: 56 }}>
         <BlueprintArtifact />
       </div>
 
@@ -70,7 +74,7 @@ export default function DesignBuildSection() {
           justifyContent: 'center',
           alignItems: 'center',
           gap: 0,
-          marginTop: 36,
+          marginTop: 40,
         }}
       >
         {stats.map((stat, i) => (
@@ -80,9 +84,9 @@ export default function DesignBuildSection() {
                 style={{
                   width: 1,
                   height: 14,
-                  backgroundColor: 'rgba(123,135,148,0.30)',
+                  backgroundColor: 'rgba(123,135,148,0.28)',
                   display: 'inline-block',
-                  margin: '0 28px',
+                  margin: '0 32px',
                 }}
               />
             )}
