@@ -27,27 +27,43 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: isMobile ? '16px 24px' : '20px 48px',
-          backgroundColor: 'rgba(13,43,82,0.25)',
-          backdropFilter: 'blur(10px)',
-          isolation: 'isolate',
-          borderBottom: '1px solid rgba(255,255,255,0.12)',
+          padding: isMobile ? '18px 24px' : '22px 52px',
+          backgroundColor: transparent ? 'rgba(13,43,82,0.22)' : COLORS.navy,
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          borderBottom: transparent ? '1px solid rgba(255,255,255,0.10)' : 'none',
         }}
       >
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none' }}>
           <WaveLogomark color={COLORS.white} />
-          <span style={{ color: COLORS.white, fontFamily: FONTS.sans, fontSize: 14, letterSpacing: '0.16em', fontWeight: 600 }}>
-            OCEAN GLORY HOMES
+          <span
+            style={{
+              color: COLORS.white,
+              fontFamily: FONTS.sans,
+              fontSize: 13,
+              letterSpacing: '0.20em',
+              fontWeight: 600,
+              textTransform: 'uppercase',
+            }}
+          >
+            Ocean Glory Homes
           </span>
         </Link>
 
         {!isMobile && (
-          <div style={{ display: 'flex', gap: 40 }}>
+          <div style={{ display: 'flex', gap: 44 }}>
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
-                style={{ color: COLORS.white, fontFamily: FONTS.sans, fontSize: 15, textDecoration: 'none' }}
+                style={{
+                  color: 'rgba(255,255,255,0.90)',
+                  fontFamily: FONTS.sans,
+                  fontSize: 14,
+                  fontWeight: 400,
+                  textDecoration: 'none',
+                  letterSpacing: '0.01em',
+                }}
               >
                 {link.label}
               </Link>
@@ -60,13 +76,14 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
             href="/for-sale"
             style={{
               backgroundColor: COLORS.gold,
-              color: COLORS.navy,
+              color: '#fff',
               fontFamily: FONTS.sans,
-              fontSize: 14,
+              fontSize: 13,
               fontWeight: 600,
-              padding: '12px 24px',
+              padding: '11px 26px',
               borderRadius: 999,
               textDecoration: 'none',
+              letterSpacing: '0.02em',
             }}
           >
             See Available Homes
@@ -127,7 +144,13 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              style={{ color: COLORS.white, fontFamily: FONTS.sans, fontSize: 22, textDecoration: 'none' }}
+              style={{
+                color: COLORS.white,
+                fontFamily: FONTS.serif,
+                fontSize: 28,
+                textDecoration: 'none',
+                fontWeight: 300,
+              }}
             >
               {link.label}
             </Link>
@@ -137,11 +160,11 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
             onClick={() => setMenuOpen(false)}
             style={{
               backgroundColor: COLORS.gold,
-              color: COLORS.navy,
+              color: '#fff',
               fontFamily: FONTS.sans,
-              fontSize: 16,
+              fontSize: 15,
               fontWeight: 600,
-              padding: '14px 32px',
+              padding: '14px 36px',
               borderRadius: 999,
               textDecoration: 'none',
               marginTop: 8,
@@ -157,10 +180,10 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
 
 export function WaveLogomark({ color }: { color: string }) {
   return (
-    <svg width="28" height="20" viewBox="0 0 28 20" fill="none">
-      <path d="M2 6c3-3 6 3 9 0s6 3 9 0 6 3 6 0" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M2 12c3-3 6 3 9 0s6 3 9 0 6 3 6 0" stroke={color} strokeWidth="1.6" strokeLinecap="round" opacity="0.7" />
-      <path d="M2 18c3-3 6 3 9 0s6 3 9 0 6 3 6 0" stroke={color} strokeWidth="1.6" strokeLinecap="round" opacity="0.4" />
+    <svg width="30" height="22" viewBox="0 0 30 22" fill="none">
+      <path d="M2 7c3.5-3.5 7 3.5 10.5 0S20 10.5 23.5 7 27 10.5 28 7" stroke={color} strokeWidth="1.7" strokeLinecap="round" />
+      <path d="M2 13c3.5-3.5 7 3.5 10.5 0S20 16.5 23.5 13 27 16.5 28 13" stroke={color} strokeWidth="1.7" strokeLinecap="round" opacity="0.65" />
+      <path d="M2 19c3.5-3.5 7 3.5 10.5 0S20 22.5 23.5 19 27 22.5 28 19" stroke={color} strokeWidth="1.7" strokeLinecap="round" opacity="0.35" />
     </svg>
   );
 }

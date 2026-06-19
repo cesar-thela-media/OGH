@@ -12,15 +12,15 @@ export default function DesignBuildSection() {
     <section
       style={{
         backgroundColor: COLORS.offWhite,
-        padding: isMobile ? '64px 24px' : '96px 24px',
+        padding: isMobile ? '72px 24px 64px' : '100px 24px 80px',
         textAlign: 'center',
       }}
     >
       <p
         style={{
           fontFamily: FONTS.sans,
-          fontSize: 13,
-          letterSpacing: '0.14em',
+          fontSize: 11,
+          letterSpacing: '0.20em',
           textTransform: 'uppercase',
           color: COLORS.gold,
           fontWeight: 600,
@@ -33,35 +33,70 @@ export default function DesignBuildSection() {
       <h2
         style={{
           fontFamily: FONTS.serif,
-          fontSize: 'clamp(36px, 4.5vw, 64px)',
+          fontSize: 'clamp(40px, 5vw, 72px)',
+          fontWeight: 300,
           color: COLORS.navy,
-          lineHeight: 1.1,
-          margin: '20px 0 0',
-          fontWeight: 400,
+          lineHeight: 1.08,
+          margin: '16px 0 0',
+          letterSpacing: '-0.01em',
         }}
       >
         We Design It.
         <br />
-        We <span style={{ fontStyle: 'italic', color: COLORS.gold }}>Build It.</span>
+        We <em style={{ fontStyle: 'italic', color: COLORS.gold }}>Build It.</em>
       </h2>
 
-      <p style={{ fontFamily: FONTS.sans, fontSize: 17, color: COLORS.grayText, marginTop: 16 }}>
+      <p
+        style={{
+          fontFamily: FONTS.sans,
+          fontSize: 16,
+          color: COLORS.grayText,
+          marginTop: 16,
+          marginBottom: 0,
+          letterSpacing: '0.01em',
+        }}
+      >
         No architect. No handoff. No surprises.
       </p>
 
-      <div style={{ marginTop: 48 }}>
+      <div style={{ marginTop: 52 }}>
         <BlueprintArtifact />
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 24, marginTop: 40 }}>
+      {/* Stat chips */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 0,
+          marginTop: 36,
+        }}
+      >
         {stats.map((stat, i) => (
-          <span key={stat} style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+          <span key={stat} style={{ display: 'flex', alignItems: 'center' }}>
             {i > 0 && (
               <span
-                style={{ width: 1, height: 16, backgroundColor: COLORS.grayLine, display: 'inline-block' }}
+                style={{
+                  width: 1,
+                  height: 14,
+                  backgroundColor: 'rgba(123,135,148,0.30)',
+                  display: 'inline-block',
+                  margin: '0 28px',
+                }}
               />
             )}
-            <span style={{ fontFamily: FONTS.sans, fontSize: 15, color: COLORS.grayText }}>{stat}</span>
+            <span
+              style={{
+                fontFamily: FONTS.sans,
+                fontSize: 14,
+                color: COLORS.grayText,
+                fontWeight: 400,
+                letterSpacing: '0.02em',
+              }}
+            >
+              {stat}
+            </span>
           </span>
         ))}
       </div>

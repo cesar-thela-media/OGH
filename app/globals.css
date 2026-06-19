@@ -14,8 +14,8 @@ body {
 }
 
 :root {
-  --font-display: 'Playfair Display';
-  --font-body: 'Inter';
+  --font-display: 'Cormorant Garamond';
+  --font-body: 'DM Sans';
 }
 
 @keyframes pulseDot {

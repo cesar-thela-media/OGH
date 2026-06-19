@@ -4,45 +4,122 @@ import CredentialList from '@/components/CredentialList';
 import TeamBadges from '@/components/TeamBadges';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
+const values = [
+  {
+    title: 'Single Point of Contact',
+    body: 'You deal with one team from day one. No chasing architects for plan changes or arguing with subcontractors about who misunderstood the drawings.',
+  },
+  {
+    title: 'Transparent Pricing',
+    body: 'We provide detailed line-item budgets updated in real time. You always know where every dollar is going — no buried markups, no surprise change orders.',
+  },
+  {
+    title: 'Timeline You Can Trust',
+    body: 'Our design/build model eliminates the bidding and redesign loops that add months to traditional projects. We commit to dates and we hit them.',
+  },
+  {
+    title: 'Coastal Expertise',
+    body: 'Building on the Texas coast means wind ratings, flood zones, and salt corrosion. We know the codes, the materials, and the techniques that last.',
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
       <NavBar />
-      <main style={{ backgroundColor: COLORS.offWhite }}>
+      <main style={{ backgroundColor: COLORS.offWhite, minHeight: '100vh' }}>
         {/* Page header */}
-        <section style={{ backgroundColor: COLORS.navy, padding: '80px 24px 64px', textAlign: 'center' }}>
-          <p style={{ fontFamily: FONTS.sans, fontSize: 13, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: 0 }}>
+        <section
+          style={{
+            backgroundColor: COLORS.navy,
+            padding: '88px 24px 72px',
+            textAlign: 'center',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: FONTS.sans,
+              fontSize: 11,
+              letterSpacing: '0.20em',
+              textTransform: 'uppercase',
+              color: COLORS.gold,
+              fontWeight: 600,
+              margin: 0,
+            }}
+          >
             Family Owned · 11+ Years
           </p>
-          <h1 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(36px, 4.5vw, 64px)', color: COLORS.white, marginTop: 12, fontWeight: 400 }}>
+          <h1
+            style={{
+              fontFamily: FONTS.serif,
+              fontSize: 'clamp(40px, 5vw, 72px)',
+              fontWeight: 300,
+              color: COLORS.white,
+              marginTop: 14,
+              marginBottom: 0,
+              letterSpacing: '-0.01em',
+              lineHeight: 1.08,
+            }}
+          >
             About Ocean Glory Homes
           </h1>
         </section>
 
-        {/* Story section */}
-        <section style={{ maxWidth: 820, margin: '0 auto', padding: '80px 24px 48px' }}>
-          <h2 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(28px, 3.5vw, 42px)', color: COLORS.navy, margin: '0 0 24px', fontWeight: 400 }}>
+        {/* Story */}
+        <section style={{ maxWidth: 820, margin: '0 auto', padding: '80px 32px 56px' }}>
+          <h2
+            style={{
+              fontFamily: FONTS.serif,
+              fontSize: 'clamp(30px, 3.5vw, 46px)',
+              fontWeight: 300,
+              color: COLORS.navy,
+              margin: '0 0 28px',
+              letterSpacing: '-0.01em',
+            }}
+          >
             Design + Build, One Company
           </h2>
-          <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: COLORS.navy, lineHeight: 1.8, margin: '0 0 20px' }}>
+          <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: '#3A4554', lineHeight: 1.85, margin: '0 0 20px' }}>
             Ocean Glory Homes is a family-owned design/build firm serving the Texas Coastal Bend. For over a decade,
             we&apos;ve delivered custom luxury homes without the friction of traditional architect-to-builder handoffs.
             Every project — from initial floor plan to final walkthrough — stays under one roof.
           </p>
-          <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: COLORS.navy, lineHeight: 1.8, margin: '0 0 20px' }}>
+          <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: '#3A4554', lineHeight: 1.85, margin: '0 0 20px' }}>
             Our process eliminates the blame game. When the same team that draws the plans also swings the hammers,
             there&apos;s nowhere to hide. The result: homes that arrive on schedule, on budget, and exactly as promised.
           </p>
-          <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: COLORS.navy, lineHeight: 1.8, margin: 0 }}>
+          <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: '#3A4554', lineHeight: 1.85, margin: 0 }}>
             We build in Corpus Christi, Port Aransas, Laguna Vista, and throughout the Coastal Bend — wherever the
             water meets the land, we&apos;re at home.
           </p>
         </section>
 
-        {/* Credentials + Team */}
-        <section style={{ backgroundColor: COLORS.navy, padding: '64px 24px' }}>
+        {/* Credentials + Team on navy */}
+        <section style={{ backgroundColor: COLORS.navy, padding: '72px 32px 80px' }}>
           <div style={{ maxWidth: 820, margin: '0 auto' }}>
-            <h2 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(24px, 3vw, 36px)', color: COLORS.white, margin: '0 0 40px', fontWeight: 400 }}>
+            <p
+              style={{
+                fontFamily: FONTS.sans,
+                fontSize: 11,
+                letterSpacing: '0.20em',
+                textTransform: 'uppercase',
+                color: COLORS.gold,
+                fontWeight: 600,
+                margin: '0 0 12px',
+              }}
+            >
+              Trust Is Earned
+            </p>
+            <h2
+              style={{
+                fontFamily: FONTS.serif,
+                fontSize: 'clamp(28px, 3.5vw, 42px)',
+                fontWeight: 300,
+                color: COLORS.white,
+                margin: '0 0 40px',
+                letterSpacing: '-0.01em',
+              }}
+            >
               Credentials &amp; Team
             </h2>
             <CredentialList />
@@ -51,22 +128,41 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section style={{ maxWidth: 820, margin: '0 auto', padding: '80px 24px' }}>
-          <h2 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(28px, 3.5vw, 42px)', color: COLORS.navy, margin: '0 0 32px', fontWeight: 400 }}>
+        <section style={{ maxWidth: 820, margin: '0 auto', padding: '80px 32px' }}>
+          <h2
+            style={{
+              fontFamily: FONTS.serif,
+              fontSize: 'clamp(30px, 3.5vw, 46px)',
+              fontWeight: 300,
+              color: COLORS.navy,
+              margin: '0 0 40px',
+              letterSpacing: '-0.01em',
+            }}
+          >
             How We Work
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-            {[
-              { title: 'Single Point of Contact', body: 'You deal with one team from day one. No chasing architects for plan changes or arguing with subcontractors about who misunderstood the drawings.' },
-              { title: 'Transparent Pricing', body: 'We provide detailed line-item budgets updated in real time. You always know where every dollar is going — no buried markups, no surprise change orders.' },
-              { title: 'Timeline You Can Trust', body: 'Our design/build model eliminates the bidding and redesign loops that add months to traditional projects. We commit to dates and we hit them.' },
-              { title: 'Coastal Expertise', body: 'Building on the Texas coast means dealing with wind ratings, flood zones, and salt corrosion. We know the codes, the materials, and the techniques that last.' },
-            ].map(item => (
-              <div key={item.title} style={{ paddingBottom: 28, borderBottom: `1px solid ${COLORS.goldSoft}` }}>
-                <h3 style={{ fontFamily: FONTS.sans, fontSize: 18, fontWeight: 600, color: COLORS.navy, margin: '0 0 8px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            {values.map((item, i) => (
+              <div
+                key={item.title}
+                style={{
+                  padding: '28px 0',
+                  borderBottom: `1px solid rgba(201,168,78,0.20)`,
+                  borderTop: i === 0 ? `1px solid rgba(201,168,78,0.20)` : 'none',
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: FONTS.sans,
+                    fontSize: 17,
+                    fontWeight: 600,
+                    color: COLORS.navy,
+                    margin: '0 0 10px',
+                  }}
+                >
                   {item.title}
                 </h3>
-                <p style={{ fontFamily: FONTS.sans, fontSize: 15, color: COLORS.grayText, lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontFamily: FONTS.sans, fontSize: 15, color: COLORS.grayText, lineHeight: 1.75, margin: 0 }}>
                   {item.body}
                 </p>
               </div>
@@ -75,7 +171,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section style={{ textAlign: 'center', padding: '0 24px 80px' }}>
+        <section style={{ textAlign: 'center', padding: '0 24px 88px' }}>
           <a
             href={CONTACT.phoneHref}
             style={{
@@ -83,9 +179,9 @@ export default function AboutPage() {
               backgroundColor: COLORS.navy,
               color: COLORS.white,
               fontFamily: FONTS.sans,
-              fontSize: 16,
+              fontSize: 15,
               fontWeight: 600,
-              padding: '16px 40px',
+              padding: '15px 40px',
               borderRadius: 999,
               textDecoration: 'none',
             }}

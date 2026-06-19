@@ -4,29 +4,28 @@ import { COLORS, FONTS } from '@/lib/constants';
 
 export default function HeroSection() {
   return (
-    <section style={{ position: 'relative', minHeight: '92vh', overflow: 'hidden' }}>
+    <section style={{ position: 'relative', height: '100vh', minHeight: 700, overflow: 'hidden' }}>
 
       {/* Full-bleed background photo */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        {/* REPLACE: swap Unsplash placeholder with licensed photography of the actual home */}
         <img
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2160&q=85"
+          src="/images/hero-mansion.jpg"
           alt="Ocean Glory custom coastal home at the waterfront"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
         />
-        {/* Gradient: transparent at top, deep navy at bottom so the dock sits on near-black */}
+        {/* Gradient: subtle tint at top for nav legibility, heavy navy at bottom for dock */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to bottom, rgba(13,43,82,0) 30%, rgba(13,43,82,0.42) 62%, rgba(13,43,82,0.97) 100%)',
+            background: 'linear-gradient(to bottom, rgba(13,43,82,0.18) 0%, rgba(13,43,82,0) 28%, rgba(13,43,82,0.35) 55%, rgba(13,43,82,0.96) 88%, rgba(13,43,82,1) 100%)',
           }}
         />
       </div>
 
       <NavBar transparent />
 
-      {/* Heading + listing dock pinned to bottom — matches reference where both live in the lower third */}
+      {/* Centered headline + bottom dock */}
       <div
         style={{
           position: 'absolute',
@@ -34,27 +33,34 @@ export default function HeroSection() {
           left: 0,
           right: 0,
           zIndex: 2,
-          padding: '0 24px 36px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
-        <div style={{ textAlign: 'center', marginBottom: 28 }}>
+        <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 36 }}>
           <h1
             style={{
               fontFamily: FONTS.serif,
-              fontSize: 'clamp(44px, 5.5vw, 82px)',
-              lineHeight: 1.08,
+              fontSize: 'clamp(52px, 6.5vw, 96px)',
+              fontWeight: 300,
+              lineHeight: 1.05,
               color: COLORS.white,
               margin: 0,
-              textShadow: '0 2px 24px rgba(13,43,82,0.35)',
+              letterSpacing: '-0.01em',
+              textShadow: '0 2px 32px rgba(13,43,82,0.4)',
             }}
           >
             Homes Worthy
             <br />
             of Your{' '}
-            <span style={{ fontStyle: 'italic', color: COLORS.gold }}>Dreams.</span>
+            <em style={{ fontStyle: 'italic', color: COLORS.gold, fontWeight: 300 }}>Dreams.</em>
           </h1>
         </div>
-        <ListingDock />
+
+        <div style={{ width: '100%', padding: '0 32px 40px', maxWidth: 1440, margin: '0 auto' }}>
+          <ListingDock />
+        </div>
       </div>
     </section>
   );

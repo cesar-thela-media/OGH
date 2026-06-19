@@ -12,15 +12,15 @@ export default function TransparencySection() {
     <section
       style={{
         backgroundColor: COLORS.navy,
-        padding: isMobile ? '64px 24px 0' : '96px 64px 0',
+        padding: isMobile ? '72px 24px 0' : '100px 72px 0',
       }}
     >
-      <div style={{ textAlign: 'center', marginBottom: 64 }}>
+      <div style={{ textAlign: 'center', marginBottom: 72 }}>
         <p
           style={{
             fontFamily: FONTS.sans,
-            fontSize: 13,
-            letterSpacing: '0.18em',
+            fontSize: 11,
+            letterSpacing: '0.20em',
             textTransform: 'uppercase',
             color: COLORS.gold,
             fontWeight: 600,
@@ -32,10 +32,13 @@ export default function TransparencySection() {
         <h2
           style={{
             fontFamily: FONTS.serif,
-            fontSize: 'clamp(40px, 4.8vw, 64px)',
+            fontSize: 'clamp(42px, 5vw, 68px)',
+            fontWeight: 300,
             color: COLORS.white,
-            marginTop: 16,
-            fontWeight: 400,
+            marginTop: 14,
+            marginBottom: 0,
+            letterSpacing: '-0.01em',
+            lineHeight: 1.08,
           }}
         >
           Built on Complete Transparency.
@@ -45,8 +48,8 @@ export default function TransparencySection() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : '40fr 60fr',
-          gap: isMobile ? 48 : 64,
+          gridTemplateColumns: isMobile ? '1fr' : '42fr 58fr',
+          gap: isMobile ? 56 : 72,
           maxWidth: 1180,
           margin: '0 auto',
           alignItems: 'start',
@@ -59,7 +62,7 @@ export default function TransparencySection() {
         <ProjectDashboardCard />
       </div>
 
-      <div style={{ height: 80 }} />
+      <div style={{ height: 96 }} />
     </section>
   );
 }
