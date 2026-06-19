@@ -18,7 +18,7 @@ export default function HeroSection() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to bottom, rgba(13,43,82,0.18) 0%, rgba(13,43,82,0) 28%, rgba(13,43,82,0.35) 55%, rgba(13,43,82,0.96) 88%, rgba(13,43,82,1) 100%)',
+            background: 'linear-gradient(to bottom, rgba(13,43,82,0.12) 0%, rgba(13,43,82,0) 22%, rgba(13,43,82,0.0) 42%, rgba(13,43,82,0.28) 60%, rgba(13,43,82,0.92) 82%, rgba(13,43,82,1) 100%)',
           }}
         />
       </div>
@@ -43,7 +43,7 @@ export default function HeroSection() {
             style={{
               fontFamily: FONTS.serif,
               fontSize: 'clamp(52px, 6.5vw, 96px)',
-              fontWeight: 300,
+              fontWeight: 400,
               lineHeight: 1.05,
               color: COLORS.white,
               margin: 0,
@@ -54,7 +54,7 @@ export default function HeroSection() {
             Homes Worthy
             <br />
             of Your{' '}
-            <em style={{ fontStyle: 'italic', color: COLORS.gold, fontWeight: 300 }}>Dreams.</em>
+            <em style={{ fontStyle: 'italic', color: COLORS.gold, fontWeight: 400 }}>Dreams.</em>
           </h1>
         </div>
 

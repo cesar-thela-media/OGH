@@ -5,7 +5,7 @@ export const COLORS = {
   goldSoft:       'rgba(201,168,78,0.35)',
   skyBlue:        '#6BAED4',
   white:          '#FFFFFF',
-  offWhite:       '#FBFCFD',
+  offWhite:       '#FDFCFA',
   grayText:       '#7B8794',
   grayLine:       'rgba(123,135,148,0.25)',
   pillGreen:      '#E8F3EA',

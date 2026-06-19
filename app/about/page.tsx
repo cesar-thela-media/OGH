@@ -53,7 +53,7 @@ export default function AboutPage() {
             style={{
               fontFamily: FONTS.serif,
               fontSize: 'clamp(40px, 5vw, 72px)',
-              fontWeight: 300,
+              fontWeight: 400,
               color: COLORS.white,
               marginTop: 14,
               marginBottom: 0,
@@ -71,7 +71,7 @@ export default function AboutPage() {
             style={{
               fontFamily: FONTS.serif,
               fontSize: 'clamp(30px, 3.5vw, 46px)',
-              fontWeight: 300,
+              fontWeight: 400,
               color: COLORS.navy,
               margin: '0 0 28px',
               letterSpacing: '-0.01em',
@@ -114,7 +114,7 @@ export default function AboutPage() {
               style={{
                 fontFamily: FONTS.serif,
                 fontSize: 'clamp(28px, 3.5vw, 42px)',
-                fontWeight: 300,
+                fontWeight: 400,
                 color: COLORS.white,
                 margin: '0 0 40px',
                 letterSpacing: '-0.01em',
@@ -133,7 +133,7 @@ export default function AboutPage() {
             style={{
               fontFamily: FONTS.serif,
               fontSize: 'clamp(30px, 3.5vw, 46px)',
-              fontWeight: 300,
+              fontWeight: 400,
               color: COLORS.navy,
               margin: '0 0 40px',
               letterSpacing: '-0.01em',

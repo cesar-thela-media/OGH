@@ -34,7 +34,7 @@ export default function ForSalePage() {
             style={{
               fontFamily: FONTS.serif,
               fontSize: 'clamp(40px, 5vw, 72px)',
-              fontWeight: 300,
+              fontWeight: 400,
               color: COLORS.white,
               marginTop: 14,
               marginBottom: 0,

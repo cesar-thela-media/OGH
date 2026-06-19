@@ -33,7 +33,7 @@ export default function TransparencySection() {
           style={{
             fontFamily: FONTS.serif,
             fontSize: 'clamp(42px, 5vw, 68px)',
-            fontWeight: 300,
+            fontWeight: 400,
             color: COLORS.white,
             marginTop: 14,
             marginBottom: 0,

@@ -149,7 +149,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
                 fontFamily: FONTS.serif,
                 fontSize: 28,
                 textDecoration: 'none',
-                fontWeight: 300,
+                fontWeight: 400,
               }}
             >
               {link.label}

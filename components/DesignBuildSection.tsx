@@ -34,7 +34,7 @@ export default function DesignBuildSection() {
         style={{
           fontFamily: FONTS.serif,
           fontSize: 'clamp(40px, 5vw, 72px)',
-          fontWeight: 300,
+          fontWeight: 400,
           color: COLORS.navy,
           lineHeight: 1.08,
           margin: '16px 0 0',

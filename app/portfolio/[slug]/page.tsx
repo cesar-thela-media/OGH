@@ -118,7 +118,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
               style={{
                 fontFamily: FONTS.serif,
                 fontSize: 'clamp(36px, 4.5vw, 60px)',
-                fontWeight: 300,
+                fontWeight: 400,
                 color: COLORS.white,
                 margin: '0 0 4px',
                 letterSpacing: '-0.01em',

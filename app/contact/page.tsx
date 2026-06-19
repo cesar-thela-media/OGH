@@ -68,7 +68,7 @@ export default function ContactPage() {
             style={{
               fontFamily: FONTS.serif,
               fontSize: 'clamp(40px, 5vw, 72px)',
-              fontWeight: 300,
+              fontWeight: 400,
               color: COLORS.white,
               marginTop: 14,
               marginBottom: 0,
@@ -151,7 +151,7 @@ export default function ContactPage() {
               style={{
                 fontFamily: FONTS.serif,
                 fontSize: 'clamp(26px, 3vw, 38px)',
-                fontWeight: 300,
+                fontWeight: 400,
                 color: COLORS.navy,
                 margin: '0 0 6px',
                 letterSpacing: '-0.01em',
