@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { COLORS, FONTS, CONTACT, SOCIALS } from '@/lib/constants';
-import { WaveLogomark } from './NavBar';
+import { COLORS, FONTS, CONTACT, SOCIALS, LOGO_URL } from '@/lib/constants';
 
 const footerLinks = [
   { label: 'For Sale',  href: '/for-sale' },
@@ -32,7 +31,7 @@ export default function Footer() {
         {/* Brand column */}
         <div style={{ flex: '1 1 280px' }}>
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', marginBottom: 16 }}>
-            <WaveLogomark color={COLORS.white} />
+            <img src={LOGO_URL} alt="Ocean Glory Homes" style={{ height: 36, width: 'auto' }} />
             <span style={{
               color: COLORS.white, fontFamily: FONTS.body, fontSize: 13,
               letterSpacing: '0.18em', fontWeight: 600, textTransform: 'uppercase',

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { COLORS, FONTS } from '@/lib/constants';
+import { COLORS, FONTS, LOGO_URL } from '@/lib/constants';
 import { useIsMobile } from '@/hooks/useIsMobile';
 
 const navLinks = [
@@ -35,7 +35,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
         }}
       >
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none' }}>
-          <WaveLogomark color={COLORS.white} />
+          <img src={LOGO_URL} alt="Ocean Glory Homes" style={{ height: 40, width: 'auto' }} />
           <span
             style={{
               color: COLORS.white,

@@ -6,12 +6,12 @@ export default function BlueprintArtifact() {
       style={{
         position: 'relative',
         width: '100%',
-        maxWidth: 960,
+        maxWidth: '92vw',
         margin: '0 auto',
         borderRadius: 12,
         overflow: 'hidden',
-        border: `1px solid rgba(201,168,78,0.50)`,
-        boxShadow: '0 24px 64px rgba(13,43,82,0.16), 0 4px 16px rgba(13,43,82,0.08)',
+        border: `2px solid ${COLORS.gold}`,
+        boxShadow: '0 28px 72px rgba(13,43,82,0.18), 0 4px 16px rgba(13,43,82,0.08)',
         aspectRatio: '16 / 7',
         backgroundColor: '#EDE8DC',
       }}

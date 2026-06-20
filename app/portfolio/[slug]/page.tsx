@@ -132,124 +132,52 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
           </div>
         </section>
 
-        {/* Detail */}
-        <section style={{ maxWidth: 900, margin: '0 auto', padding: '56px 32px' }}>
-          <div
-            style={{
-              backgroundColor: COLORS.white,
-              borderRadius: 16,
-              padding: '36px 40px',
-              boxShadow: '0 4px 24px rgba(13,43,82,0.07)',
-              marginBottom: 32,
-              border: '1px solid rgba(13,43,82,0.05)',
-            }}
-          >
-            <h2
-              style={{
-                fontFamily: FONTS.heading,
-                fontSize: 26,
-                fontWeight: 400,
-                color: COLORS.navy,
-                margin: '0 0 16px',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Project Overview
-            </h2>
-            <p
-              style={{
-                fontFamily: FONTS.body,
-                fontSize: 15,
-                color: COLORS.navy,
-                lineHeight: 1.85,
-                margin: '0 0 28px',
-              }}
-            >
-              {project.description}
-            </p>
-            <div
-              style={{
-                display: 'flex',
-                gap: 48,
-                flexWrap: 'wrap',
-                paddingTop: 24,
-                borderTop: `1px solid rgba(201,168,78,0.22)`,
-              }}
-            >
-              <div>
-                <p
-                  style={{
-                    fontFamily: FONTS.body,
-                    fontSize: 11,
-                    color: COLORS.grayText,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.12em',
-                    margin: '0 0 6px',
-                  }}
-                >
-                  Specifications
-                </p>
-                <p style={{ fontFamily: FONTS.body, fontSize: 15, color: COLORS.navy, margin: 0 }}>
-                  {project.specs}
-                </p>
+        {/* Detail — bento grid */}
+        <section style={{ maxWidth: 960, margin: '0 auto', padding: '56px 32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+
+            {/* Project overview */}
+            <div style={{ gridColumn: '1 / -1', backgroundColor: COLORS.white, borderRadius: 18, padding: '32px 36px', boxShadow: '0 2px 16px rgba(13,43,82,0.05)' }}>
+              <h2 style={{ fontFamily: FONTS.heading, fontSize: 22, fontWeight: 400, color: COLORS.navy, margin: '0 0 16px' }}>Project Overview</h2>
+              <p style={{ fontFamily: FONTS.body, fontSize: 15, color: COLORS.grayText, lineHeight: 1.8, margin: '0 0 24px' }}>{project.description}</p>
+              <div style={{ display: 'flex', gap: 40, flexWrap: 'wrap', paddingTop: 20, borderTop: `1px solid ${COLORS.goldSoft}` }}>
+                <div>
+                  <p style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.10em', margin: '0 0 6px' }}>Specifications</p>
+                  <p style={{ fontFamily: FONTS.body, fontSize: 15, color: COLORS.navy, margin: 0 }}>{project.specs}</p>
+                </div>
+                <div>
+                  <p style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.10em', margin: '0 0 6px' }}>Status</p>
+                  <p style={{ fontFamily: FONTS.body, fontSize: 15, color: isCompleted ? '#22C55E' : COLORS.gold, fontWeight: 600, margin: 0 }}>{project.stage}</p>
+                </div>
               </div>
+            </div>
+
+            {/* Image gallery */}
+            <div style={{ borderRadius: 18, overflow: 'hidden' }}>
+              <img src={project.image} alt={project.name} style={{ width: '100%', height: 280, objectFit: 'cover', display: 'block' }} />
+            </div>
+            <div style={{ borderRadius: 18, overflow: 'hidden' }}>
+              <img src="/images/hero-mansion.jpg" alt={`${project.name} detail`} style={{ width: '100%', height: 280, objectFit: 'cover', display: 'block' }} />
+            </div>
+
+            {/* Design/Build note */}
+            <div style={{ gridColumn: '1 / -1', backgroundColor: COLORS.white, borderRadius: 18, padding: '28px 32px', boxShadow: '0 2px 16px rgba(13,43,82,0.05)', display: 'flex', gap: 20, alignItems: 'flex-start' }}>
+              <span style={{ fontFamily: FONTS.heading, fontSize: 28, color: COLORS.gold, flexShrink: 0 }}>✦</span>
               <div>
-                <p
-                  style={{
-                    fontFamily: FONTS.body,
-                    fontSize: 11,
-                    color: COLORS.grayText,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.12em',
-                    margin: '0 0 6px',
-                  }}
-                >
-                  Status
-                </p>
-                <p
-                  style={{
-                    fontFamily: FONTS.body,
-                    fontSize: 15,
-                    color: isCompleted ? '#1F6B3A' : COLORS.navy,
-                    margin: 0,
-                    fontWeight: isCompleted ? 600 : 400,
-                  }}
-                >
-                  {project.stage}
+                <p style={{ fontFamily: FONTS.body, fontSize: 14, fontWeight: 600, color: COLORS.navy, margin: '0 0 6px' }}>Design + Build, One Company</p>
+                <p style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.grayText, lineHeight: 1.6, margin: 0 }}>
+                  This project was designed and built entirely by Ocean Glory Homes — no outside architects, no subcontractor miscommunication, no surprises. One team, from floor plan to finish.
                 </p>
               </div>
             </div>
+
           </div>
 
-          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-            <a
-              href="/portfolio"
-              style={{
-                fontFamily: FONTS.body,
-                fontSize: 14,
-                fontWeight: 600,
-                color: COLORS.navy,
-                textDecoration: 'none',
-                padding: '12px 26px',
-                border: `1.5px solid rgba(201,168,78,0.4)`,
-                borderRadius: 999,
-              }}
-            >
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 24 }}>
+            <a href="/portfolio" style={{ fontFamily: FONTS.body, fontSize: 14, fontWeight: 600, color: COLORS.navy, textDecoration: 'none', padding: '12px 26px', border: `1.5px solid ${COLORS.goldSoft}`, borderRadius: 999 }}>
               ← Back to Portfolio
             </a>
-            <a
-              href={CONTACT.phoneHref}
-              style={{
-                fontFamily: FONTS.body,
-                fontSize: 14,
-                fontWeight: 600,
-                backgroundColor: COLORS.gold,
-                color: '#fff',
-                textDecoration: 'none',
-                padding: '12px 26px',
-                borderRadius: 999,
-              }}
-            >
+            <a href={CONTACT.phoneHref} style={{ fontFamily: FONTS.body, fontSize: 14, fontWeight: 600, backgroundColor: COLORS.gold, color: '#fff', textDecoration: 'none', padding: '12px 26px', borderRadius: 999 }}>
               Start Your Project — {CONTACT.phone}
             </a>
           </div>
