@@ -1,5 +1,4 @@
 import HeroSection from '@/components/HeroSection';
-import FanShowcaseSection from '@/components/FanShowcaseSection';
 import DesignBuildSection from '@/components/DesignBuildSection';
 import TransparencySection from '@/components/TransparencySection';
 import ShowcaseSection from '@/components/ShowcaseSection';
@@ -10,7 +9,6 @@ export default function Home() {
   return (
     <main style={{ overflowX: 'hidden' }}>
       <HeroSection />
-      <FanShowcaseSection />
       <DesignBuildSection />
       <TransparencySection />
       <ShowcaseSection />

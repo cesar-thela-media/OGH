@@ -2,6 +2,7 @@
 import { useState, type FormEvent } from 'react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+import { MeetingScheduler } from '@/components/meeting-scheduler';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const WEBHOOK_URL = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK || '';
@@ -123,6 +124,26 @@ export default function ContactPage() {
 
           </div>
         </section>
+
+        {/* Schedule a Consultation */}
+        <section className="bg-navy py-16 md:py-20">
+          <div className="max-w-2xl mx-auto px-6 text-center mb-10">
+            <p className="text-gold text-xs tracking-[0.18em] uppercase font-semibold font-body">Schedule a Visit</p>
+            <h2 className="text-white text-3xl md:text-4xl font-heading font-semibold mt-4">Book a Consultation</h2>
+            <p className="text-white/50 font-body mt-3">Pick a date and time — we&apos;ll confirm within 24 hours.</p>
+          </div>
+          <div className="flex justify-center px-4">
+            <MeetingScheduler
+              title="Schedule a Consultation"
+              description="Choose your preferred dates and we'll reach out to confirm."
+              scheduleButtonText="Request Consultation"
+              cancelButtonText="Cancel"
+              onSchedule={(d) => { if (d.startDate) alert(`Consultation requested for ${d.startDate.toDateString()}. We'll confirm shortly.`); }}
+              onCancel={() => {}}
+            />
+          </div>
+        </section>
+
       </main>
       <Footer />
     </>
