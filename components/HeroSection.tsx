@@ -48,27 +48,27 @@ export default function HeroSection() {
           alignItems: 'center',
         }}
       >
-        <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 44 }}>
+        <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 52 }}>
           <h1
             style={{
               fontFamily: FONTS.heading,
-              fontSize: 'clamp(54px, 6vw, 92px)',
+              fontSize: 'clamp(56px, 7vw, 104px)',
               fontWeight: 400,
-              lineHeight: 1.08,
+              lineHeight: 1.04,
               color: COLORS.white,
               margin: 0,
-              letterSpacing: '-0.015em',
-              textShadow: '0 2px 40px rgba(13,43,82,0.55)',
+              letterSpacing: '-0.02em',
+              textShadow: '0 4px 60px rgba(13,43,82,0.70), 0 1px 0 rgba(255,255,255,0.08)',
             }}
           >
             Homes Worthy
             <br />
             of Your{' '}
-            <em style={{ fontStyle: 'italic', color: COLORS.gold }}>Dreams.</em>
+            <em style={{ fontStyle: 'italic', color: COLORS.gold, textShadow: '0 2px 30px rgba(201,168,78,0.40)' }}>Dreams.</em>
           </h1>
         </div>
 
-        <div style={{ width: '100%', padding: '0 40px 44px' }}>
+        <div style={{ width: '100%', padding: '0 48px 52px' }}>
           <ListingDock />
         </div>
       </div>

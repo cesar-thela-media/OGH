@@ -19,27 +19,28 @@ export default function ListingDock() {
           href={`/for-sale/${listing.id}`}
           style={{
             display: 'flex',
-            gap: 16,
-            backgroundColor: 'rgba(8,28,58,0.76)',
-            backdropFilter: 'blur(18px)',
-            WebkitBackdropFilter: 'blur(18px)',
-            borderRadius: 16,
-            padding: '14px 16px',
-            border: '1px solid rgba(255,255,255,0.09)',
+            gap: 18,
+            backgroundColor: 'rgba(8,25,52,0.72)',
+            backdropFilter: 'blur(24px) saturate(120%)',
+            WebkitBackdropFilter: 'blur(24px) saturate(120%)',
+            borderRadius: 20,
+            padding: '16px 20px',
+            border: '1px solid rgba(255,255,255,0.08)',
             textDecoration: 'none',
             minWidth: 0,
-            transition: 'background 0.2s',
+            transition: 'background 0.25s, border-color 0.25s',
           }}
         >
           <img
             src={listing.image}
             alt={listing.address}
             style={{
-              width: 96,
-              height: 96,
+              width: 100,
+              height: 100,
               objectFit: 'cover',
-              borderRadius: 10,
+              borderRadius: 12,
               flexShrink: 0,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.25)',
             }}
           />
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: 0, flex: 1 }}>
@@ -47,30 +48,29 @@ export default function ListingDock() {
               <p
                 style={{
                   fontFamily: FONTS.heading,
-                  fontSize: 18,
+                  fontSize: 19,
                   fontWeight: 400,
                   color: COLORS.white,
                   margin: 0,
                   whiteSpace: 'nowrap',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
-                  letterSpacing: '-0.005em',
                   lineHeight: 1.2,
                 }}
               >
                 {listing.address}
               </p>
-              <div style={{ display: 'flex', gap: 10, marginTop: 6 }}>
+              <div style={{ display: 'flex', gap: 12, marginTop: 7 }}>
                 <Spec icon="bed" value={listing.beds} />
                 <Spec icon="bath" value={listing.baths} />
                 <Spec icon="sqft" value={listing.sqft.toLocaleString()} />
               </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
               <span
                 style={{
                   fontFamily: FONTS.body,
-                  fontSize: 16,
+                  fontSize: 17,
                   fontWeight: 600,
                   color: COLORS.gold,
                   whiteSpace: 'nowrap',
@@ -85,12 +85,12 @@ export default function ListingDock() {
                   fontSize: 10,
                   fontWeight: 500,
                   color: COLORS.gold,
-                  border: `1px solid rgba(201,168,78,0.55)`,
+                  border: `1px solid rgba(201,168,78,0.45)`,
                   borderRadius: 999,
-                  padding: '3px 11px',
+                  padding: '4px 12px',
                   whiteSpace: 'nowrap',
                   flexShrink: 0,
-                  letterSpacing: '0.05em',
+                  letterSpacing: '0.06em',
                 }}
               >
                 {listing.stage}

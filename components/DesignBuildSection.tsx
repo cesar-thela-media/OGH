@@ -20,8 +20,8 @@ export default function DesignBuildSection() {
       <p
         style={{
           fontFamily: FONTS.body,
-          fontSize: 11,
-          letterSpacing: '0.22em',
+          fontSize: 12,
+          letterSpacing: '0.20em',
           textTransform: 'uppercase',
           color: COLORS.gold,
           fontWeight: 600,
@@ -35,17 +35,18 @@ export default function DesignBuildSection() {
       <h2
         style={{
           fontFamily: FONTS.heading,
-          fontSize: isMobile ? 'clamp(38px, 8vw, 56px)' : 'clamp(44px, 4.8vw, 76px)',
+          fontSize: isMobile ? 'clamp(40px, 8vw, 58px)' : 'clamp(48px, 5.5vw, 84px)',
           fontWeight: 400,
           color: COLORS.navy,
-          lineHeight: 1.10,
-          margin: '18px 0 0',
-          letterSpacing: '-0.02em',
+          lineHeight: 1.08,
+          margin: '20px 0 0',
+          letterSpacing: '-0.025em',
         }}
       >
         We Design It.
         <br />
-        We <em style={{ fontStyle: 'italic', color: COLORS.gold }}>Build It.</em>
+        We{' '}
+        <em style={{ fontStyle: 'italic', color: COLORS.gold, textShadow: '0 1px 0 rgba(201,168,78,0.15)' }}>Build It.</em>
       </h2>
 
       {/* Subtitle */}
