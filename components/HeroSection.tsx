@@ -41,7 +41,7 @@ export default function HeroSection() {
             style={{
               fontFamily: FONTS.heading,
               fontSize: 'clamp(52px, 6.5vw, 96px)',
-              fontWeight: 400,
+              fontWeight: 600,
               lineHeight: 1.06,
               color: COLORS.white,
               margin: 0,
