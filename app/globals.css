@@ -23,6 +23,11 @@ body {
   50%       { opacity: 0.4; transform: scale(0.7); }
 }
 
+@keyframes scrollCol {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; }
 }
