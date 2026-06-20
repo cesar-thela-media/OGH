@@ -86,22 +86,22 @@ export default function CTASection() {
 
       {/* CTA */}
       <div style={{
-        maxWidth: 600, margin: '0 auto', textAlign: 'center',
-        backgroundColor: 'rgba(255,255,255,0.04)',
-        borderRadius: 24, padding: 48,
+        maxWidth: 640, margin: '0 auto', textAlign: 'center',
+        backgroundColor: 'rgba(255,255,255,0.05)',
+        borderRadius: 28, padding: 56,
+        border: '1px solid rgba(255,255,255,0.06)',
       }}>
         <h2 style={{
-          fontFamily: FONTS.heading, fontSize: 'clamp(28px, 3.5vw, 42px)',
-          color: COLORS.white, margin: '0 0 16px', fontWeight: 400,
+          fontFamily: FONTS.heading, fontSize: 'clamp(30px, 4vw, 48px)',
+          color: COLORS.white, margin: '0 0 16px', fontWeight: 600,
         }}>
-          Ready to Build Your Dream Home?
+          Ready to Build?
         </h2>
         <p style={{
-          fontFamily: FONTS.body, fontSize: 16, color: 'rgba(255,255,255,0.60)',
-          margin: '0 0 32px', lineHeight: 1.6,
+          fontFamily: FONTS.body, fontSize: 17, color: 'rgba(255,255,255,0.55)',
+          margin: '0 0 36px', lineHeight: 1.6,
         }}>
-          Whether you have your own lot or are looking for the perfect place, we&apos;d love to
-          talk about your project. Call us today to get started.
+          Whether you have your own lot or are looking for the perfect place, we&apos;d love to talk about your project.
         </p>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
           <a
@@ -109,11 +109,11 @@ export default function CTASection() {
             style={{
               display: 'inline-block',
               backgroundColor: COLORS.gold,
-              color: COLORS.white,
+              color: COLORS.navy,
               fontFamily: FONTS.body,
-              fontSize: 15,
-              fontWeight: 600,
-              padding: '16px 36px',
+              fontSize: 16,
+              fontWeight: 700,
+              padding: '18px 40px',
               borderRadius: 999,
               textDecoration: 'none',
             }}
@@ -127,12 +127,12 @@ export default function CTASection() {
               backgroundColor: 'transparent',
               color: COLORS.white,
               fontFamily: FONTS.body,
-              fontSize: 15,
+              fontSize: 16,
               fontWeight: 600,
-              padding: '16px 36px',
+              padding: '18px 40px',
               borderRadius: 999,
               textDecoration: 'none',
-              border: `1.5px solid rgba(255,255,255,0.25)`,
+              border: `2px solid rgba(255,255,255,0.20)`,
             }}
           >
             Send a Message

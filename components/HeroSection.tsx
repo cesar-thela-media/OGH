@@ -4,38 +4,26 @@ import { COLORS, FONTS } from '@/lib/constants';
 
 export default function HeroSection() {
   return (
-    <section style={{ position: 'relative', height: '100vh', minHeight: 700, overflow: 'hidden' }}>
+    <section style={{ position: 'relative', height: '100vh', minHeight: 720, overflow: 'hidden' }}>
 
       {/* Full-bleed background photo */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <img
           src="/images/hero-mansion.jpg"
           alt="Ocean Glory custom coastal home at the waterfront"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
         />
-        {/* Gradient: barely visible at top for nav, photo clear through center, darkens bottom third */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: [
-              'linear-gradient(to bottom,',
-              '  rgba(13,43,82,0.10) 0%,',
-              '  rgba(13,43,82,0.00) 18%,',
-              '  rgba(13,43,82,0.00) 48%,',
-              '  rgba(13,43,82,0.22) 60%,',
-              '  rgba(13,43,82,0.78) 76%,',
-              '  rgba(13,43,82,0.97) 88%,',
-              '  rgba(13,43,82,1.00) 100%',
-              ')',
-            ].join(' '),
+            background: 'linear-gradient(to bottom, rgba(13,43,82,0.35) 0%, rgba(13,43,82,0.05) 25%, rgba(13,43,82,0.00) 45%, rgba(13,43,82,0.35) 65%, rgba(13,43,82,0.82) 80%, rgba(13,43,82,1.00) 95%)',
           }}
         />
       </div>
 
       <NavBar transparent />
 
-      {/* Headline + dock — anchored to bottom */}
       <div
         style={{
           position: 'absolute',
@@ -48,27 +36,27 @@ export default function HeroSection() {
           alignItems: 'center',
         }}
       >
-        <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 52 }}>
+        <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 56 }}>
           <h1
             style={{
               fontFamily: FONTS.heading,
-              fontSize: 'clamp(56px, 7vw, 104px)',
-              fontWeight: 600,
-              lineHeight: 1.04,
+              fontSize: 'clamp(52px, 6.5vw, 96px)',
+              fontWeight: 700,
+              lineHeight: 1.06,
               color: COLORS.white,
               margin: 0,
-              letterSpacing: '-0.02em',
-              textShadow: '0 4px 60px rgba(13,43,82,0.70), 0 1px 0 rgba(255,255,255,0.08)',
+              letterSpacing: '-0.03em',
+              textShadow: '0 4px 80px rgba(0,0,0,0.50)',
             }}
           >
             Homes Worthy
             <br />
             of Your{' '}
-            <em style={{ fontStyle: 'italic', color: COLORS.gold, textShadow: '0 2px 30px rgba(201,168,78,0.40)' }}>Dreams.</em>
+            <em style={{ fontStyle: 'italic', color: COLORS.gold, fontWeight: 700 }}>Dreams.</em>
           </h1>
         </div>
 
-        <div style={{ width: '100%', padding: '0 48px 52px' }}>
+        <div style={{ width: '100%', padding: '0 48px 56px' }}>
           <ListingDock />
         </div>
       </div>

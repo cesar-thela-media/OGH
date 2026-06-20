@@ -19,28 +19,28 @@ export default function ListingDock() {
           href={`/for-sale/${listing.id}`}
           style={{
             display: 'flex',
-            gap: 18,
-            backgroundColor: 'rgba(8,25,52,0.72)',
-            backdropFilter: 'blur(24px) saturate(120%)',
-            WebkitBackdropFilter: 'blur(24px) saturate(120%)',
-            borderRadius: 20,
-            padding: '16px 20px',
-            border: '1px solid rgba(255,255,255,0.08)',
+            gap: 20,
+            backgroundColor: 'rgba(5,18,40,0.78)',
+            backdropFilter: 'blur(32px) saturate(140%)',
+            WebkitBackdropFilter: 'blur(32px) saturate(140%)',
+            borderRadius: 18,
+            padding: '18px 22px',
+            border: '1px solid rgba(255,255,255,0.06)',
             textDecoration: 'none',
             minWidth: 0,
-            transition: 'background 0.25s, border-color 0.25s',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.30)',
           }}
         >
           <img
             src={listing.image}
             alt={listing.address}
             style={{
-              width: 100,
-              height: 100,
+              width: 108,
+              height: 108,
               objectFit: 'cover',
               borderRadius: 12,
               flexShrink: 0,
-              boxShadow: '0 4px 16px rgba(0,0,0,0.25)',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.30)',
             }}
           />
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: 0, flex: 1 }}>
