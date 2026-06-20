@@ -34,20 +34,8 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
           borderBottom: transparent ? '1px solid rgba(255,255,255,0.10)' : 'none',
         }}
       >
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img src={LOGO_URL} alt="Ocean Glory Homes" style={{ height: 40, width: 'auto' }} />
-          <span
-            style={{
-              color: COLORS.white,
-              fontFamily: FONTS.body,
-              fontSize: 13,
-              letterSpacing: '0.20em',
-              fontWeight: 600,
-              textTransform: 'uppercase',
-            }}
-          >
-            Ocean Glory Homes
-          </span>
         </Link>
 
         {!isMobile && (

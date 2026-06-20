@@ -13,7 +13,7 @@ export default function ListingDock() {
         margin: '0 auto',
       }}
     >
-      {listings.map(listing => (
+      {listings.slice(0, 3).map(listing => (
         <Link
           key={listing.id}
           href={`/for-sale/${listing.id}`}

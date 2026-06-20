@@ -30,14 +30,8 @@ export default function Footer() {
       >
         {/* Brand column */}
         <div style={{ flex: '1 1 280px' }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', marginBottom: 16 }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 16 }}>
             <img src={LOGO_URL} alt="Ocean Glory Homes" style={{ height: 36, width: 'auto' }} />
-            <span style={{
-              color: COLORS.white, fontFamily: FONTS.body, fontSize: 13,
-              letterSpacing: '0.18em', fontWeight: 600, textTransform: 'uppercase',
-            }}>
-              Ocean Glory Homes
-            </span>
           </Link>
           <p style={{ fontFamily: FONTS.body, fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, margin: '0 0 16px', maxWidth: 300 }}>
             A locally owned custom home builder serving Rockport, Portland, and Corpus Christi, Texas.
