@@ -13,8 +13,8 @@ export const COLORS = {
 };
 
 export const FONTS = {
-  heading: 'var(--font-heading), Montserrat, sans-serif',
-  body:    'var(--font-body), "Open Sans", sans-serif',
+  heading: 'var(--font-heading), "Playfair Display", Georgia, serif',
+  body:    'var(--font-body), "Inter", system-ui, sans-serif',
 };
 
 export const CONTACT = {

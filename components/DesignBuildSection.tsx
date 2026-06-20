@@ -36,7 +36,7 @@ export default function DesignBuildSection() {
         style={{
           fontFamily: FONTS.heading,
           fontSize: isMobile ? 'clamp(40px, 8vw, 58px)' : 'clamp(48px, 5.5vw, 84px)',
-          fontWeight: 600,
+          fontWeight: 400,
           color: COLORS.navy,
           lineHeight: 1.08,
           margin: '20px 0 0',

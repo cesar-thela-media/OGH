@@ -93,7 +93,7 @@ export default function CTASection() {
       }}>
         <h2 style={{
           fontFamily: FONTS.heading, fontSize: 'clamp(30px, 4vw, 48px)',
-          color: COLORS.white, margin: '0 0 16px', fontWeight: 600,
+          color: COLORS.white, margin: '0 0 16px', fontWeight: 400,
         }}>
           Ready to Build?
         </h2>
