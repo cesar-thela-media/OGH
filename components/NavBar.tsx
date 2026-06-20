@@ -39,7 +39,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
           <span
             style={{
               color: COLORS.white,
-              fontFamily: FONTS.sans,
+              fontFamily: FONTS.body,
               fontSize: 13,
               letterSpacing: '0.20em',
               fontWeight: 600,
@@ -58,7 +58,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
                 href={link.href}
                 style={{
                   color: 'rgba(255,255,255,0.90)',
-                  fontFamily: FONTS.sans,
+                  fontFamily: FONTS.body,
                   fontSize: 14,
                   fontWeight: 400,
                   textDecoration: 'none',
@@ -77,7 +77,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
             style={{
               backgroundColor: COLORS.gold,
               color: '#fff',
-              fontFamily: FONTS.sans,
+              fontFamily: FONTS.body,
               fontSize: 13,
               fontWeight: 600,
               padding: '11px 26px',
@@ -146,7 +146,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
               onClick={() => setMenuOpen(false)}
               style={{
                 color: COLORS.white,
-                fontFamily: FONTS.serif,
+                fontFamily: FONTS.heading,
                 fontSize: 28,
                 textDecoration: 'none',
                 fontWeight: 400,
@@ -161,7 +161,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
             style={{
               backgroundColor: COLORS.gold,
               color: '#fff',
-              fontFamily: FONTS.sans,
+              fontFamily: FONTS.body,
               fontSize: 15,
               fontWeight: 600,
               padding: '14px 36px',

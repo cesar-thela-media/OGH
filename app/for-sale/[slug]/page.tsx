@@ -47,7 +47,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
           >
             <span
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 10,
                 fontWeight: 600,
                 color: COLORS.gold,
@@ -63,7 +63,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
             </span>
             <h1
               style={{
-                fontFamily: FONTS.serif,
+                fontFamily: FONTS.heading,
                 fontSize: 'clamp(36px, 4.5vw, 60px)',
                 fontWeight: 400,
                 color: COLORS.white,
@@ -91,7 +91,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
           >
             <p
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 28,
                 fontWeight: 700,
                 color: COLORS.gold,
@@ -109,7 +109,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
                 <div key={spec.label}>
                   <p
                     style={{
-                      fontFamily: FONTS.sans,
+                      fontFamily: FONTS.body,
                       fontSize: 11,
                       color: COLORS.grayText,
                       textTransform: 'uppercase',
@@ -121,7 +121,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
                   </p>
                   <p
                     style={{
-                      fontFamily: FONTS.serif,
+                      fontFamily: FONTS.heading,
                       fontSize: 24,
                       fontWeight: 400,
                       color: COLORS.navy,
@@ -148,7 +148,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
           >
             <h2
               style={{
-                fontFamily: FONTS.serif,
+                fontFamily: FONTS.heading,
                 fontSize: 22,
                 fontWeight: 400,
                 color: COLORS.navy,
@@ -226,7 +226,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
                       )}
                       <p
                         style={{
-                          fontFamily: FONTS.sans,
+                          fontFamily: FONTS.body,
                           fontSize: 11,
                           color: isActive ? COLORS.gold : COLORS.grayText,
                           whiteSpace: 'nowrap',
@@ -259,7 +259,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
             <a
               href="/for-sale"
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 14,
                 fontWeight: 600,
                 color: COLORS.navy,
@@ -274,7 +274,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
             <a
               href={CONTACT.phoneHref}
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 14,
                 fontWeight: 600,
                 backgroundColor: COLORS.gold,

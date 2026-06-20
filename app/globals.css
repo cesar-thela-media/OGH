@@ -14,8 +14,8 @@ body {
 }
 
 :root {
-  --font-display: 'DM Serif Display';
-  --font-body: 'DM Sans';
+  --font-heading: 'Montserrat';
+  --font-body: 'Open Sans';
 }
 
 @keyframes pulseDot {

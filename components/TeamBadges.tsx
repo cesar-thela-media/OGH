@@ -21,7 +21,7 @@ export default function TeamBadges() {
           >
             <span
               style={{
-                fontFamily: FONTS.serif,
+                fontFamily: FONTS.heading,
                 fontSize: 18,
                 fontWeight: 400,
                 color: COLORS.gold,
@@ -32,7 +32,7 @@ export default function TeamBadges() {
           </div>
           <p
             style={{
-              fontFamily: FONTS.sans,
+              fontFamily: FONTS.body,
               fontSize: 11,
               color: 'rgba(255,255,255,0.55)',
               marginTop: 8,

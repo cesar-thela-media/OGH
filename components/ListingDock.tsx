@@ -46,7 +46,7 @@ export default function ListingDock() {
             <div style={{ minWidth: 0 }}>
               <p
                 style={{
-                  fontFamily: FONTS.serif,
+                  fontFamily: FONTS.heading,
                   fontSize: 18,
                   fontWeight: 400,
                   color: COLORS.white,
@@ -69,7 +69,7 @@ export default function ListingDock() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
               <span
                 style={{
-                  fontFamily: FONTS.sans,
+                  fontFamily: FONTS.body,
                   fontSize: 16,
                   fontWeight: 600,
                   color: COLORS.gold,
@@ -81,7 +81,7 @@ export default function ListingDock() {
               </span>
               <span
                 style={{
-                  fontFamily: FONTS.sans,
+                  fontFamily: FONTS.body,
                   fontSize: 10,
                   fontWeight: 500,
                   color: COLORS.gold,
@@ -105,7 +105,7 @@ export default function ListingDock() {
 
 function Spec({ icon, value }: { icon: 'bed' | 'bath' | 'sqft'; value: string | number }) {
   return (
-    <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'rgba(255,255,255,0.60)', fontFamily: FONTS.sans, whiteSpace: 'nowrap' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'rgba(255,255,255,0.60)', fontFamily: FONTS.body, whiteSpace: 'nowrap' }}>
       <SpecIcon type={icon} /> {value}
     </span>
   );

@@ -100,7 +100,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
           >
             <span
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 10,
                 fontWeight: 600,
                 color: isCompleted ? '#22C55E' : COLORS.gold,
@@ -116,7 +116,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
             </span>
             <h1
               style={{
-                fontFamily: FONTS.serif,
+                fontFamily: FONTS.heading,
                 fontSize: 'clamp(36px, 4.5vw, 60px)',
                 fontWeight: 400,
                 color: COLORS.white,
@@ -126,7 +126,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
             >
               {project.name}
             </h1>
-            <p style={{ fontFamily: FONTS.sans, fontSize: 15, color: 'rgba(255,255,255,0.65)', margin: 0 }}>
+            <p style={{ fontFamily: FONTS.body, fontSize: 15, color: 'rgba(255,255,255,0.65)', margin: 0 }}>
               {project.location}
             </p>
           </div>
@@ -146,7 +146,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
           >
             <h2
               style={{
-                fontFamily: FONTS.serif,
+                fontFamily: FONTS.heading,
                 fontSize: 26,
                 fontWeight: 400,
                 color: COLORS.navy,
@@ -158,7 +158,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
             </h2>
             <p
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 15,
                 color: COLORS.navy,
                 lineHeight: 1.85,
@@ -179,7 +179,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
               <div>
                 <p
                   style={{
-                    fontFamily: FONTS.sans,
+                    fontFamily: FONTS.body,
                     fontSize: 11,
                     color: COLORS.grayText,
                     textTransform: 'uppercase',
@@ -189,14 +189,14 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
                 >
                   Specifications
                 </p>
-                <p style={{ fontFamily: FONTS.sans, fontSize: 15, color: COLORS.navy, margin: 0 }}>
+                <p style={{ fontFamily: FONTS.body, fontSize: 15, color: COLORS.navy, margin: 0 }}>
                   {project.specs}
                 </p>
               </div>
               <div>
                 <p
                   style={{
-                    fontFamily: FONTS.sans,
+                    fontFamily: FONTS.body,
                     fontSize: 11,
                     color: COLORS.grayText,
                     textTransform: 'uppercase',
@@ -208,7 +208,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
                 </p>
                 <p
                   style={{
-                    fontFamily: FONTS.sans,
+                    fontFamily: FONTS.body,
                     fontSize: 15,
                     color: isCompleted ? '#1F6B3A' : COLORS.navy,
                     margin: 0,
@@ -225,7 +225,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
             <a
               href="/portfolio"
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 14,
                 fontWeight: 600,
                 color: COLORS.navy,
@@ -240,7 +240,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
             <a
               href={CONTACT.phoneHref}
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 14,
                 fontWeight: 600,
                 backgroundColor: COLORS.gold,

@@ -18,7 +18,7 @@ export default function ProjectDashboardCard() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32 }}>
         <h3
           style={{
-            fontFamily: FONTS.serif,
+            fontFamily: FONTS.heading,
             fontSize: 26,
             fontWeight: 400,
             color: COLORS.navy,
@@ -33,7 +33,7 @@ export default function ProjectDashboardCard() {
             display: 'flex',
             alignItems: 'center',
             gap: 7,
-            fontFamily: FONTS.sans,
+            fontFamily: FONTS.body,
             fontSize: 12,
             color: COLORS.grayText,
           }}
@@ -67,7 +67,7 @@ export default function ProjectDashboardCard() {
               <StageNode status={stage.status} />
               <p
                 style={{
-                  fontFamily: FONTS.sans,
+                  fontFamily: FONTS.body,
                   fontSize: 11,
                   fontWeight: 400,
                   color: stage.status === 'active' ? COLORS.gold : COLORS.grayText,
@@ -111,7 +111,7 @@ export default function ProjectDashboardCard() {
           >
             <span
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 14,
                 fontWeight: 400,
                 color: COLORS.navy,
@@ -134,7 +134,7 @@ export default function ProjectDashboardCard() {
           border: `1.5px solid ${COLORS.gold}`,
           borderRadius: 999,
           color: COLORS.gold,
-          fontFamily: FONTS.sans,
+          fontFamily: FONTS.body,
           fontSize: 13,
           fontWeight: 600,
           cursor: 'pointer',
@@ -170,7 +170,7 @@ function PillValue({ pill, value }: { pill: LedgerPill; value: string }) {
   };
 
   return (
-    <span style={{ fontFamily: FONTS.sans, fontWeight: 600, ...styles[pill] }}>
+    <span style={{ fontFamily: FONTS.body, fontWeight: 600, ...styles[pill] }}>
       {value}
     </span>
   );

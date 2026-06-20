@@ -13,8 +13,8 @@ export const COLORS = {
 };
 
 export const FONTS = {
-  serif: 'var(--font-display), Georgia, serif',
-  sans:  'var(--font-body), system-ui, sans-serif',
+  heading: 'var(--font-heading), Montserrat, sans-serif',
+  body:    'var(--font-body), "Open Sans", sans-serif',
 };
 
 export const CONTACT = {
@@ -22,3 +22,11 @@ export const CONTACT = {
   phoneHref: 'tel:+13617658888',
   email:     'info@oceangloryhomes.com',
 };
+
+export const LOGO_URL = 'https://oceangloryhomes.com/wp-content/uploads/2016/06/ocean-glory-homes-.png';
+
+export const SOCIALS = [
+  { kind: 'instagram' as const, href: 'https://www.instagram.com/oceanglory_homes/' },
+  { kind: 'facebook'  as const, href: 'https://www.facebook.com/oceangloryhomes/' },
+  { kind: 'tiktok'    as const, href: 'https://www.tiktok.com/@oceangloryhomes' },
+];

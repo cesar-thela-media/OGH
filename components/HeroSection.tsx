@@ -51,7 +51,7 @@ export default function HeroSection() {
         <div style={{ textAlign: 'center', padding: '0 24px', marginBottom: 44 }}>
           <h1
             style={{
-              fontFamily: FONTS.serif,
+              fontFamily: FONTS.heading,
               fontSize: 'clamp(54px, 6vw, 92px)',
               fontWeight: 400,
               lineHeight: 1.08,

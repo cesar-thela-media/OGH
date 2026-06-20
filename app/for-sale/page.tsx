@@ -9,52 +9,18 @@ export default function ForSalePage() {
     <>
       <NavBar />
       <main style={{ backgroundColor: COLORS.offWhite, minHeight: '100vh' }}>
-        {/* Page header */}
-        <section
-          style={{
-            backgroundColor: COLORS.navy,
-            padding: '88px 24px 72px',
-            textAlign: 'center',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: FONTS.sans,
-              fontSize: 11,
-              letterSpacing: '0.20em',
-              textTransform: 'uppercase',
-              color: COLORS.gold,
-              fontWeight: 600,
-              margin: 0,
-            }}
-          >
+        <section style={{ backgroundColor: COLORS.navy, padding: '88px 24px 72px', textAlign: 'center' }}>
+          <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: 0 }}>
             Current Opportunities
           </p>
-          <h1
-            style={{
-              fontFamily: FONTS.serif,
-              fontSize: 'clamp(40px, 5vw, 72px)',
-              fontWeight: 400,
-              color: COLORS.white,
-              marginTop: 14,
-              marginBottom: 0,
-              letterSpacing: '-0.02em',
-              lineHeight: 1.08,
-            }}
-          >
+          <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(40px, 5vw, 68px)', fontWeight: 400, color: COLORS.white, marginTop: 14, marginBottom: 0, lineHeight: 1.08 }}>
             Available Homes
           </h1>
         </section>
 
-        {/* Listing grid */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '72px 32px' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-              gap: 32,
-            }}
-          >
+        {/* 2-column listing grid */}
+        <section style={{ maxWidth: 1100, margin: '0 auto', padding: '64px 32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(460px, 1fr))', gap: 36 }}>
             {listings.map(listing => (
               <Link
                 key={listing.id}
@@ -63,78 +29,35 @@ export default function ForSalePage() {
                   backgroundColor: COLORS.white,
                   borderRadius: 16,
                   overflow: 'hidden',
-                  boxShadow: '0 4px 24px rgba(13,43,82,0.08)',
+                  boxShadow: '0 2px 16px rgba(13,43,82,0.06)',
                   textDecoration: 'none',
-                  display: 'block',
-                  border: '1px solid rgba(13,43,82,0.06)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '1px solid rgba(13,43,82,0.05)',
                 }}
               >
-                <div style={{ width: '100%', height: 260, overflow: 'hidden', position: 'relative' }}>
-                  <img
-                    src={listing.image}
-                    alt={listing.address}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: 16,
-                      right: 16,
-                      fontFamily: FONTS.sans,
-                      fontSize: 10,
-                      fontWeight: 600,
-                      color: COLORS.gold,
-                      border: `1px solid rgba(201,168,78,0.6)`,
-                      borderRadius: 999,
-                      padding: '4px 12px',
-                      backgroundColor: 'rgba(13,43,82,0.72)',
-                      backdropFilter: 'blur(8px)',
-                      letterSpacing: '0.04em',
-                    }}
-                  >
+                <div style={{ width: '100%', height: 340, overflow: 'hidden', position: 'relative' }}>
+                  <img src={listing.image} alt={listing.address} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <span style={{
+                    position: 'absolute', top: 16, right: 16,
+                    fontFamily: FONTS.body, fontSize: 11, fontWeight: 600,
+                    color: COLORS.gold, border: `1px solid ${COLORS.gold}`,
+                    borderRadius: 999, padding: '5px 14px',
+                    backgroundColor: 'rgba(13,43,82,0.70)', backdropFilter: 'blur(8px)',
+                  }}>
                     {listing.stage}
-                  </div>
+                  </span>
                 </div>
-                <div style={{ padding: '24px 28px 28px' }}>
-                  <h3
-                    style={{
-                      fontFamily: FONTS.serif,
-                      fontSize: 24,
-                      fontWeight: 400,
-                      color: COLORS.navy,
-                      margin: '0 0 10px',
-                      letterSpacing: '-0.02em',
-                    }}
-                  >
+                <div style={{ padding: '28px 32px 32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontFamily: FONTS.heading, fontSize: 26, fontWeight: 400, color: COLORS.navy, margin: '0 0 12px' }}>
                     {listing.address}
                   </h3>
-                  <div style={{ display: 'flex', gap: 24, marginBottom: 16 }}>
-                    {[
-                      `${listing.beds} Beds`,
-                      `${listing.baths} Baths`,
-                      `${listing.sqft.toLocaleString()} sqft`,
-                    ].map(spec => (
-                      <span
-                        key={spec}
-                        style={{
-                          fontFamily: FONTS.sans,
-                          fontSize: 13,
-                          color: COLORS.grayText,
-                        }}
-                      >
-                        {spec}
-                      </span>
-                    ))}
+                  <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
+                    <span style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.grayText }}>{listing.beds} Beds</span>
+                    <span style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.grayText }}>{listing.baths} Baths</span>
+                    <span style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.grayText }}>{listing.sqft.toLocaleString()} sqft</span>
                   </div>
-                  <p
-                    style={{
-                      fontFamily: FONTS.sans,
-                      fontSize: 22,
-                      fontWeight: 600,
-                      color: COLORS.gold,
-                      margin: 0,
-                    }}
-                  >
+                  <p style={{ fontFamily: FONTS.body, fontSize: 24, fontWeight: 600, color: COLORS.gold, margin: 'auto 0 0' }}>
                     {listing.price}
                   </p>
                 </div>
@@ -143,33 +66,15 @@ export default function ForSalePage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section style={{ textAlign: 'center', padding: '0 24px 88px' }}>
-          <p
-            style={{
-              fontFamily: FONTS.sans,
-              fontSize: 15,
-              color: COLORS.grayText,
-              marginBottom: 24,
-            }}
-          >
+          <p style={{ fontFamily: FONTS.body, fontSize: 16, color: COLORS.grayText, marginBottom: 24 }}>
             Interested in a property? Call to schedule a private showing.
           </p>
-          <a
-            href={CONTACT.phoneHref}
-            style={{
-              display: 'inline-block',
-              backgroundColor: COLORS.gold,
-              color: '#fff',
-              fontFamily: FONTS.sans,
-              fontSize: 15,
-              fontWeight: 600,
-              padding: '15px 40px',
-              borderRadius: 999,
-              textDecoration: 'none',
-              letterSpacing: '0.02em',
-            }}
-          >
+          <a href={CONTACT.phoneHref} style={{
+            display: 'inline-block', backgroundColor: COLORS.gold, color: '#fff',
+            fontFamily: FONTS.body, fontSize: 15, fontWeight: 600,
+            padding: '16px 40px', borderRadius: 999, textDecoration: 'none',
+          }}>
             {CONTACT.phone}
           </a>
         </section>

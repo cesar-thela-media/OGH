@@ -199,7 +199,7 @@ export default function BlueprintArtifact() {
         <span
           style={{
             color: COLORS.gold,
-            fontFamily: FONTS.sans,
+            fontFamily: FONTS.body,
             fontSize: 9,
             letterSpacing: '0.18em',
             textTransform: 'uppercase',

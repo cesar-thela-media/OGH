@@ -1,6 +1,8 @@
 import HeroSection from '@/components/HeroSection';
 import DesignBuildSection from '@/components/DesignBuildSection';
 import TransparencySection from '@/components/TransparencySection';
+import AboutPreviewSection from '@/components/AboutPreviewSection';
+import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -9,6 +11,8 @@ export default function Home() {
       <HeroSection />
       <DesignBuildSection />
       <TransparencySection />
+      <AboutPreviewSection />
+      <CTASection />
       <Footer />
     </main>
   );

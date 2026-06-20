@@ -19,7 +19,7 @@ export default function DesignBuildSection() {
       {/* Gold eyebrow */}
       <p
         style={{
-          fontFamily: FONTS.sans,
+          fontFamily: FONTS.body,
           fontSize: 11,
           letterSpacing: '0.22em',
           textTransform: 'uppercase',
@@ -34,7 +34,7 @@ export default function DesignBuildSection() {
       {/* Main headline */}
       <h2
         style={{
-          fontFamily: FONTS.serif,
+          fontFamily: FONTS.heading,
           fontSize: isMobile ? 'clamp(38px, 8vw, 56px)' : 'clamp(44px, 4.8vw, 76px)',
           fontWeight: 400,
           color: COLORS.navy,
@@ -51,7 +51,7 @@ export default function DesignBuildSection() {
       {/* Subtitle */}
       <p
         style={{
-          fontFamily: FONTS.sans,
+          fontFamily: FONTS.body,
           fontSize: 15,
           color: COLORS.grayText,
           marginTop: 18,
@@ -92,7 +92,7 @@ export default function DesignBuildSection() {
             )}
             <span
               style={{
-                fontFamily: FONTS.sans,
+                fontFamily: FONTS.body,
                 fontSize: 14,
                 color: COLORS.grayText,
                 fontWeight: 400,

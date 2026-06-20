@@ -33,7 +33,7 @@ export default function CredentialList() {
           </span>
           <span
             style={{
-              fontFamily: FONTS.sans,
+              fontFamily: FONTS.body,
               fontSize: 15,
               fontWeight: 400,
               color: COLORS.white,

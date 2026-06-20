@@ -1,228 +1,142 @@
 'use client';
-import type { CSSProperties } from 'react';
+import { useState, type FormEvent, type CSSProperties } from 'react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
-const contactCards = [
-  {
-    label: 'Call Us',
-    value: CONTACT.phone,
-    href: CONTACT.phoneHref,
-    detail: 'Mon – Sat, 8am – 6pm',
-  },
-  {
-    label: 'Email Us',
-    value: CONTACT.email,
-    href: `mailto:${CONTACT.email}`,
-    detail: 'Response within 24 hours',
-  },
-  {
-    label: 'Office',
-    value: 'Corpus Christi, TX',
-    href: '#',
-    detail: 'By appointment only',
-  },
-];
+// ── Webhook endpoint (replace with your n8n webhook URL) ──
+const WEBHOOK_URL = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK || '';
 
 const inputStyle: CSSProperties = {
-  width: '100%',
-  padding: '13px 16px',
-  borderRadius: 10,
-  border: `1px solid rgba(13,43,82,0.14)`,
-  fontFamily: FONTS.sans,
-  fontSize: 14,
-  color: COLORS.navy,
-  outline: 'none',
-  boxSizing: 'border-box',
-  backgroundColor: '#FAFBFC',
+  width: '100%', padding: '14px 16px', borderRadius: 10,
+  border: `1px solid rgba(13,43,82,0.14)`, fontFamily: FONTS.body,
+  fontSize: 14, color: COLORS.navy, outline: 'none',
+  boxSizing: 'border-box', backgroundColor: '#FAFBFC',
 };
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    if (WEBHOOK_URL) {
+      setStatus('sending');
+      try {
+        await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        setStatus('sent');
+        form.reset();
+      } catch { setStatus('idle'); }
+    } else {
+      setStatus('sent');
+      form.reset();
+    }
+  };
+
   return (
     <>
       <NavBar />
-      <main style={{ backgroundColor: COLORS.offWhite, minHeight: '100vh' }}>
-        {/* Page header */}
-        <section
-          style={{
-            backgroundColor: COLORS.navy,
-            padding: '88px 24px 72px',
-            textAlign: 'center',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: FONTS.sans,
-              fontSize: 11,
-              letterSpacing: '0.20em',
-              textTransform: 'uppercase',
-              color: COLORS.gold,
-              fontWeight: 600,
-              margin: 0,
-            }}
-          >
+      <main style={{ backgroundColor: COLORS.offWhite }}>
+        <section style={{ backgroundColor: COLORS.navy, padding: '88px 24px 72px', textAlign: 'center' }}>
+          <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: 0 }}>
             Get In Touch
           </p>
-          <h1
-            style={{
-              fontFamily: FONTS.serif,
-              fontSize: 'clamp(40px, 5vw, 72px)',
-              fontWeight: 400,
-              color: COLORS.white,
-              marginTop: 14,
-              marginBottom: 0,
-              letterSpacing: '-0.02em',
-              lineHeight: 1.08,
-            }}
-          >
+          <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 400, color: COLORS.white, marginTop: 14, marginBottom: 0, lineHeight: 1.08 }}>
             Contact Us
           </h1>
         </section>
 
-        <section style={{ maxWidth: 860, margin: '0 auto', padding: '72px 32px 88px' }}>
-          {/* Contact cards */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: 20,
-              marginBottom: 56,
-            }}
-          >
-            {contactCards.map(card => (
-              <div
-                key={card.label}
-                style={{
-                  backgroundColor: COLORS.white,
-                  borderRadius: 14,
-                  padding: '28px 24px',
-                  boxShadow: '0 4px 20px rgba(13,43,82,0.07)',
-                  textAlign: 'center',
-                  border: '1px solid rgba(13,43,82,0.05)',
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: FONTS.sans,
-                    fontSize: 10,
-                    letterSpacing: '0.18em',
-                    textTransform: 'uppercase',
-                    color: COLORS.gold,
-                    fontWeight: 700,
-                    margin: '0 0 14px',
-                  }}
-                >
-                  {card.label}
+        {/* Two-column layout */}
+        <section style={{ maxWidth: 1080, margin: '0 auto', padding: '72px 32px 88px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 48, alignItems: 'start' }}>
+
+            {/* LEFT: Contact details */}
+            <div>
+              <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 400, color: COLORS.navy, margin: '0 0 32px' }}>
+                Let&apos;s Talk
+              </h2>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+                {[
+                  { label: 'Call Us', value: CONTACT.phone, href: CONTACT.phoneHref, icon: '📞' },
+                  { label: 'Email', value: CONTACT.email, href: `mailto:${CONTACT.email}`, icon: '✉️' },
+                  { label: 'Office', value: 'Corpus Christi, Texas', href: '#', icon: '📍' },
+                ].map(item => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    style={{
+                      display: 'flex', alignItems: 'flex-start', gap: 16,
+                      padding: '20px 24px', backgroundColor: COLORS.white,
+                      borderRadius: 14, textDecoration: 'none',
+                      boxShadow: '0 2px 12px rgba(13,43,82,0.05)',
+                      border: '1px solid rgba(13,43,82,0.05)',
+                    }}
+                  >
+                    <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
+                    <div>
+                      <p style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.10em', margin: '0 0 4px' }}>
+                        {item.label}
+                      </p>
+                      <p style={{ fontFamily: FONTS.heading, fontSize: 18, color: COLORS.navy, margin: 0 }}>{item.value}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Service area */}
+              <div style={{ marginTop: 32, backgroundColor: COLORS.white, borderRadius: 14, padding: '24px', boxShadow: '0 2px 12px rgba(13,43,82,0.05)' }}>
+                <p style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.10em', margin: '0 0 8px' }}>
+                  Service Area
                 </p>
-                <a
-                  href={card.href}
-                  style={{
-                    fontFamily: FONTS.serif,
-                    fontSize: 19,
-                    fontWeight: 400,
-                    color: COLORS.navy,
-                    textDecoration: 'none',
-                    display: 'block',
-                    marginBottom: 8,
-                    letterSpacing: '-0.02em',
-                  }}
-                >
-                  {card.value}
-                </a>
-                <p style={{ fontFamily: FONTS.sans, fontSize: 12, color: COLORS.grayText, margin: 0 }}>
-                  {card.detail}
+                <p style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.grayText, margin: 0, lineHeight: 1.6 }}>
+                  Rockport · Portland · Corpus Christi · Port Aransas · Laguna Vista · Padre Island, Texas
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
 
-          {/* Inquiry form */}
-          <div
-            style={{
-              backgroundColor: COLORS.white,
-              borderRadius: 20,
-              padding: '44px 48px',
-              boxShadow: '0 4px 24px rgba(13,43,82,0.07)',
-              border: '1px solid rgba(13,43,82,0.05)',
-            }}
-          >
-            <h2
-              style={{
-                fontFamily: FONTS.serif,
-                fontSize: 'clamp(26px, 3vw, 38px)',
-                fontWeight: 400,
-                color: COLORS.navy,
-                margin: '0 0 6px',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Send a Message
-            </h2>
-            <p style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.grayText, margin: '0 0 32px' }}>
-              Tell us about your project — we reply within one business day.
-            </p>
+            {/* RIGHT: Form */}
+            <div style={{ backgroundColor: COLORS.white, borderRadius: 20, padding: 40, boxShadow: '0 2px 16px rgba(13,43,82,0.06)' }}>
+              <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(24px, 2.5vw, 32px)', fontWeight: 400, color: COLORS.navy, margin: '0 0 6px' }}>
+                Send a Message
+              </h2>
+              <p style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.grayText, margin: '0 0 28px' }}>
+                We reply within one business day.
+              </p>
 
-            <form onSubmit={e => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-                <div>
-                  <label style={{ fontFamily: FONTS.sans, fontSize: 13, fontWeight: 500, color: COLORS.navy, display: 'block', marginBottom: 6 }}>
-                    First Name
-                  </label>
-                  <input type="text" placeholder="John" style={inputStyle} />
-                </div>
-                <div>
-                  <label style={{ fontFamily: FONTS.sans, fontSize: 13, fontWeight: 500, color: COLORS.navy, display: 'block', marginBottom: 6 }}>
-                    Last Name
-                  </label>
-                  <input type="text" placeholder="Smith" style={inputStyle} />
-                </div>
-              </div>
-
-              <div>
-                <label style={{ fontFamily: FONTS.sans, fontSize: 13, fontWeight: 500, color: COLORS.navy, display: 'block', marginBottom: 6 }}>
-                  Email
-                </label>
-                <input type="email" placeholder="john@example.com" style={inputStyle} />
-              </div>
-
-              <div>
-                <label style={{ fontFamily: FONTS.sans, fontSize: 13, fontWeight: 500, color: COLORS.navy, display: 'block', marginBottom: 6 }}>
-                  Phone
-                </label>
-                <input type="tel" placeholder="(361) 555-0123" style={inputStyle} />
-              </div>
-
-              <div>
-                <label style={{ fontFamily: FONTS.sans, fontSize: 13, fontWeight: 500, color: COLORS.navy, display: 'block', marginBottom: 6 }}>
-                  Tell us about your project
-                </label>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <input type="text" name="firstName" placeholder="First Name" required style={inputStyle} />
+                <input type="text" name="lastName" placeholder="Last Name" required style={inputStyle} />
+                <input type="email" name="email" placeholder="Email address" required style={inputStyle} />
+                <input type="tel" name="phone" placeholder="Phone number" style={inputStyle} />
                 <textarea
+                  name="message"
                   rows={4}
-                  placeholder="I'm interested in building a custom home in the Corpus Christi area..."
+                  placeholder="Tell us about your project..."
                   style={{ ...inputStyle, resize: 'vertical' }}
                 />
-              </div>
 
-              <button
-                type="submit"
-                style={{
-                  backgroundColor: COLORS.gold,
-                  color: '#fff',
-                  fontFamily: FONTS.sans,
-                  fontSize: 14,
-                  fontWeight: 600,
-                  padding: '14px 40px',
-                  borderRadius: 999,
-                  border: 'none',
-                  cursor: 'pointer',
-                  alignSelf: 'flex-start',
-                  letterSpacing: '0.02em',
-                }}
-              >
-                Send Message
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  style={{
+                    backgroundColor: COLORS.gold, color: '#fff',
+                    fontFamily: FONTS.body, fontSize: 15, fontWeight: 600,
+                    padding: '15px 32px', borderRadius: 999, border: 'none',
+                    cursor: status === 'sending' ? 'wait' : 'pointer',
+                    opacity: status === 'sending' ? 0.7 : 1,
+                  }}
+                >
+                  {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Message Sent ✓' : 'Send Message'}
+                </button>
+              </form>
+            </div>
           </div>
         </section>
       </main>
