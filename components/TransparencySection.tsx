@@ -8,7 +8,7 @@ export default function TransparencySection() {
   const isMobile = useIsMobile();
 
   return (
-    <section style={{ backgroundColor: COLORS.offWhite, padding: isMobile ? '64px 24px' : '96px 64px' }}>
+    <section style={{ backgroundColor: COLORS.navy, padding: isMobile ? '64px 24px' : '96px 64px' }}>
       <div style={{ maxWidth: 1080, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <p style={{
@@ -19,17 +19,17 @@ export default function TransparencySection() {
           </p>
           <h2 style={{
             fontFamily: FONTS.heading, fontSize: 'clamp(36px, 4.5vw, 60px)',
-            color: COLORS.navy, marginTop: 16, fontWeight: 400, lineHeight: 1.12,
+            color: COLORS.white, marginTop: 16, fontWeight: 400, lineHeight: 1.12,
           }}>
             Building with Integrity
           </h2>
           <p style={{
-            fontFamily: FONTS.body, fontSize: 17, color: COLORS.grayText,
+            fontFamily: FONTS.body, fontSize: 17, color: 'rgba(255,255,255,0.60)',
             maxWidth: 620, margin: '20px auto 0', lineHeight: 1.7,
           }}>
             We operate with complete transparency on costs, timelines, and construction quality.
-            Our clients always know where their project stands, because frequent communication
-            isn&apos;t an afterthought — it&apos;s how we build.
+            Our clients always know where their project stands — frequent communication
+            isn&apos;t an afterthought, it&apos;s how we build.
           </p>
         </div>
 
