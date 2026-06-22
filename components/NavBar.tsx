@@ -8,7 +8,6 @@ const navLinks = [
   { label: 'For Sale',  href: '/for-sale' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'About',     href: '/about' },
-  { label: 'Contact',   href: '/contact' },
 ];
 
 export default function NavBar({ transparent = false }: { transparent?: boolean }) {
@@ -20,145 +19,94 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
       <nav
         style={{
           position: transparent ? 'absolute' : 'sticky',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 10,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: isMobile ? '18px 24px' : '22px 60px',
-          backgroundColor: transparent ? 'rgba(13,43,82,0.22)' : COLORS.navy,
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          borderBottom: transparent ? '1px solid rgba(255,255,255,0.10)' : 'none',
+          top: 0, left: 0, right: 0, zIndex: 10,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: isMobile ? '16px 24px' : '16px 64px',
+          backgroundColor: transparent ? 'rgba(13,43,82,0.18)' : COLORS.navy,
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: transparent ? '1px solid rgba(255,255,255,0.06)' : 'none',
         }}
       >
         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src={LOGO_URL} alt="Ocean Glory Homes" style={{ height: 40, width: 'auto' }} />
+          <img src={LOGO_URL} alt="Ocean Glory Homes" style={{ height: 36, width: 'auto' }} />
         </Link>
 
         {!isMobile && (
-          <div style={{ display: 'flex', gap: 44 }}>
+          <div style={{ display: 'flex', gap: 48, alignItems: 'center' }}>
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
                 style={{
-                  color: 'rgba(255,255,255,0.90)',
-                  fontFamily: FONTS.body,
-                  fontSize: 14,
-                  fontWeight: 400,
+                  color: 'rgba(255,255,255,0.85)',
+                  fontFamily: FONTS.heading,
+                  fontSize: 15,
+                  fontWeight: 500,
                   textDecoration: 'none',
-                  letterSpacing: '0.01em',
+                  letterSpacing: '0.02em',
                 }}
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              style={{
+                backgroundColor: COLORS.gold,
+                color: COLORS.navy,
+                fontFamily: FONTS.body,
+                fontSize: 13,
+                fontWeight: 700,
+                padding: '10px 24px',
+                borderRadius: 999,
+                textDecoration: 'none',
+                letterSpacing: '0.03em',
+              }}
+            >
+              Contact Us
+            </Link>
           </div>
-        )}
-
-        {!isMobile && (
-          <Link
-            href="/for-sale"
-            style={{
-              backgroundColor: COLORS.gold,
-              color: '#fff',
-              fontFamily: FONTS.body,
-              fontSize: 13,
-              fontWeight: 600,
-              padding: '11px 26px',
-              borderRadius: 999,
-              textDecoration: 'none',
-              letterSpacing: '0.02em',
-            }}
-          >
-            See Available Homes
-          </Link>
         )}
 
         {isMobile && (
           <button
             onClick={() => setMenuOpen(o => !o)}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 5,
-            }}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4, display: 'flex', flexDirection: 'column', gap: 5 }}
             aria-label="Toggle menu"
           >
             {[0, 1, 2].map(i => (
-              <span
-                key={i}
-                style={{ display: 'block', width: 22, height: 2, backgroundColor: COLORS.white, borderRadius: 2 }}
-              />
+              <span key={i} style={{ display: 'block', width: 22, height: 2, backgroundColor: COLORS.white, borderRadius: 2 }} />
             ))}
           </button>
         )}
       </nav>
 
       {isMobile && menuOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0, left: 0, right: 0, bottom: 0,
-            backgroundColor: COLORS.navy,
-            zIndex: 100,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 32,
-          }}
-        >
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: COLORS.navy, zIndex: 100,
+          display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center', gap: 32,
+        }}>
           <button
             onClick={() => setMenuOpen(false)}
-            style={{
-              position: 'absolute', top: 24, right: 24,
-              background: 'none', border: 'none', color: COLORS.white,
-              fontSize: 28, cursor: 'pointer',
-            }}
+            style={{ position: 'absolute', top: 24, right: 24, background: 'none', border: 'none', color: COLORS.white, fontSize: 28, cursor: 'pointer' }}
             aria-label="Close menu"
-          >
-            ×
-          </button>
+          >×</button>
           {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                color: COLORS.white,
-                fontFamily: FONTS.heading,
-                fontSize: 28,
-                textDecoration: 'none',
-                fontWeight: 400,
-              }}
-            >
+            <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
+              style={{ color: COLORS.white, fontFamily: FONTS.heading, fontSize: 28, textDecoration: 'none', fontWeight: 400 }}>
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/for-sale"
-            onClick={() => setMenuOpen(false)}
+          <Link href="/contact" onClick={() => setMenuOpen(false)}
             style={{
-              backgroundColor: COLORS.gold,
-              color: '#fff',
-              fontFamily: FONTS.body,
-              fontSize: 15,
-              fontWeight: 600,
-              padding: '14px 36px',
-              borderRadius: 999,
-              textDecoration: 'none',
-              marginTop: 8,
-            }}
-          >
-            See Available Homes
+              backgroundColor: COLORS.gold, color: COLORS.navy,
+              fontFamily: FONTS.body, fontSize: 16, fontWeight: 700,
+              padding: '14px 36px', borderRadius: 999, textDecoration: 'none', marginTop: 8,
+            }}>
+            Contact Us
           </Link>
         </div>
       )}

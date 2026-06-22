@@ -16,7 +16,7 @@ const bottomLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: COLORS.navy, position: 'relative', overflow: 'hidden' }}>
+    <footer style={{ backgroundColor: COLORS.gold, position: 'relative', overflow: 'hidden' }}>
       <div
         style={{
           borderTop: `1px solid ${COLORS.goldSoft}`,
@@ -33,22 +33,22 @@ export default function Footer() {
           <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 16 }}>
             <img src={LOGO_URL} alt="Ocean Glory Homes" style={{ height: 36, width: 'auto' }} />
           </Link>
-          <p style={{ fontFamily: FONTS.body, fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, margin: '0 0 16px', maxWidth: 300 }}>
+          <p style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.navy, lineHeight: 1.7, margin: '0 0 16px', maxWidth: 300, opacity: 0.7 }}>
             A locally owned custom home builder serving Rockport, Portland, and Corpus Christi, Texas.
           </p>
-          <p style={{ fontFamily: FONTS.body, fontSize: 13, color: 'rgba(255,255,255,0.45)', margin: 0 }}>
-            <a href={CONTACT.phoneHref} style={{ color: COLORS.gold, textDecoration: 'none', fontWeight: 600 }}>{CONTACT.phone}</a>
+          <p style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.navy, margin: 0, opacity: 0.6 }}>
+            <a href={CONTACT.phoneHref} style={{ color: COLORS.navy, textDecoration: 'none', fontWeight: 700 }}>{CONTACT.phone}</a>
           </p>
         </div>
 
         {/* Nav column */}
         <div style={{ flex: '0 1 auto' }}>
-          <p style={{ fontFamily: FONTS.body, fontSize: 12, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.12em', margin: '0 0 20px' }}>
+          <p style={{ fontFamily: FONTS.body, fontSize: 12, fontWeight: 700, color: COLORS.navy, textTransform: 'uppercase', letterSpacing: '0.12em', margin: '0 0 20px', opacity: 0.8 }}>
             Navigate
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {footerLinks.map(link => (
-              <Link key={link.href} href={link.href} style={{ fontFamily: FONTS.body, fontSize: 14, color: 'rgba(255,255,255,0.70)', textDecoration: 'none' }}>
+              <Link key={link.href} href={link.href} style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.navy, textDecoration: 'none', opacity: 0.65 }}>
                 {link.label}
               </Link>
             ))}
@@ -57,7 +57,7 @@ export default function Footer() {
 
         {/* Social column */}
         <div style={{ flex: '0 1 auto' }}>
-          <p style={{ fontFamily: FONTS.body, fontSize: 12, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.12em', margin: '0 0 20px' }}>
+          <p style={{ fontFamily: FONTS.body, fontSize: 12, fontWeight: 700, color: COLORS.navy, textTransform: 'uppercase', letterSpacing: '0.12em', margin: '0 0 20px', opacity: 0.8 }}>
             Follow Us
           </p>
           <div style={{ display: 'flex', gap: 12 }}>
@@ -70,7 +70,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div style={{
-        borderTop: '1px solid rgba(255,255,255,0.08)',
+        borderTop: '1px solid rgba(13,43,82,0.10)',
         padding: '20px 60px',
         display: 'flex',
         justifyContent: 'space-between',
@@ -80,12 +80,12 @@ export default function Footer() {
         position: 'relative',
         zIndex: 1,
       }}>
-        <span style={{ fontFamily: FONTS.body, fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>
+        <span style={{ fontFamily: FONTS.body, fontSize: 12, color: COLORS.navy, opacity: 0.5 }}>
           &copy; {new Date().getFullYear()} Ocean Glory Homes. All rights reserved.
         </span>
         <div style={{ display: 'flex', gap: 24 }}>
           {bottomLinks.map(link => (
-            <Link key={link.label} href={link.href} style={{ fontFamily: FONTS.body, fontSize: 12, color: 'rgba(255,255,255,0.40)', textDecoration: 'none' }}>
+            <Link key={link.label} href={link.href} style={{ fontFamily: FONTS.body, fontSize: 12, color: COLORS.navy, textDecoration: 'none', opacity: 0.5 }}>
               {link.label}
             </Link>
           ))}
@@ -96,7 +96,7 @@ export default function Footer() {
       <span style={{
         position: 'absolute', bottom: -80, right: -16,
         fontFamily: FONTS.heading, fontSize: 300,
-        color: 'rgba(107,174,212,0.04)', lineHeight: 1,
+        color: 'rgba(13,43,82,0.04)', lineHeight: 1,
         pointerEvents: 'none', userSelect: 'none', fontStyle: 'italic',
       }}>
         O
@@ -113,22 +113,18 @@ function SocialIcon({ kind, href }: { kind: string; href: string }) {
       rel="noopener noreferrer"
       aria-label={kind}
       style={{
-        width: 34,
-        height: 34,
-        borderRadius: '50%',
-        border: '1px solid rgba(255,255,255,0.22)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        width: 34, height: 34, borderRadius: '50%',
+        border: '1px solid rgba(13,43,82,0.22)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
         textDecoration: 'none',
       }}
     >
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" strokeWidth="1.5">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={COLORS.navy} strokeWidth="1.5" opacity={0.6}>
         {kind === 'instagram' && (
           <>
             <rect x="3" y="3" width="18" height="18" rx="5" />
             <circle cx="12" cy="12" r="4" />
-            <circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,0.75)" stroke="none" />
+            <circle cx="17.5" cy="6.5" r="1" fill={COLORS.navy} stroke="none" opacity={0.6} />
           </>
         )}
         {kind === 'facebook' && (

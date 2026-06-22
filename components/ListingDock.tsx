@@ -79,22 +79,18 @@ export default function ListingDock() {
               >
                 {listing.price}
               </span>
-              <span
+              <Link
+                href={`/for-sale/${listing.id}`}
                 style={{
-                  fontFamily: FONTS.body,
-                  fontSize: 10,
-                  fontWeight: 500,
-                  color: COLORS.gold,
-                  border: `1px solid rgba(201,168,78,0.45)`,
-                  borderRadius: 999,
-                  padding: '4px 12px',
-                  whiteSpace: 'nowrap',
-                  flexShrink: 0,
-                  letterSpacing: '0.06em',
+                  fontFamily: FONTS.body, fontSize: 10, fontWeight: 600,
+                  color: COLORS.navy, backgroundColor: COLORS.gold,
+                  borderRadius: 999, padding: '5px 14px',
+                  whiteSpace: 'nowrap', flexShrink: 0,
+                  textDecoration: 'none',
                 }}
               >
-                {listing.stage}
-              </span>
+                View →
+              </Link>
             </div>
           </div>
         </Link>
