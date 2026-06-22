@@ -38,18 +38,6 @@ export default function PortfolioPage() {
     <>
       <NavBar />
       <main style={{ backgroundColor: COLORS.offWhite }}>
-        <section style={{ backgroundColor: COLORS.navy, padding: '88px 24px 72px', textAlign: 'center' }}>
-          <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: 0 }}>
-            Our Work
-          </p>
-          <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(40px, 5vw, 68px)', fontWeight: 400, color: COLORS.white, marginTop: 14, marginBottom: 0, lineHeight: 1.08 }}>
-            Customized Quality &amp; Creativity
-          </h1>
-          <p style={{ fontFamily: FONTS.body, fontSize: 16, color: 'rgba(255,255,255,0.55)', maxWidth: 500, margin: '18px auto 0' }}>
-            A part of every home we build — browse our gallery of finished spaces.
-          </p>
-        </section>
-
         {/* Category galleries */}
         {categories.map((cat, ci) => (
           <section key={cat.name} style={{ padding: ci === 0 ? '72px 32px 48px' : '48px 32px', maxWidth: 1100, margin: '0 auto' }}>

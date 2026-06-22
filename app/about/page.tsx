@@ -9,15 +9,6 @@ export default function AboutPage() {
     <>
       <NavBar />
       <main style={{ backgroundColor: COLORS.offWhite }}>
-        <section style={{ backgroundColor: COLORS.navy, padding: '88px 24px 72px', textAlign: 'center' }}>
-          <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: 0 }}>
-            Family Owned · 11+ Years
-          </p>
-          <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(40px, 5vw, 64px)', fontWeight: 400, color: COLORS.white, marginTop: 14, marginBottom: 0, lineHeight: 1.08 }}>
-            About Ocean Glory Homes
-          </h1>
-        </section>
-
         {/* Visual bento grid */}
         <section style={{ maxWidth: 1080, margin: '0 auto', padding: '72px 32px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28 }}>

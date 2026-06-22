@@ -9,9 +9,9 @@ const footerLinks = [
 ];
 
 const bottomLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Builder News',   href: '#' },
-  { label: 'Español',        href: '#' },
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Builder News',   href: '/news' },
+  { label: 'Español',        href: '/espanol' },
 ];
 
 export default function Footer() {
