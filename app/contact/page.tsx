@@ -2,7 +2,6 @@
 import { useState, type FormEvent } from 'react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
-import { MeetingScheduler } from '@/components/meeting-scheduler';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const WEBHOOK_URL = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK || '';
@@ -120,22 +119,74 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Schedule a Consultation */}
-        <section className="bg-navy py-16 md:py-20">
-          <div className="max-w-2xl mx-auto px-6 text-center mb-10">
-            <p className="text-gold text-xs tracking-[0.18em] uppercase font-semibold font-body">Schedule a Visit</p>
-            <h2 className="text-white text-3xl md:text-4xl font-heading font-semibold mt-4">Book a Consultation</h2>
-            <p className="text-white/50 font-body mt-3">Pick a date and time — we&apos;ll confirm within 24 hours.</p>
-          </div>
-          <div className="flex justify-center px-4">
-            <MeetingScheduler
-              title="Schedule a Consultation"
-              description="Choose your preferred dates and we'll reach out to confirm."
-              scheduleButtonText="Request Consultation"
-              cancelButtonText="Cancel"
-              onSchedule={(d) => { if (d.startDate) alert(`Consultation requested for ${d.startDate.toDateString()}. We'll confirm shortly.`); }}
-              onCancel={() => {}}
-            />
+        {/* Schedule a Consultation — custom cal.com-style */}
+        <section style={{ backgroundColor: COLORS.offWhite, padding: '80px 24px' }}>
+          <div style={{ maxWidth: 640, margin: '0 auto', backgroundColor: COLORS.white, borderRadius: 24, padding: '40px 44px', boxShadow: '0 4px 32px rgba(13,43,82,0.08)', border: '1px solid rgba(13,43,82,0.05)' }}>
+            <div style={{ textAlign: 'center', marginBottom: 36 }}>
+              <p style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.14em', margin: '0 0 8px' }}>Schedule a Visit</p>
+              <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 600, color: COLORS.navy, margin: 0 }}>Book a Consultation</h2>
+              <p style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.grayText, margin: '8px 0 0' }}>Choose a date — we&apos;ll confirm within 24 hours.</p>
+            </div>
+
+            {/* Date Picker */}
+            <div style={{ marginBottom: 28 }}>
+              <p style={{ fontFamily: FONTS.body, fontSize: 12, fontWeight: 600, color: COLORS.navy, textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 12px' }}>Select a Date</p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 8, textAlign: 'center' }}>
+                {['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d => (
+                  <p key={d} style={{ fontFamily: FONTS.body, fontSize: 11, color: COLORS.grayText, margin: 0, paddingBottom: 4 }}>{d}</p>
+                ))}
+                {Array.from({ length: 28 }, (_, i) => i + 1).map(day => (
+                  <button
+                    key={day}
+                    style={{
+                      fontFamily: FONTS.body, fontSize: 13, fontWeight: 500,
+                      padding: '10px 0', borderRadius: 10,
+                      border: day === 15 ? `2px solid ${COLORS.gold}` : '1px solid transparent',
+                      backgroundColor: day === 15 ? 'rgba(201,168,78,0.10)' : 'transparent',
+                      color: day === 15 ? COLORS.navy : COLORS.grayText,
+                      cursor: 'pointer',
+                    }}
+                  >{day}</button>
+                ))}
+              </div>
+            </div>
+
+            {/* Time Slots */}
+            <div style={{ marginBottom: 28 }}>
+              <p style={{ fontFamily: FONTS.body, fontSize: 12, fontWeight: 600, color: COLORS.navy, textTransform: 'uppercase', letterSpacing: '0.08em', margin: '0 0 12px' }}>Preferred Time</p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+                {['9:00 AM', '11:00 AM', '1:00 PM', '3:00 PM', '5:00 PM', '7:00 PM'].map(time => (
+                  <button key={time} style={{
+                    fontFamily: FONTS.body, fontSize: 13, fontWeight: 500,
+                    padding: '10px 12px', borderRadius: 10,
+                    border: time === '11:00 AM' ? `2px solid ${COLORS.gold}` : '1px solid rgba(13,43,82,0.10)',
+                    backgroundColor: time === '11:00 AM' ? 'rgba(201,168,78,0.10)' : 'transparent',
+                    color: time === '11:00 AM' ? COLORS.navy : COLORS.grayText,
+                    cursor: 'pointer',
+                  }}>{time}</button>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Form */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
+              <input type="text" placeholder="Your name" style={{ width: '100%', padding: '13px 16px', borderRadius: 10, border: '1px solid rgba(13,43,82,0.14)', fontFamily: FONTS.body, fontSize: 14, color: COLORS.navy, outline: 'none', boxSizing: 'border-box' }} />
+              <input type="email" placeholder="Email address" style={{ width: '100%', padding: '13px 16px', borderRadius: 10, border: '1px solid rgba(13,43,82,0.14)', fontFamily: FONTS.body, fontSize: 14, color: COLORS.navy, outline: 'none', boxSizing: 'border-box' }} />
+              <input type="tel" placeholder="Phone number" style={{ width: '100%', padding: '13px 16px', borderRadius: 10, border: '1px solid rgba(13,43,82,0.14)', fontFamily: FONTS.body, fontSize: 14, color: COLORS.navy, outline: 'none', boxSizing: 'border-box' }} />
+            </div>
+
+            <button style={{
+              width: '100%', padding: '16px', borderRadius: 14,
+              backgroundColor: COLORS.gold, color: COLORS.navy,
+              fontFamily: FONTS.body, fontSize: 15, fontWeight: 700,
+              border: 'none', cursor: 'pointer',
+            }}>
+              Request Consultation
+            </button>
+
+            <p style={{ fontFamily: FONTS.body, fontSize: 12, color: COLORS.grayText, textAlign: 'center', margin: '16px 0 0' }}>
+              Free consultation · No commitment required
+            </p>
           </div>
         </section>
 
