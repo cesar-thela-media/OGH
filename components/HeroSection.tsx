@@ -11,13 +11,16 @@ export default function HeroSection() {
         <img
           src="/images/hero-mansion.jpg"
           alt="Ocean Glory custom coastal home at the waterfront"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 55%' }}
         />
+        {/* Constant dark base layer */}
+        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(13,43,82,0.28)' }} />
+        {/* Gradient: dark top for nav, dark bottom for dock */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(to bottom, rgba(13,43,82,0.35) 0%, rgba(13,43,82,0.05) 25%, rgba(13,43,82,0.00) 45%, rgba(13,43,82,0.35) 65%, rgba(13,43,82,0.82) 80%, rgba(13,43,82,1.00) 95%)',
+            background: 'linear-gradient(to bottom, rgba(13,43,82,0.55) 0%, rgba(13,43,82,0.10) 18%, rgba(13,43,82,0.10) 38%, rgba(13,43,82,0.45) 58%, rgba(13,43,82,0.88) 78%, rgba(13,43,82,1.00) 92%)',
           }}
         />
       </div>
@@ -40,19 +43,19 @@ export default function HeroSection() {
           <h1
             style={{
               fontFamily: FONTS.heading,
-              fontSize: 'clamp(52px, 6.5vw, 96px)',
-              fontWeight: 600,
-              lineHeight: 1.06,
+              fontSize: 'clamp(44px, 5.2vw, 80px)',
+              fontWeight: 400,
+              lineHeight: 1.08,
               color: COLORS.white,
               margin: 0,
-              letterSpacing: '-0.03em',
-              textShadow: '0 4px 80px rgba(0,0,0,0.50)',
+              letterSpacing: '-0.02em',
+              textShadow: '0 2px 40px rgba(13,43,82,0.70), 0 8px 80px rgba(0,0,0,0.40)',
             }}
           >
             Homes Worthy
             <br />
             of Your{' '}
-            <em style={{ fontStyle: 'italic', color: COLORS.gold, fontWeight: 700 }}>Dreams.</em>
+            <em style={{ fontStyle: 'italic', color: COLORS.gold, fontWeight: 400 }}>Dreams.</em>
           </h1>
         </div>
 

@@ -27,7 +27,7 @@ export default function TransparencySection() {
           </p>
           <h2 style={{
             fontFamily: FONTS.heading,
-            fontSize: 'clamp(36px, 4.5vw, 56px)',
+            fontSize: 'clamp(34px, 4.2vw, 54px)',
             color: COLORS.white,
             margin: 0,
             fontWeight: 400,

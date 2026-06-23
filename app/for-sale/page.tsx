@@ -21,7 +21,7 @@ export default function ForSalePage() {
       <NavBar />
       <main style={{ backgroundColor: COLORS.offWhite }}>
         <section style={{ backgroundColor: COLORS.navy, padding: '48px 24px 56px', textAlign: 'center' }}>
-          <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 600, color: COLORS.white, margin: 0, lineHeight: 1.1 }}>Available Homes</h1>
+          <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 400, color: COLORS.white, margin: 0, lineHeight: 1.1 }}>Available Homes</h1>
         </section>
 
         <section style={{ maxWidth: '96vw', margin: '0 auto', padding: '48px 16px' }}>

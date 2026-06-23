@@ -35,8 +35,8 @@ export default function DesignBuildSection() {
       <h2
         style={{
           fontFamily: FONTS.heading,
-          fontSize: isMobile ? 'clamp(40px, 8vw, 58px)' : 'clamp(48px, 5.5vw, 84px)',
-          fontWeight: 600,
+          fontSize: isMobile ? 'clamp(36px, 8vw, 54px)' : 'clamp(44px, 5vw, 76px)',
+          fontWeight: 400,
           color: COLORS.navy,
           lineHeight: 1.08,
           margin: '20px 0 0',

@@ -23,7 +23,7 @@ export default function CTASection() {
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
             <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: 0 }}>Homeowner Reviews</p>
-            <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(32px, 4vw, 48px)', color: COLORS.white, marginTop: 12, fontWeight: 600 }}>What Our Homeowners Say</h2>
+            <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(32px, 4vw, 48px)', color: COLORS.white, marginTop: 12, fontWeight: 400 }}>What Our Homeowners Say</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: 20, maxHeight: isMobile ? 'none' : 620, overflow: 'hidden', maskImage: isMobile ? 'none' : 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: isMobile ? 'none' : 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)' }}>
             {Array.from({ length: cols }).map((_, ci) => (
@@ -49,7 +49,7 @@ export default function CTASection() {
       {/* CTA — white bg */}
       <section style={{ backgroundColor: COLORS.offWhite, padding: '80px 24px' }}>
         <div style={{ maxWidth: 560, margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(28px, 3.5vw, 44px)', color: COLORS.navy, margin: '0 0 12px', fontWeight: 600 }}>Ready to Build?</h2>
+          <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(28px, 3.5vw, 44px)', color: COLORS.navy, margin: '0 0 12px', fontWeight: 400 }}>Ready to Build?</h2>
           <p style={{ fontFamily: FONTS.body, fontSize: 16, color: COLORS.grayText, margin: '0 0 32px', lineHeight: 1.6 }}>Have your own lot or looking for the perfect place? Let&apos;s talk.</p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href={CONTACT.phoneHref} style={{ display: 'inline-block', backgroundColor: COLORS.gold, color: COLORS.navy, fontFamily: FONTS.body, fontSize: 15, fontWeight: 700, padding: '16px 36px', borderRadius: 999, textDecoration: 'none' }}>{CONTACT.phone}</a>
