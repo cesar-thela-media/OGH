@@ -4,58 +4,174 @@ import Footer from '@/components/Footer';
 import { listings } from '@/data/listings';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
-const locations: Record<string, string> = {
-  '1511-cape-velero': 'Corpus Christi, TX',
-  '116-forest-hills': 'Rockport, TX',
-  '117-forest-hills': 'Rockport, TX',
-  '118-forest-hills': 'Rockport, TX',
-  '427-augusta': 'Rockport, TX',
-  '10-westpointe': 'Rockport, TX',
-  '15-tradewinds': 'Rockport, TX',
-  '24-tradewinds': 'Rockport, TX',
+const stageLabel: Record<string, string> = {
+  'For Sale': 'FOR SALE',
+  'Under Contract': 'UNDER CONTRACT',
+  'Sold': 'SOLD',
+  'Under Construction': 'UNDER CONSTRUCTION',
+};
+
+const stageColor: Record<string, { bg: string; text: string; border: string }> = {
+  'For Sale':           { bg: 'rgba(31,107,58,0.08)',   text: '#1F6B3A', border: 'rgba(31,107,58,0.25)' },
+  'Under Contract':     { bg: 'rgba(201,168,78,0.10)',  text: '#8B6A00', border: 'rgba(201,168,78,0.40)' },
+  'Sold':               { bg: 'rgba(13,43,82,0.06)',    text: COLORS.navy, border: 'rgba(13,43,82,0.18)' },
+  'Under Construction': { bg: 'rgba(107,174,212,0.12)', text: '#2D6E8E', border: 'rgba(107,174,212,0.40)' },
 };
 
 export default function ForSalePage() {
   return (
     <>
       <NavBar />
-      <main style={{ backgroundColor: COLORS.offWhite }}>
-        <section style={{ backgroundColor: COLORS.navy, padding: '48px 24px 56px', textAlign: 'center' }}>
-          <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 400, color: COLORS.white, margin: 0, lineHeight: 1.1 }}>Available Homes</h1>
-        </section>
+      <main style={{ backgroundColor: COLORS.offWhite, minHeight: '100vh' }}>
 
-        <section style={{ maxWidth: '96vw', margin: '0 auto', padding: '48px 16px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(420px, 1fr))', gap: 24 }}>
-            {listings.map(listing => (
-              <div key={listing.id} style={{ backgroundColor: COLORS.white, borderRadius: 16, overflow: 'hidden', boxShadow: '0 2px 16px rgba(13,43,82,0.05)', border: '1px solid rgba(13,43,82,0.05)' }}>
-                <Link href={`/for-sale/${listing.id}`} style={{ display: 'block', width: '100%', height: 300, overflow: 'hidden' }}>
-                  <img src={listing.image} alt={listing.address} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                </Link>
-                <div style={{ padding: '24px 28px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
-                    <h3 style={{ fontFamily: FONTS.heading, fontSize: 24, fontWeight: 600, color: COLORS.navy, margin: 0 }}>{listing.address}</h3>
-                    <span style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 600, color: listing.stage === 'For Sale' ? '#1F6B3A' : COLORS.gold, border: `1px solid ${listing.stage === 'For Sale' ? 'rgba(31,107,58,0.4)' : 'rgba(201,168,78,0.5)'}`, borderRadius: 999, padding: '4px 12px', whiteSpace: 'nowrap', flexShrink: 0 }}>{listing.stage}</span>
-                  </div>
-                  <p style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.grayText, margin: '0 0 14px' }}>{locations[listing.id] || 'Corpus Christi Area'}</p>
-                  <div style={{ display: 'flex', gap: 20, marginBottom: 16 }}>
-                    <span style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.grayText }}>{listing.beds} Beds</span>
-                    <span style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.grayText }}>{listing.baths} Baths</span>
-                    <span style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.grayText }}>{listing.sqft.toLocaleString()} sqft</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <p style={{ fontFamily: FONTS.body, fontSize: 22, fontWeight: 700, color: COLORS.gold, margin: 0 }}>{listing.price}</p>
-                    <Link href={`/for-sale/${listing.id}`} style={{ fontFamily: FONTS.body, fontSize: 13, fontWeight: 600, color: COLORS.navy, textDecoration: 'none', padding: '8px 20px', border: `1.5px solid ${COLORS.goldSoft}`, borderRadius: 999 }}>View Details →</Link>
-                  </div>
-                </div>
-              </div>
-            ))}
+        {/* Page header */}
+        <section style={{ backgroundColor: COLORS.navy, padding: '40px 32px 48px' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 10px' }}>
+              Ocean Glory Homes
+            </p>
+            <h1 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 400, color: COLORS.white, margin: 0, lineHeight: 1.1 }}>
+              Available Homes
+            </h1>
+            <p style={{ fontFamily: FONTS.body, fontSize: 14, color: 'rgba(255,255,255,0.55)', margin: '12px 0 0' }}>
+              {listings.filter(l => l.stage === 'For Sale' || l.stage === 'Under Construction').length} available &middot; Corpus Christi, Rockport &amp; Portland, Texas
+            </p>
           </div>
         </section>
 
-        <section style={{ textAlign: 'center', padding: '24px 24px 80px' }}>
-          <p style={{ fontFamily: FONTS.body, fontSize: 16, color: COLORS.grayText, marginBottom: 24 }}>Interested in a property? Call to schedule a private showing.</p>
-          <a href={CONTACT.phoneHref} style={{ display: 'inline-block', backgroundColor: COLORS.gold, color: COLORS.navy, fontFamily: FONTS.body, fontSize: 15, fontWeight: 700, padding: '16px 40px', borderRadius: 999, textDecoration: 'none' }}>{CONTACT.phone}</a>
+        {/* Listings grid */}
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px 80px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: 28 }}>
+            {listings.map(listing => {
+              const sc = stageColor[listing.stage] ?? stageColor['For Sale'];
+              return (
+                <div
+                  key={listing.id}
+                  style={{
+                    backgroundColor: COLORS.white,
+                    borderRadius: 18,
+                    overflow: 'hidden',
+                    boxShadow: '0 2px 20px rgba(13,43,82,0.07)',
+                    border: '1px solid rgba(13,43,82,0.06)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                >
+                  {/* Photo */}
+                  <Link href={`/for-sale/${listing.id}`} style={{ display: 'block', flexShrink: 0, height: 260, overflow: 'hidden', position: 'relative' }}>
+                    <img
+                      src={listing.image}
+                      alt={listing.address}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }}
+                    />
+                    {/* Stage badge overlaid on photo */}
+                    <span style={{
+                      position: 'absolute', top: 14, right: 14,
+                      fontFamily: FONTS.body, fontSize: 10, fontWeight: 700,
+                      color: sc.text, backgroundColor: sc.bg,
+                      border: `1px solid ${sc.border}`,
+                      borderRadius: 999, padding: '5px 12px',
+                      backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+                      letterSpacing: '0.06em',
+                    }}>
+                      {stageLabel[listing.stage]}
+                    </span>
+                  </Link>
+
+                  {/* Card body */}
+                  <div style={{ padding: '24px 26px 28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    {/* Address headline — OGH format */}
+                    <h2 style={{
+                      fontFamily: FONTS.body,
+                      fontSize: 15,
+                      fontWeight: 700,
+                      color: COLORS.navy,
+                      margin: '0 0 4px',
+                      letterSpacing: '0.04em',
+                      textTransform: 'uppercase',
+                    }}>
+                      {listing.address}, TX {listing.zip}
+                    </h2>
+                    <p style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.grayText, margin: '0 0 16px' }}>
+                      {listing.location}
+                    </p>
+
+                    {/* Stats */}
+                    <div style={{ display: 'flex', gap: 0, marginBottom: 16, borderTop: '1px solid rgba(13,43,82,0.06)', borderBottom: '1px solid rgba(13,43,82,0.06)', padding: '12px 0' }}>
+                      {[
+                        { label: 'Beds', value: listing.beds },
+                        { label: 'Baths', value: listing.baths },
+                        { label: 'Floor Area', value: `${listing.sqft.toLocaleString()} sqft` },
+                        ...(listing.landSqft ? [{ label: 'Land', value: `${listing.landSqft.toLocaleString()} sqft` }] : []),
+                      ].map((stat, i, arr) => (
+                        <div key={stat.label} style={{ flex: 1, textAlign: 'center', borderRight: i < arr.length - 1 ? '1px solid rgba(13,43,82,0.08)' : 'none', padding: '0 4px' }}>
+                          <p style={{ fontFamily: FONTS.body, fontSize: 15, fontWeight: 600, color: COLORS.navy, margin: 0 }}>{stat.value}</p>
+                          <p style={{ fontFamily: FONTS.body, fontSize: 10, color: COLORS.grayText, margin: '2px 0 0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{stat.label}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Description */}
+                    {listing.description && (
+                      <p style={{ fontFamily: FONTS.body, fontSize: 13, color: COLORS.grayText, margin: '0 0 20px', lineHeight: 1.65, flex: 1 }}>
+                        {listing.description.length > 120 ? listing.description.slice(0, 120) + '…' : listing.description}
+                      </p>
+                    )}
+
+                    {/* CTA */}
+                    <Link
+                      href={`/for-sale/${listing.id}`}
+                      style={{
+                        display: 'block',
+                        textAlign: 'center',
+                        backgroundColor: COLORS.navy,
+                        color: COLORS.white,
+                        fontFamily: FONTS.body,
+                        fontSize: 13,
+                        fontWeight: 600,
+                        padding: '12px 20px',
+                        borderRadius: 10,
+                        textDecoration: 'none',
+                        letterSpacing: '0.03em',
+                        marginTop: 'auto',
+                      }}
+                    >
+                      View Property Details
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </section>
+
+        {/* Bottom CTA */}
+        <section style={{ backgroundColor: COLORS.navy, padding: '64px 24px 72px', textAlign: 'center' }}>
+          <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 12px' }}>
+            Don&apos;t See What You&apos;re Looking For?
+          </p>
+          <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(26px, 3vw, 38px)', color: COLORS.white, fontWeight: 400, margin: '0 0 16px' }}>
+            We Build to Order — On Your Lot or Ours.
+          </h2>
+          <p style={{ fontFamily: FONTS.body, fontSize: 15, color: 'rgba(255,255,255,0.60)', margin: '0 0 32px' }}>
+            Call to discuss floor plans, available land, and pricing.
+          </p>
+          <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a
+              href={CONTACT.phoneHref}
+              style={{ display: 'inline-block', backgroundColor: COLORS.gold, color: COLORS.navy, fontFamily: FONTS.body, fontSize: 15, fontWeight: 700, padding: '15px 36px', borderRadius: 999, textDecoration: 'none' }}
+            >
+              {CONTACT.phone}
+            </a>
+            <Link
+              href="/contact"
+              style={{ display: 'inline-block', backgroundColor: 'transparent', color: COLORS.white, fontFamily: FONTS.body, fontSize: 15, fontWeight: 500, padding: '15px 36px', borderRadius: 999, textDecoration: 'none', border: '1.5px solid rgba(255,255,255,0.25)' }}
+            >
+              Send a Message
+            </Link>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </>

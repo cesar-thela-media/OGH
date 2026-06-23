@@ -40,11 +40,11 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
                 href={link.href}
                 style={{
                   color: 'rgba(255,255,255,0.85)',
-                  fontFamily: FONTS.heading,
-                  fontSize: 15,
+                  fontFamily: FONTS.body,
+                  fontSize: 14,
                   fontWeight: 500,
                   textDecoration: 'none',
-                  letterSpacing: '0.02em',
+                  letterSpacing: '0.04em',
                 }}
               >
                 {link.label}
@@ -96,7 +96,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
           >×</button>
           {navLinks.map(link => (
             <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
-              style={{ color: COLORS.white, fontFamily: FONTS.heading, fontSize: 28, textDecoration: 'none', fontWeight: 400 }}>
+              style={{ color: COLORS.white, fontFamily: FONTS.body, fontSize: 22, textDecoration: 'none', fontWeight: 500, letterSpacing: '0.04em' }}>
               {link.label}
             </Link>
           ))}

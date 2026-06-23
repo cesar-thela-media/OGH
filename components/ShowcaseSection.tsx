@@ -44,7 +44,7 @@ export default function ShowcaseSection() {
       <div className="max-w-[95vw] mx-auto px-4">
         <div className="text-center mb-10">
           <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 16px' }}>Why Ocean Glory Homes</p>
-          <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(30px, 3.8vw, 48px)', fontWeight: 400, color: COLORS.navy, margin: 0, letterSpacing: '-0.02em' }}>What Sets Us Apart</h2>
+          <h2 style={{ fontFamily: FONTS.body, fontSize: 'clamp(28px, 3.2vw, 42px)', fontWeight: 600, color: COLORS.navy, margin: 0, letterSpacing: '-0.01em' }}>What Sets Us Apart</h2>
         </div>
         <ExpandingCards items={featureCards} defaultActiveIndex={0} />
       </div>

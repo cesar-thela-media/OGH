@@ -67,17 +67,8 @@ export default function ListingDock() {
               </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
-              <span
-                style={{
-                  fontFamily: FONTS.body,
-                  fontSize: 17,
-                  fontWeight: 600,
-                  color: COLORS.gold,
-                  whiteSpace: 'nowrap',
-                  letterSpacing: '-0.01em',
-                }}
-              >
-                {listing.price}
+              <span style={{ fontFamily: FONTS.body, fontSize: 11, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>
+                {listing.location}
               </span>
               <span
                 style={{

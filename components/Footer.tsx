@@ -2,10 +2,12 @@ import Link from 'next/link';
 import { COLORS, FONTS, CONTACT, SOCIALS, LOGO_URL } from '@/lib/constants';
 
 const footerLinks = [
-  { label: 'For Sale',  href: '/for-sale' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'About',     href: '/about' },
-  { label: 'Contact',   href: '/contact' },
+  { label: 'For Sale',       href: '/for-sale' },
+  { label: 'Portfolio',      href: '/portfolio' },
+  { label: 'Recently Sold',  href: '/recently-sold' },
+  { label: 'Reviews',        href: '/reviews' },
+  { label: 'About',          href: '/about' },
+  { label: 'Contact',        href: '/contact' },
 ];
 
 const bottomLinks = [
@@ -16,10 +18,9 @@ const bottomLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: COLORS.gold, position: 'relative', overflow: 'hidden' }}>
+    <footer style={{ backgroundColor: COLORS.white, borderTop: '1px solid rgba(13,43,82,0.08)', position: 'relative', overflow: 'hidden' }}>
       <div
         style={{
-          borderTop: `1px solid ${COLORS.goldSoft}`,
           padding: '56px 60px 40px',
           display: 'flex',
           flexWrap: 'wrap',
@@ -70,7 +71,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div style={{
-        borderTop: '1px solid rgba(13,43,82,0.10)',
+        borderTop: '1px solid rgba(13,43,82,0.08)',
         padding: '20px 60px',
         display: 'flex',
         justifyContent: 'space-between',
@@ -96,7 +97,7 @@ export default function Footer() {
       <span style={{
         position: 'absolute', bottom: -80, right: -16,
         fontFamily: FONTS.heading, fontSize: 300,
-        color: 'rgba(13,43,82,0.04)', lineHeight: 1,
+        color: 'rgba(13,43,82,0.03)', lineHeight: 1,
         pointerEvents: 'none', userSelect: 'none', fontStyle: 'italic',
       }}>
         O
