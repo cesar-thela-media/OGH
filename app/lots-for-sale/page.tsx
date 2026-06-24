@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Lots for Sale',
+  description:
+    'Available residential lots in Rockport, Portland, and Corpus Christi, TX. Ocean Glory Homes builds on our lots or yours. Call for current availability.',
+};
 import Link from 'next/link';
 
 const lots = [

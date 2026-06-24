@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Rockport Country Club',
+  description:
+    'Custom homes in the Rockport Country Club golf community. Gated, HOA-managed, with pool, tennis, and 18-hole course. Built by Ocean Glory Homes.',
+};
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const amenities = [

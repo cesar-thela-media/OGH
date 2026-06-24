@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Homeowner Reviews',
+  description:
+    'Read what Ocean Glory Homes clients say about their custom home building experience in Rockport and Corpus Christi, Texas.',
+};
 import Link from 'next/link';
 
 const reviews = [

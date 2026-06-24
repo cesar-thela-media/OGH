@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { listings } from '@/data/listings';
@@ -6,6 +7,15 @@ import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
   return listings.map(listing => ({ slug: listing.id }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const listing = listings.find(l => l.id === params.slug);
+  if (!listing) return { title: 'Listing Not Found' };
+  return {
+    title: listing.address,
+    description: `${listing.beds} bed, ${listing.baths} bath, ${listing.sqft.toLocaleString()} sqft custom home in ${listing.location}. Built by Ocean Glory Homes.`,
+  };
 }
 
 const stageLabel: Record<string, string> = {

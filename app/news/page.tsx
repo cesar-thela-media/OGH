@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Builder News',
+  description:
+    'Construction updates, coastal building tips, and news from Ocean Glory Homes in Rockport and Corpus Christi, TX.',
+};
 import Link from 'next/link';
 
 const posts = [

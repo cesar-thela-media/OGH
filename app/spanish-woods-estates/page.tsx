@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Spanish Woods Estates',
+  description:
+    'Gated community with oversized wooded lots in Rockport, TX. Half-acre and larger lots under mature oak canopy. Custom homes by Ocean Glory Homes.',
+};
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const BASE = 'https://oceangloryhomes.com/wp-content/uploads';

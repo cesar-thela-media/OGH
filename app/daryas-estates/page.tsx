@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: "Darya's Estates",
+  description:
+    "Private gated community in Rockport, TX with estate-sized cul-de-sac lots. Custom homes by Ocean Glory Homes in Darya's Estates.",
+};
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const BASE = 'https://oceangloryhomes.com/wp-content/uploads';

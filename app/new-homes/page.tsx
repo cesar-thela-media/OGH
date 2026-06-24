@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'New Homes',
+  description:
+    'New custom homes for sale and under construction in Corpus Christi and Rockport, TX. Move-in ready inventory and build-to-order from Ocean Glory Homes.',
+};
 import BlueprintArtifact from '@/components/BlueprintArtifact';
 import { listings } from '@/data/listings';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';

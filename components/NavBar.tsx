@@ -5,9 +5,11 @@ import { COLORS, FONTS, LOGO_URL } from '@/lib/constants';
 import { useIsMobile } from '@/hooks/useIsMobile';
 
 const navLinks = [
-  { label: 'For Sale',  href: '/for-sale' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'About',     href: '/about' },
+  { label: 'For Sale',    href: '/for-sale' },
+  { label: 'New Homes',   href: '/new-homes' },
+  { label: 'Communities', href: '/community' },
+  { label: 'Portfolio',   href: '/portfolio' },
+  { label: 'About',       href: '/about' },
 ];
 
 export default function NavBar({ transparent = false }: { transparent?: boolean }) {

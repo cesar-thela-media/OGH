@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Our Communities',
+  description:
+    'Explore the residential communities where Ocean Glory Homes builds — Rockport Country Club, Southwind Harbor, Daniels Forest, Harbor Oaks, and more.',
+};
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const BASE = 'https://oceangloryhomes.com/wp-content/uploads';

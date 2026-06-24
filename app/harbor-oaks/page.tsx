@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Harbor Oaks',
+  description:
+    'Established residential community in Rockport, TX with community dock access. Custom homes on corner and waterfront-access lots by Ocean Glory Homes.',
+};
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const BASE = 'https://oceangloryhomes.com/wp-content/uploads';

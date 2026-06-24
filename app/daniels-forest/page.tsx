@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Daniels Forest',
+  description:
+    'Wooded residential community near Aransas Bay in Rockport, TX. Half-acre lots under mature oak canopy. Custom homes by Ocean Glory Homes.',
+};
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const BASE = 'https://oceangloryhomes.com/wp-content/uploads';

@@ -1,8 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { listings } from '@/data/listings';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Homes for Sale',
+  description:
+    'Browse custom homes for sale and under construction by Ocean Glory Homes in Rockport and Corpus Christi, TX. Call for current pricing.',
+};
 
 const stageLabel: Record<string, string> = {
   'For Sale': 'FOR SALE',

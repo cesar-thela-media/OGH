@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Español',
+  description:
+    'Ocean Glory Homes — Constructor de casas personalizadas en la costa de Texas. Rockport, Corpus Christi y Portland, TX.',
+};
 
 export default function EspanolPage() {
   return (

@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Southwind Harbor',
+  description:
+    'Waterfront custom homes in Southwind Harbor, Rockport, TX. Private marina, deep-water boat slips, and bay views. Built by Ocean Glory Homes.',
+};
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 
 const BASE = 'https://oceangloryhomes.com/wp-content/uploads';

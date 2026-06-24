@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
@@ -63,6 +64,15 @@ const projects: Record<string, {
 
 export function generateStaticParams() {
   return Object.keys(projects).map(slug => ({ slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const project = projects[params.slug];
+  if (!project) return { title: 'Project Not Found' };
+  return {
+    title: project.name,
+    description: `${project.description} ${project.specs}. Custom build by Ocean Glory Homes in ${project.location}.`,
+  };
 }
 
 export default function PortfolioDetailPage({ params }: { params: { slug: string } }) {

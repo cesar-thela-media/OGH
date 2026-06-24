@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Recently Sold',
+  description:
+    'Browse custom homes recently completed and sold by Ocean Glory Homes in Rockport and Corpus Christi, TX. Real builds, real results.',
+};
 import Link from 'next/link';
 
 const BASE = 'https://oceangloryhomes.com/wp-content/uploads';
