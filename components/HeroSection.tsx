@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Full-bleed background photo */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <img
-          src="/images/hero-mansion.jpg"
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=85"
           alt="Ocean Glory custom coastal home at the waterfront"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 55%' }}
         />

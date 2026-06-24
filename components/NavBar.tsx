@@ -5,11 +5,10 @@ import { COLORS, FONTS, LOGO_URL } from '@/lib/constants';
 import { useIsMobile } from '@/hooks/useIsMobile';
 
 const navLinks = [
-  { label: 'For Sale',    href: '/for-sale' },
-  { label: 'New Homes',   href: '/new-homes' },
-  { label: 'Communities', href: '/community' },
-  { label: 'Portfolio',   href: '/portfolio' },
-  { label: 'About',       href: '/about' },
+  { label: 'For Sale',  href: '/for-sale' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'About',     href: '/about' },
+  { label: 'Contact',   href: '/contact' },
 ];
 
 export default function NavBar({ transparent = false }: { transparent?: boolean }) {
@@ -53,7 +52,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/for-sale"
               style={{
                 backgroundColor: COLORS.gold,
                 color: COLORS.navy,
@@ -66,7 +65,7 @@ export default function NavBar({ transparent = false }: { transparent?: boolean 
                 letterSpacing: '0.03em',
               }}
             >
-              Contact Us
+              See Available Homes
             </Link>
           </div>
         )}
