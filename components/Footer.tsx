@@ -3,11 +3,23 @@ import { COLORS, FONTS, CONTACT, SOCIALS, LOGO_URL } from '@/lib/constants';
 
 const footerLinks = [
   { label: 'For Sale',       href: '/for-sale' },
+  { label: 'New Homes',      href: '/new-homes' },
   { label: 'Portfolio',      href: '/portfolio' },
   { label: 'Recently Sold',  href: '/recently-sold' },
   { label: 'Reviews',        href: '/reviews' },
   { label: 'About',          href: '/about' },
   { label: 'Contact',        href: '/contact' },
+];
+
+const communityLinks = [
+  { label: 'Our Communities',          href: '/community' },
+  { label: 'Lots for Sale',            href: '/lots-for-sale' },
+  { label: 'Rockport Country Club',    href: '/rockport-country-club' },
+  { label: 'Southwind Harbor',         href: '/southwind-harbor' },
+  { label: "Darya's Estates",          href: '/daryas-estates' },
+  { label: 'Daniels Forest',           href: '/daniels-forest' },
+  { label: 'Harbor Oaks',             href: '/harbor-oaks' },
+  { label: 'Spanish Woods Estates',   href: '/spanish-woods-estates' },
 ];
 
 const bottomLinks = [
@@ -49,6 +61,20 @@ export default function Footer() {
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {footerLinks.map(link => (
+              <Link key={link.href} href={link.href} style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.navy, textDecoration: 'none', opacity: 0.65 }}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Communities column */}
+        <div style={{ flex: '0 1 auto' }}>
+          <p style={{ fontFamily: FONTS.body, fontSize: 12, fontWeight: 700, color: COLORS.navy, textTransform: 'uppercase', letterSpacing: '0.12em', margin: '0 0 20px', opacity: 0.8 }}>
+            Communities
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {communityLinks.map(link => (
               <Link key={link.href} href={link.href} style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.navy, textDecoration: 'none', opacity: 0.65 }}>
                 {link.label}
               </Link>
