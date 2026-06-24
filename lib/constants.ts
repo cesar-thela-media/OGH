@@ -23,7 +23,7 @@ export const CONTACT = {
   email:     'info@oceangloryhomes.com',
 };
 
-export const LOGO_URL = 'https://oceangloryhomes.com/wp-content/uploads/2016/06/ocean-glory-homes-.png';
+export const LOGO_URL = '/images/ogh-logo.png';
 
 export const SOCIALS = [
   { kind: 'instagram' as const, href: 'https://www.instagram.com/oceanglory_homes/' },

@@ -39,7 +39,9 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: 'https://oceangloryhomes.com/wp-content/uploads/2016/06/ocean-glory-homes-.png',
+    icon: '/images/ogh-logo.png',
+    shortcut: '/images/ogh-logo.png',
+    apple: '/images/ogh-logo.png',
   },
 };
 
