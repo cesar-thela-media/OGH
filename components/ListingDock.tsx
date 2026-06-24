@@ -1,6 +1,37 @@
 import Link from 'next/link';
-import { listings } from '@/data/listings';
 import { COLORS, FONTS } from '@/lib/constants';
+
+const BASE = 'https://oceangloryhomes.com/wp-content/uploads';
+
+const featured = [
+  {
+    href: '/for-sale/1511-cape-velero',
+    address: '1511 Cape Velero',
+    location: 'Rockport, TX',
+    beds: 4, baths: 3.5, sqft: 3126,
+    price: '$1,875,000',
+    stage: 'Framing',
+    image: `${BASE}/2024/07/1504-Cape-Valero-Exterior-495x400.jpg`,
+  },
+  {
+    href: '/portfolio/laguna-vista',
+    address: '1802 Laguna Vista',
+    location: 'Laguna Vista, TX',
+    beds: 4, baths: 4.5, sqft: 3840,
+    price: '$2,295,000',
+    stage: 'Permitting',
+    image: `${BASE}/2024/07/615-N-Fulton-Beach-Exterior-495x400.jpg`,
+  },
+  {
+    href: '/portfolio/harbor-key',
+    address: '2324 Harbor Key',
+    location: 'Port Aransas, TX',
+    beds: 3, baths: 3.5, sqft: 2654,
+    price: '$1,495,000',
+    stage: 'Foundation',
+    image: `${BASE}/2022/06/14-Tradewinds-Front-Exterior-495x400.jpeg`,
+  },
+];
 
 export default function ListingDock() {
   return (
@@ -12,10 +43,10 @@ export default function ListingDock() {
         margin: '0 auto',
       }}
     >
-      {listings.slice(0, 3).map(listing => (
+      {featured.map(home => (
         <Link
-          key={listing.id}
-          href={`/for-sale/${listing.id}`}
+          key={home.href}
+          href={home.href}
           style={{
             display: 'flex',
             gap: 20,
@@ -31,8 +62,8 @@ export default function ListingDock() {
           }}
         >
           <img
-            src={listing.image}
-            alt={listing.address}
+            src={home.image}
+            alt={home.address}
             style={{
               width: 108,
               height: 108,
@@ -50,34 +81,47 @@ export default function ListingDock() {
                   fontSize: 19,
                   fontWeight: 400,
                   color: COLORS.white,
-                  margin: 0,
+                  margin: '0 0 6px',
                   whiteSpace: 'nowrap',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   lineHeight: 1.2,
                 }}
               >
-                {listing.address}
+                {home.address}
               </p>
-              <div style={{ display: 'flex', gap: 12, marginTop: 7 }}>
-                <Spec icon="bed" value={listing.beds} />
-                <Spec icon="bath" value={listing.baths} />
-                <Spec icon="sqft" value={listing.sqft.toLocaleString()} />
+              <div style={{ display: 'flex', gap: 12, marginBottom: 8 }}>
+                <Spec icon="bed" value={home.beds} />
+                <Spec icon="bath" value={home.baths} />
+                <Spec icon="sqft" value={home.sqft.toLocaleString()} />
               </div>
+              <p style={{
+                fontFamily: FONTS.heading,
+                fontSize: 17,
+                fontWeight: 400,
+                color: COLORS.gold,
+                margin: 0,
+                letterSpacing: '-0.01em',
+              }}>
+                {home.price}
+              </p>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
-              <span style={{ fontFamily: FONTS.body, fontSize: 11, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.04em' }}>
-                {listing.location}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginTop: 10 }}>
+              <span style={{ fontFamily: FONTS.body, fontSize: 11, color: 'rgba(255,255,255,0.40)', letterSpacing: '0.04em' }}>
+                {home.location}
               </span>
               <span
                 style={{
                   fontFamily: FONTS.body, fontSize: 10, fontWeight: 600,
-                  color: COLORS.navy, backgroundColor: COLORS.gold,
-                  borderRadius: 999, padding: '5px 14px',
+                  color: 'rgba(255,255,255,0.75)',
+                  backgroundColor: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  borderRadius: 999, padding: '4px 12px',
                   whiteSpace: 'nowrap', flexShrink: 0,
+                  letterSpacing: '0.05em',
                 }}
               >
-                View →
+                {home.stage}
               </span>
             </div>
           </div>
