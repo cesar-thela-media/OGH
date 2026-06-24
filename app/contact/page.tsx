@@ -91,7 +91,7 @@ export default function ContactPage() {
 
         {/* CONTACT FORM */}
         <section style={{ maxWidth: 1080, margin: '0 auto', padding: '64px 32px 80px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 48, alignItems: 'start' }}>
+          <div className="g2" style={{ gap: 48, alignItems: 'start' }}>
 
             {/* Left: contact info */}
             <div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleContact} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                  <div className="g2" style={{ gap: 14 }}>
                     <input type="text" name="firstName" placeholder="First Name" required style={inputS} />
                     <input type="text" name="lastName" placeholder="Last Name" required style={inputS} />
                   </div>
@@ -218,12 +218,12 @@ export default function ContactPage() {
                   <p style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 700, color: COLORS.navy, textTransform: 'uppercase', letterSpacing: '0.10em', margin: '0 0 14px' }}>
                     Preferred Day
                   </p>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 4, marginBottom: 8 }}>
+                  <div className="g7" style={{ gap: 4, marginBottom: 8 }}>
                     {DAYS.map(d => (
                       <p key={d} style={{ fontFamily: FONTS.body, fontSize: 10, color: COLORS.grayText, margin: 0, textAlign: 'center', paddingBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{d}</p>
                     ))}
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 4 }}>
+                  <div className="g7" style={{ gap: 4 }}>
                     {Array.from({ length: 28 }, (_, i) => i + 1).map(day => (
                       <button
                         key={day}
@@ -249,7 +249,7 @@ export default function ContactPage() {
                   <p style={{ fontFamily: FONTS.body, fontSize: 11, fontWeight: 700, color: COLORS.navy, textTransform: 'uppercase', letterSpacing: '0.10em', margin: '0 0 14px' }}>
                     Preferred Time
                   </p>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
+                  <div className="g4" style={{ gap: 8 }}>
                     {TIMES.map(time => (
                       <button
                         key={time}

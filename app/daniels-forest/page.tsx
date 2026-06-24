@@ -86,7 +86,7 @@ export default function DanielsForestPage() {
 
         {/* INTRO STAT ROW */}
         <section style={{ backgroundColor: COLORS.gold }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 48px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="g4 sp48" style={{ maxWidth: 1100, margin: '0 auto' }}>
             {[
               { value: '0.5+', label: 'Acres Per Lot' },
               { value: '< 1mi', label: 'to Aransas Bay' },
@@ -102,7 +102,7 @@ export default function DanielsForestPage() {
         </section>
 
         {/* 3-COL FEATURE CARDS */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '80px 48px' }}>
+        <section className="sp48" style={{ backgroundColor: COLORS.offWhite, paddingTop: 80, paddingBottom: 80 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 52 }}>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 12px' }}>
@@ -112,7 +112,7 @@ export default function DanielsForestPage() {
                 Life in Daniels Forest
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22 }}>
+            <div className="g3" style={{ gap: 22 }}>
               {features.map(f => (
                 <div key={f.title} style={{ backgroundColor: COLORS.white, borderRadius: 16, padding: '32px 28px', border: '1px solid rgba(13,43,82,0.05)' }}>
                   <span style={{ fontSize: 28, display: 'block', marginBottom: 16 }}>{f.icon}</span>
@@ -125,8 +125,8 @@ export default function DanielsForestPage() {
         </section>
 
         {/* PHOTO + TEXT */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 64px' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1100, margin: '0 auto', gap: 64, alignItems: 'center' }}>
             <div>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 14px' }}>
                 Build On Your Lot
@@ -148,7 +148,7 @@ export default function DanielsForestPage() {
               <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '16/9' }}>
                 <img src={`${BASE}/2022/06/14-Tradewinds-Front-Exterior-495x400.jpeg`} alt="Home in Daniels Forest" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+              <div className="g2" style={{ gap: 14 }}>
                 <div style={{ borderRadius: 14, overflow: 'hidden', aspectRatio: '4/3' }}>
                   <img src={`${BASE}/2024/07/1504-Cape-Valero-Exterior-495x400.jpg`} alt="Custom home exterior" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>

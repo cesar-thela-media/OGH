@@ -84,7 +84,7 @@ export default function NewHomesPage() {
         </section>
 
         {/* WHY NEW CONSTRUCTION — 4 col */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 60px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 52 }}>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 12px' }}>The Ocean Glory Difference</p>
@@ -92,7 +92,7 @@ export default function NewHomesPage() {
                 Why Build New?
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            <div className="g4" style={{ gap: 24 }}>
               {whyNewConstruction.map(w => (
                 <div key={w.title} style={{ padding: '32px 24px', borderTop: `3px solid ${COLORS.gold}`, backgroundColor: COLORS.offWhite }}>
                   <span style={{ fontFamily: FONTS.heading, fontSize: 32, color: COLORS.gold, display: 'block', marginBottom: 16, lineHeight: 1 }}>{w.icon}</span>
@@ -105,9 +105,9 @@ export default function NewHomesPage() {
         </section>
 
         {/* BLUEPRINT DESIGN SECTION */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '80px 40px' }}>
+        <section className="sp32" style={{ backgroundColor: COLORS.offWhite, paddingTop: 80, paddingBottom: 80 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: 56, alignItems: 'center' }}>
+            <div className="g2" style={{ gap: 56, alignItems: 'center' }}>
               <div>
                 <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 16px' }}>
                   Start with a Plan

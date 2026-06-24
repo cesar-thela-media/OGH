@@ -49,10 +49,10 @@ export default function HarborOaksPage() {
         </section>
 
         {/* BENTO MOSAIC GRID */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '48px 64px 72px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.offWhite, paddingTop: 48, paddingBottom: 72 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             {/* Top row: wide + narrow */}
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 14, marginBottom: 14 }}>
+            <div className="g21" style={{ gap: 14, marginBottom: 14 }}>
               <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '16/9', position: 'relative' }}>
                 <img src={`${BASE}/2025/10/103-St-Andrews-Front-Exterior-2-edited.jpg`} alt="Harbor Oaks home" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,43,82,0.75) 0%, transparent 55%)' }} />
@@ -73,7 +73,7 @@ export default function HarborOaksPage() {
             </div>
 
             {/* Bottom row: 3 equal */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+            <div className="g3" style={{ gap: 14 }}>
               <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '4/3' }}>
                 <img src={`${BASE}/2024/07/1509-Cape-Valero-Exterior-495x400.jpg`} alt="Home exterior" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
@@ -90,8 +90,8 @@ export default function HarborOaksPage() {
         </section>
 
         {/* COMMUNITY DETAILS */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 64px' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1100, margin: '0 auto', gap: 64, alignItems: 'start' }}>
             <div>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 14px' }}>
                 About Harbor Oaks

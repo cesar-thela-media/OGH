@@ -100,7 +100,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
 
         {/* Detail body */}
         <section style={{ maxWidth: 1040, margin: '0 auto', padding: '52px 32px 80px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22 }}>
+          <div className="g2" style={{ gap: 22 }}>
 
             {/* Stats bar — full width */}
             <div style={{
@@ -163,7 +163,7 @@ export default function ListingDetailPage({ params }: { params: { slug: string }
             </div>
 
             {/* Gallery — full width */}
-            <div style={{ gridColumn: '1 / -1', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gridTemplateRows: '200px 200px', gap: 14 }}>
+            <div className="g211" style={{ gridColumn: '1 / -1', gridTemplateRows: '200px 200px', gap: 14 }}>
               <div style={{ gridRow: '1 / 3', borderRadius: 14, overflow: 'hidden' }}>
                 <img src={listing.image} alt={`${listing.address} exterior`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>

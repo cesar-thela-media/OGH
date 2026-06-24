@@ -62,8 +62,8 @@ export default function AboutPage() {
         </section>
 
         {/* WHO WE ARE */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 60px' }}>
-          <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1080, margin: '0 auto', gap: 72, alignItems: 'center' }}>
             <div>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 16px' }}>
                 Family Owned &amp; Operated
@@ -90,8 +90,8 @@ export default function AboutPage() {
         </section>
 
         {/* BUILD ON YOUR LOT */}
-        <section style={{ backgroundColor: COLORS.navy, padding: '80px 60px' }}>
-          <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.navy, paddingTop: 80, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1080, margin: '0 auto', gap: 64, alignItems: 'center' }}>
             <div>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 16px' }}>
                 Flexibility Is the Foundation
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+            <div className="g2" style={{ gap: 14 }}>
               {[
                 { label: 'Homes Built', value: '200+' },
                 { label: 'Years Experience', value: '10+' },
@@ -135,13 +135,13 @@ export default function AboutPage() {
         </section>
 
         {/* THE PROCESS */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 60px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
           <div style={{ maxWidth: 1080, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 56 }}>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 12px' }}>How It Works</p>
               <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 400, color: COLORS.navy, margin: 0, letterSpacing: '-0.02em' }}>From Idea to Keys</h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            <div className="g4" style={{ gap: 24 }}>
               {[
                 { step: '01', title: 'Design', body: 'We sit down with you to understand your vision, lifestyle, and budget. Together we develop floor plans and elevations tailored exactly to you.' },
                 { step: '02', title: 'Permit & Plan', body: 'We handle every permit, engineering submission, and city approval. You don\'t lift a finger on paperwork.' },
@@ -159,7 +159,7 @@ export default function AboutPage() {
         </section>
 
         {/* FAQ */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '80px 60px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.offWhite, paddingTop: 80, paddingBottom: 80 }}>
           <div style={{ maxWidth: 760, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 12px' }}>Common Questions</p>
@@ -205,7 +205,7 @@ export default function AboutPage() {
         </section>
 
         {/* CREDENTIALS */}
-        <section style={{ backgroundColor: COLORS.navy, padding: '72px 60px 80px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.navy, paddingTop: 72, paddingBottom: 80 }}>
           <div style={{ maxWidth: 960, margin: '0 auto' }}>
             <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 12px' }}>Verified &amp; Credentialed</p>
             <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 400, color: COLORS.white, margin: '0 0 40px', letterSpacing: '-0.02em' }}>

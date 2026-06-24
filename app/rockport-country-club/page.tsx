@@ -67,8 +67,8 @@ export default function RockportCountryClubPage() {
         </section>
 
         {/* COMMUNITY STORY */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 64px' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 72, alignItems: 'center' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1100, margin: '0 auto', gap: 72, alignItems: 'center' }}>
             <div>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 16px' }}>
                 Premium Golf Community
@@ -91,7 +91,7 @@ export default function RockportCountryClubPage() {
                 </Link>
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div className="g2" style={{ gap: 12 }}>
               <div style={{ borderRadius: 14, overflow: 'hidden', gridRow: '1 / 3', aspectRatio: '2/3' }}>
                 <img src={`${BASE}/2025/10/103-St-Andrews-Front-Exterior-2-edited.jpg`} alt="OGH home in Rockport CC" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
@@ -106,12 +106,12 @@ export default function RockportCountryClubPage() {
         </section>
 
         {/* HOMES WE'VE BUILT HERE */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '72px 64px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.offWhite, paddingTop: 72, paddingBottom: 72 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(24px, 3vw, 38px)', fontWeight: 400, color: COLORS.navy, margin: '0 0 36px', letterSpacing: '-0.02em' }}>
               Homes We&apos;ve Built in Rockport Country Club
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18, marginBottom: 32 }}>
+            <div className="g3" style={{ gap: 18, marginBottom: 32 }}>
               {homes.map(h => (
                 <div key={h.label} style={{ borderRadius: 14, overflow: 'hidden', position: 'relative', aspectRatio: '4/3' }}>
                   <img src={h.img} alt={h.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />

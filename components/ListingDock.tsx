@@ -5,9 +5,8 @@ import { COLORS, FONTS } from '@/lib/constants';
 export default function ListingDock() {
   return (
     <div
+      className="g3"
       style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
         gap: 16,
         maxWidth: 1360,
         margin: '0 auto',

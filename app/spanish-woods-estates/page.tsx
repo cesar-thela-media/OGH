@@ -82,7 +82,7 @@ export default function SpanishWoodsEstatesPage() {
 
         {/* SPEC BAR */}
         <section style={{ backgroundColor: COLORS.navy, borderTop: '1px solid rgba(201,168,78,0.18)' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 48px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="g4 sp48" style={{ maxWidth: 1100, margin: '0 auto' }}>
             {[
               { value: '0.6+ ac', label: 'Min Lot Size' },
               { value: 'Gated', label: 'Community Type' },
@@ -99,8 +99,8 @@ export default function SpanishWoodsEstatesPage() {
 
         {/* ALTERNATING BROCHURE SECTIONS */}
         {sections.map((s, idx) => (
-          <section key={s.heading} style={{ backgroundColor: idx % 2 === 0 ? COLORS.white : COLORS.offWhite, padding: '88px 64px' }}>
-            <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center', direction: s.imgLeft ? 'rtl' : 'ltr' }}>
+          <section key={s.heading} className="sp" style={{ backgroundColor: idx % 2 === 0 ? COLORS.white : COLORS.offWhite, paddingTop: 88, paddingBottom: 88 }}>
+            <div className="g2" style={{ maxWidth: 1100, margin: '0 auto', gap: 72, alignItems: 'center', direction: s.imgLeft ? 'rtl' : 'ltr' }}>
               <div style={{ borderRadius: 22, overflow: 'hidden', aspectRatio: '4/3', direction: 'ltr' }}>
                 <img src={s.img} alt={s.heading} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
@@ -122,12 +122,12 @@ export default function SpanishWoodsEstatesPage() {
         ))}
 
         {/* GALLERY ROW */}
-        <section style={{ backgroundColor: COLORS.white, padding: '0 64px 80px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 0, paddingBottom: 80 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 24px' }}>
               Homes We&apos;ve Built Here
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+            <div className="g3" style={{ gap: 14 }}>
               <div style={{ borderRadius: 14, overflow: 'hidden', aspectRatio: '4/3' }}>
                 <img src={`${BASE}/2024/07/1509-Cape-Valero-Exterior-495x400.jpg`} alt="Spanish Woods home" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>

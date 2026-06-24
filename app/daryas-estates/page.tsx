@@ -33,7 +33,7 @@ export default function DaryasEstatesPage() {
             <Link href="/community" style={{ fontFamily: FONTS.body, fontSize: 12, color: 'rgba(255,255,255,0.45)', textDecoration: 'none', letterSpacing: '0.08em', display: 'inline-block', marginBottom: 28 }}>
               ← Our Communities
             </Link>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'end' }}>
+            <div className="g2" style={{ gap: 64, alignItems: 'end' }}>
               <div>
                 <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 16px' }}>
                   Private Estate Community
@@ -47,7 +47,7 @@ export default function DaryasEstatesPage() {
                 <p style={{ fontFamily: FONTS.body, fontSize: 15, color: 'rgba(255,255,255,0.60)', lineHeight: 1.8, margin: '0 0 24px' }}>
                   Rockport, TX &middot; Gated Community
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+                <div className="g2" style={{ gap: 18 }}>
                   {lotDetails.map(d => (
                     <div key={d.label} style={{ borderTop: `1px solid rgba(201,168,78,0.35)`, paddingTop: 12 }}>
                       <p style={{ fontFamily: FONTS.body, fontSize: 10, fontWeight: 600, color: COLORS.gold, textTransform: 'uppercase', letterSpacing: '0.10em', margin: '0 0 4px' }}>{d.label}</p>
@@ -84,7 +84,7 @@ export default function DaryasEstatesPage() {
         </section>
 
         {/* EDITORIAL BODY */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 64px' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
           <div style={{ maxWidth: 820, margin: '0 auto' }}>
             <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 16px' }}>
               About the Community
@@ -92,7 +92,7 @@ export default function DaryasEstatesPage() {
             <h2 style={{ fontFamily: FONTS.heading, fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 400, color: COLORS.navy, margin: '0 0 28px', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
               Space, Privacy, and the Texas Coastal Lifestyle.
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+            <div className="g2" style={{ gap: 32 }}>
               <p style={{ fontFamily: FONTS.body, fontSize: 15, color: COLORS.grayText, lineHeight: 1.85, margin: 0 }}>
                 Darya&apos;s Estates is a small, gated residential community in Rockport featuring estate-sized lots on quiet cul-de-sac streets. With generous lot dimensions ranging from one-third to half an acre, homes here have room to breathe — large covered porches, outdoor kitchens, and pools without crowding the property line.
               </p>
@@ -104,8 +104,8 @@ export default function DaryasEstatesPage() {
         </section>
 
         {/* TWO-PHOTO GALLERY */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '0 64px 80px' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+        <section className="sp" style={{ backgroundColor: COLORS.offWhite, paddingTop: 0, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1100, margin: '0 auto', gap: 16 }}>
             <div style={{ borderRadius: 16, overflow: 'hidden', aspectRatio: '4/3' }}>
               <img src={`${BASE}/2022/06/14-Tradewinds-Front-Exterior-495x400.jpeg`} alt="Darya's Estates home 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>

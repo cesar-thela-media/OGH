@@ -110,7 +110,7 @@ export default function LotsForSalePage() {
         </section>
 
         {/* SPLIT LAYOUT */}
-        <section style={{ maxWidth: 1160, margin: '0 auto', padding: '48px 32px 80px', display: 'grid', gridTemplateColumns: '1fr 360px', gap: 40, alignItems: 'start' }}>
+        <section className="g-sidebar sp32" style={{ maxWidth: 1160, margin: '0 auto', paddingTop: 48, paddingBottom: 80, gap: 40, alignItems: 'start' }}>
 
           {/* LEFT: Lot listings */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>

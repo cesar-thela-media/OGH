@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import { COLORS, FONTS, CONTACT } from '@/lib/constants';
 import { notFound } from 'next/navigation';
 
+const BASE = 'https://oceangloryhomes.com/wp-content/uploads';
+
 const projects: Record<string, {
   name: string;
   location: string;
@@ -11,6 +13,7 @@ const projects: Record<string, {
   specs: string;
   stage: string;
   image: string;
+  image2: string;
 }> = {
   'cape-velero': {
     name: '1511 Cape Velero',
@@ -18,7 +21,8 @@ const projects: Record<string, {
     description: 'Two-story coastal estate with arched entries, wrap-around porch, and panoramic bay views. Currently in framing with completion expected Q4 2026.',
     specs: '4 Beds · 3.5 Baths · 3,126 sqft',
     stage: 'Framing',
-    image: '/images/listing-1511-cape-velero.jpg',
+    image:  `${BASE}/2024/07/1504-Cape-Valero-Exterior-495x400.jpg`,
+    image2: `${BASE}/2024/07/1509-Cape-Valero-Exterior-495x400.jpg`,
   },
   'laguna-vista': {
     name: '1802 Laguna Vista',
@@ -26,7 +30,8 @@ const projects: Record<string, {
     description: 'Modern Mediterranean villa with courtyard pool, outdoor kitchen, and private dock access. Permitting stage — ground breaking expected summer 2026.',
     specs: '4 Beds · 4.5 Baths · 3,840 sqft',
     stage: 'Permitting',
-    image: '/images/listing-1802-laguna-vista.jpg',
+    image:  `${BASE}/2024/07/615-N-Fulton-Beach-Exterior-495x400.jpg`,
+    image2: `${BASE}/2026/01/905-Dunes-Exterior-Front-EDIT-495x400.jpg`,
   },
   'harbor-key': {
     name: '2324 Harbor Key',
@@ -34,7 +39,8 @@ const projects: Record<string, {
     description: 'Beachside retreat with open-concept living, rooftop deck, and hurricane-rated construction. Foundation complete, framing starting next month.',
     specs: '3 Beds · 3.5 Baths · 2,654 sqft',
     stage: 'Foundation',
-    image: '/images/listing-2324-harbor-key.jpg',
+    image:  `${BASE}/2022/06/14-Tradewinds-Front-Exterior-495x400.jpeg`,
+    image2: `${BASE}/2024/11/125-Sunrise-edit-4-Front-495x400.jpg`,
   },
   'ocean-drive': {
     name: 'Ocean Drive Residence',
@@ -42,7 +48,8 @@ const projects: Record<string, {
     description: 'Classic colonial revival with modern interior, grand foyer with spiral staircase, and detached carriage house. Delivered on schedule, on budget.',
     specs: '5 Beds · 5 Baths · 4,200 sqft',
     stage: 'Completed',
-    image: '/images/hero-mansion.jpg',
+    image:  `${BASE}/2025/10/103-St-Andrews-Front-Exterior-2-edited.jpg`,
+    image2: `${BASE}/2025/10/101-Cypress-Exterior-495x400.jpg`,
   },
   'mustang-island': {
     name: 'Mustang Island Retreat',
@@ -50,7 +57,8 @@ const projects: Record<string, {
     description: 'Contemporary beach house with floor-to-ceiling glass, infinity-edge pool, and dune-preserving foundation engineering. Completed 2023.',
     specs: '4 Beds · 3 Baths · 2,900 sqft',
     stage: 'Completed',
-    image: '/images/listing-1802-laguna-vista.jpg',
+    image:  `${BASE}/2024/11/125-Sunrise-edit-4-Front-495x400.jpg`,
+    image2: `${BASE}/2024/07/1509-Cape-Valero-Exterior-495x400.jpg`,
   },
   'padre-island': {
     name: 'Padre Island Estate',
@@ -58,7 +66,8 @@ const projects: Record<string, {
     description: 'Spanish revival waterfront home with terracotta roofing, courtyard fountain, private boat slip, and guest casita. Completed 2022.',
     specs: '6 Beds · 5.5 Baths · 5,100 sqft',
     stage: 'Completed',
-    image: '/images/listing-2324-harbor-key.jpg',
+    image:  `${BASE}/2026/01/905-Dunes-Exterior-Front-EDIT-495x400.jpg`,
+    image2: `${BASE}/2022/06/14-Tradewinds-Front-Exterior-495x400.jpeg`,
   },
 };
 
@@ -144,7 +153,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
 
         {/* Detail — bento grid */}
         <section style={{ maxWidth: 960, margin: '0 auto', padding: '56px 32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div className="g2" style={{ gap: 20 }}>
 
             {/* Project overview */}
             <div style={{ gridColumn: '1 / -1', backgroundColor: COLORS.white, borderRadius: 18, padding: '32px 36px', boxShadow: '0 2px 16px rgba(13,43,82,0.05)' }}>
@@ -167,7 +176,7 @@ export default function PortfolioDetailPage({ params }: { params: { slug: string
               <img src={project.image} alt={project.name} style={{ width: '100%', height: 280, objectFit: 'cover', display: 'block' }} />
             </div>
             <div style={{ borderRadius: 18, overflow: 'hidden' }}>
-              <img src="/images/hero-mansion.jpg" alt={`${project.name} detail`} style={{ width: '100%', height: 280, objectFit: 'cover', display: 'block' }} />
+              <img src={project.image2} alt={`${project.name} detail`} style={{ width: '100%', height: 280, objectFit: 'cover', display: 'block' }} />
             </div>
 
             {/* Design/Build note */}

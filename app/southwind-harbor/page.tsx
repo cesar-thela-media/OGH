@@ -28,7 +28,7 @@ export default function SouthwindHarborPage() {
       <main>
 
         {/* SPLIT-SCREEN HERO */}
-        <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 580 }}>
+        <section className="g2" style={{ minHeight: 580 }}>
           {/* Left: text */}
           <div style={{ backgroundColor: COLORS.navy, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 64px' }}>
             <Link href="/community" style={{ fontFamily: FONTS.body, fontSize: 12, color: 'rgba(255,255,255,0.45)', textDecoration: 'none', letterSpacing: '0.08em', display: 'inline-block', marginBottom: 24 }}>
@@ -64,12 +64,12 @@ export default function SouthwindHarborPage() {
         </section>
 
         {/* HORIZONTAL FEATURES ROW */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '60px 48px' }}>
+        <section className="sp48" style={{ backgroundColor: COLORS.offWhite, paddingTop: 60, paddingBottom: 60 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 32px', textAlign: 'center' }}>
               Community Amenities
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+            <div className="g3" style={{ gap: 24 }}>
               {features.map(f => (
                 <div key={f.label} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                   <div style={{ width: 4, height: 4, borderRadius: '50%', backgroundColor: COLORS.gold, flexShrink: 0, marginTop: 8 }} />
@@ -85,8 +85,8 @@ export default function SouthwindHarborPage() {
 
         {/* ALTERNATING SECTIONS */}
         {/* Section A: Harbor lifestyle */}
-        <section style={{ backgroundColor: COLORS.white, padding: '80px 64px' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.white, paddingTop: 80, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1100, margin: '0 auto', gap: 64, alignItems: 'center' }}>
             <div style={{ borderRadius: 20, overflow: 'hidden', aspectRatio: '4/3' }}>
               <img src={`${BASE}/2024/07/615-N-Fulton-Beach-Exterior-495x400.jpg`} alt="Coastal home" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
@@ -105,8 +105,8 @@ export default function SouthwindHarborPage() {
         </section>
 
         {/* Section B: Build here */}
-        <section style={{ backgroundColor: COLORS.offWhite, padding: '80px 64px' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+        <section className="sp" style={{ backgroundColor: COLORS.offWhite, paddingTop: 80, paddingBottom: 80 }}>
+          <div className="g2" style={{ maxWidth: 1100, margin: '0 auto', gap: 64, alignItems: 'center' }}>
             <div>
               <p style={{ fontFamily: FONTS.body, fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.gold, fontWeight: 600, margin: '0 0 14px' }}>
                 Build Your Harbor Home
